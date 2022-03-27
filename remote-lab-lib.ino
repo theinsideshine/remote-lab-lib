@@ -63,10 +63,8 @@
 
 #include "serial.h"
 #include "memory.h"
-#include "timer.h"
-#include "button.h"
 #include "led.h"
-#include "precompilation.h"
+
 
 
 /*

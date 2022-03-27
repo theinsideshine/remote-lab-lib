@@ -16,7 +16,6 @@
 #define memory_H
 
 #include "Arduino.h"
-#include "precompilation.h"
 #include <ArduinoJson.h>
 
 #define FIRMWARE_VERSION                "1.0.00"
