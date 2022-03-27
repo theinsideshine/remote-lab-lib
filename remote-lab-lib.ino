@@ -14,6 +14,51 @@
 */
 
 
+// Lee por el puerto serie parametros de memoryuracion en formato json.
+// {read:'all-params'}        Envia todos los parametros en formato json.
+// {read:'all-cfg'}           Envia todos los parametros de remoteLabLib
+// {read:'all-uint8'}         Envia todos los parametros unsigned 8 bits
+// {read:'all-uint16'}        Envia todos los parametros unsigned 16 bits
+// {read:'all-int32'}         Envia todos los parametros signed 32 bits
+// {read:'all-float'}         Envia todos los parametros float
+ 
+// {read:'version'}           Envia  la version del firmware.
+// {read:'status'}            Devuelve el estatus del ensayo.
+
+// {read:'serial_level'}         Nivel de serialeo por puerto serie.
+
+
+// {serial_level:'0'}       serial_level:0=desactivado,
+// {serial_level:'1'}                 1=mensajes.
+// {serial_level:'2'}                 2=info control estandar.
+// {serial_level:'3'}                 3=info control arduino plotter.
+
+// {cmd:'start'}       Comienza el ensayo.
+
+
+
+ //   {cdd:'start',data:{distance:'20',force:'306'}} 
+
+
+// {uint8_0:'250'}       uint8_0       parametro de 8 bits sin signo 
+// {uint8_x:'250'}       uint8_x       parametro de 8 bits sin signo 
+
+// {uint16_0:'250'}       uint16_0     parametro de 16 bits sin signo
+// {uint16_x:'250'}       uint16_x     parametro de 16 bits sin signo 
+
+// {int32_0:'70000'}      int32_0       parametro de 32 bits con signo
+// {int32_x:'70000'}      int32_x       parametro de 32 bits con signo
+
+// {float_0:'70.123'}      float_0      parametro float
+// {float_x:'70.123'}      float_x      parametro float
+
+// {st_test:'1'}         st_test       0 ensayo desactivado. 
+//                       st_test       1 ensayo activado. 
+// {st_mode:'0'}         st_mode       ST_MODE_TEST                    0  ensayo activado.
+//                                     ST_MODE_HOME_M2                 1 Va al home del motor 2.
+//                                     ST_MODE_CELL                    2 Lee las celdas de carga.
+
+
 
 
 #include "serial.h"
