@@ -1,14 +1,13 @@
 /*
  * File:   Clase para controlar la confirguracion en la EEPROM.
  *
- * - Compiler:           Arduino 1.8.13
+ * - Compiler:           Arduino 1.8.15
  * - Supported devices:  Mega
  *
- * \author               MV: luis.villacorta@alumnos.udemm.edu.ar
- *                       LC: leandro.cintioli@alumnos.udemm.edu.ar
+ * \author               LC: leandro.cintioli@alumnos.udemm.edu.ar
  *                       PT: pablo.tavolaro@alumnos.udemm.edu.ar
  *
- * Date:  17-04-2021
+ * Date:  05-05-2022
  *
  *      Universidad de la Marina Mercante.
  */
@@ -205,16 +204,7 @@ void Cmemory::set_st_mode( uint8_t mode )
 
 // {cmd:'start'}       Comienza el ensayo.
 
-// {m1_fwd:'50'}           Mueve 50 mm el motor 1 hacia adelante.
-// {m1_rwd:'4'}            Mueve 4 mm el motor 1 hacia atras.
-// {step_m1_fwd:'200'}     Mueve 200 pasos el motor 1 hacia adelante.
-// {step_m1_rwd:'200'}     Mueve 200 pasos el motor 1 hacia atras.
 
-
-// {m2_up:'5'}              Mueve 5 mm el motor 1 hacia arriba.
-// {m2_down:'4'}            Mueve 4 mm el motor 1 hacia abajo.
-// {step_m2_up:'200'}       Mueve 200 pasos el motor 2 hacia arriba.
-// {step_m2_down:'200'}     Mueve 200 pasos el motor 2 hacia abajo.
 
  //   {cdd:'start',data:{distance:'20',force:'306'}} 
 
@@ -248,15 +238,7 @@ bool known_key = false;
             }
 
             if ( doc.containsKey("force") ) {
-                float temp = doc["force"];
-               
-                if (temp > FORCE_MAX) {                   
-                  doc["force"]=FORCE_MAX;
-                  
-                }else if (temp < FORCE_MIN) {                   
-                  doc["force"]=FORCE_MIN;
-                }
-                
+                float temp = doc["force"];                
                 set_force( doc["force"] );
                 known_key = true;
             }
@@ -286,13 +268,7 @@ bool known_key = false;
                 known_key = true;
             }
                       
-            /*             
-             *              
-            if ( doc.containsKey("st_test") ) {
-                set_st_test( doc["st_test"] );
-                known_key = true;
-            }
-            */ 
+            
             
             if ( doc.containsKey("serial_level") ) {
                 set_serial_level( doc["serial_level"] );

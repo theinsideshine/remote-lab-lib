@@ -1,14 +1,13 @@
 /**
- * File:   Clase que controla los finales de carrera
+ * File:    Soporte para botones
  *
- * - Compiler:           Arduino 1.8.13
+ * - Compiler:          Arduino 1.8.15
  * - Supported devices:  Mega
  *
- * \author               MV: luis.villacorta@alumnos.udemm.edu.ar
- *                       LC: leandro.cintioli@alumnos.udemm.edu.ar
+ * \author               LC: leandro.cintioli@alumnos.udemm.edu.ar
  *                       PT: pablo.tavolaro@alumnos.udemm.edu.ar
  *
- * Date:  21-04-2021
+ * Date:  01-04-2022
  *
  *      Universidad de la Marina Mercante.
  */

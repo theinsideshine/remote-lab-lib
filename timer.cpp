@@ -1,14 +1,13 @@
 /**
  * File:   Clase de timers por software basados en la funcion millis().
  *
- * - Compiler:           Arduino 1.8.13
+ * - Compiler:           Arduino 1.8.15
  * - Supported devices:  Mega
  *
- * \author               MV: luis.villacorta@alumnos.udemm.edu.ar
- *                       LC: leandro.cintioli@alumnos.udemm.edu.ar
+ * \author               LC: leandro.cintioli@alumnos.udemm.edu.ar
  *                       PT: pablo.tavolaro@alumnos.udemm.edu.ar
  *
- * Date:  21-04-2021
+ * Date:  12-05-2022
  *
  *      Universidad de la Marina Mercante.
  */

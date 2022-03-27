@@ -59,8 +59,9 @@ CLed     Led;
 
 void end_experiment( void ) {
  
-  Led.n_blink(3, 1000);                       // 2 blinks cada 1000 ms;
-  serial.msg( F("ENSAYO TERMINADO, SUERTE!!!"));
+  Led.n_blink(3, 2000);                       // 2 blinks cada 2000 ms;
+  serial.msg( F("Experimento terminado"));
+  
   memory.set_st_test( false );
   memory.send_test_finish(); // Informa al servidor que termino el ensayo.
 }
@@ -83,7 +84,7 @@ void setup()
 #ifdef LED_PRESENT
   Led.init();
   serial.msg( F("Led init") );
-  Led.n_blink(2, 1000); // 2 blinks cada 1000 ms
+  Led.n_blink(1, 2000); // 1 blinks cada 2000 ms
 #endif // LED_PRESENT   
 
 
@@ -124,15 +125,14 @@ void loop()
     break;
 
     
-    case ST_LOOP_HOME_M2:
+    case ST_LOOP_HOME_M2:    
 
-               
-      delay(2000); // Espera 2 segundos para pasar de estado.
+      serial.msg( F("Comienzo del experimento") );         
+      Led.n_blink(5, 1000); 
       
       st_loop = ST_LOOP_OFF_TEST;
-    break;
-
-    
+      
+    break;    
       
      // Termina el ensayo.
     case ST_LOOP_OFF_TEST:  
@@ -140,8 +140,7 @@ void loop()
        end_experiment();   
       st_loop = ST_LOOP_IDLE;
       
-      break;    
-      
+      break;      
 
       default:
       st_loop = ST_LOOP_INIT;

@@ -8,7 +8,7 @@
  *                       LC: leandro.cintioli@alumnos.udemm.edu.ar
  *                       PT: pablo.tavolaro@alumnos.udemm.edu.ar
  *
- * Date:  10-05-2021
+ * Date:  01-05-2022
  *
  *      Universidad de la Marina Mercante.
  */
@@ -18,7 +18,7 @@
 #include "Arduino.h"
 #include "timer.h"
 
-#define PIN_LED_DEBUG                 16
+#define PIN_LED_DEBUG                 13
 
 class CLed
 {
