@@ -30,120 +30,210 @@ uint8_t magic_number;
         magic_number = MAGIC_NUMBER;
         EEPROM.put( EEPROM_ADDRESS_MAGIC_NUMBER, magic_number );
 
-        set_distance( DISTANCE_DEFAULT );
-        set_force( FORCE_DEFAULT );
-        set_reaction1(REACTION1_DEFAULT );
-        set_reaction2(REACTION2_DEFAULT );         
-        set_flexion(FLEXION_DEFAULT);
-        set_step_cal( STEP_CAL_DEFAULT );
-        set_step_k( STEP_K_DEFAULT );        
-        
-        //set_serial_level( serial_DISABLED );
+        set_uint8_0( UINT8_0_DEFAULT );
+        set_uint8_1( UINT8_1_DEFAULT );
+        set_uint8_2( UINT8_2_DEFAULT );
+        set_uint8_3( UINT8_3_DEFAULT );
+        set_uint8_4( UINT8_4_DEFAULT );
+        set_uint8_5( UINT8_5_DEFAULT );
+        set_uint8_6( UINT8_6_DEFAULT );
+        set_uint8_7( UINT8_7_DEFAULT );
+        set_uint8_8( UINT8_8_DEFAULT );
+        set_uint8_9( UINT8_9_DEFAULT );
+
+
+         //set_serial_level( serial_DISABLED );
         set_serial_level( serial_MSG ); // cuando cambias el magic numbre setea los mensajes de serialeo (Arduino 1,primer inicio")        
         set_st_test(ST_TEST_DEFAULT);
         set_st_mode(ST_MODE_DEFAULT );
 
+        set_uint16_0( UINT16_0_DEFAULT );
+        set_uint16_1( UINT16_1_DEFAULT );
+        set_uint16_2( UINT16_3_DEFAULT );
+        set_uint16_3( UINT16_3_DEFAULT );
+        set_uint16_4( UINT16_4_DEFAULT );
+        set_uint16_5( UINT16_5_DEFAULT );
+        set_uint16_6( UINT16_6_DEFAULT );
+        set_uint16_7( UINT16_7_DEFAULT );
+        set_uint16_8( UINT16_8_DEFAULT );
+        set_uint16_9( UINT16_9_DEFAULT );    
+
+
+        set_int32_0( INT32_0_DEFAULT );
+        set_int32_1( INT32_1_DEFAULT );
+        set_int32_2( INT32_2_DEFAULT );
+        set_int32_3( INT32_3_DEFAULT );
+        set_int32_4( INT32_4_DEFAULT );
+        set_int32_5( INT32_5_DEFAULT );
+        set_int32_6( INT32_6_DEFAULT );
+        set_int32_7( INT32_7_DEFAULT );
+        set_int32_8( INT32_8_DEFAULT );
+        set_int32_9( INT32_9_DEFAULT );
+        
+               
+        
+       
+
         
     }else {
-        EEPROM.get( EEPROM_ADDRESS_DISTANCE, distance );
-        EEPROM.get( EEPROM_ADDRESS_FORCE, force);
-        EEPROM.get( EEPROM_ADDRESS_REACTION_1, reaction1 );
-        EEPROM.get( EEPROM_ADDRESS_REACTION_2, reaction2 );       
-        EEPROM.get( EEPROM_ADDRESS_FLEXION, flexion );
-        EEPROM.get( EEPROM_ADDRESS_STEP_CAL, step_cal );
-        EEPROM.get( EEPROM_ADDRESS_STEP_K, step_k );
+        EEPROM.get( EEPROM_ADDRESS_UINT8_0, uint8_0 );
+        EEPROM.get( EEPROM_ADDRESS_UINT8_1, uint8_1 );
+        EEPROM.get( EEPROM_ADDRESS_UINT8_2, uint8_2 );
+        EEPROM.get( EEPROM_ADDRESS_UINT8_3, uint8_3 );
+        EEPROM.get( EEPROM_ADDRESS_UINT8_4, uint8_4 );
+        EEPROM.get( EEPROM_ADDRESS_UINT8_5, uint8_5 );
+        EEPROM.get( EEPROM_ADDRESS_UINT8_6, uint8_6 );
+        EEPROM.get( EEPROM_ADDRESS_UINT8_7, uint8_7 );
+        EEPROM.get( EEPROM_ADDRESS_UINT8_8, uint8_8 );
+        EEPROM.get( EEPROM_ADDRESS_UINT8_9, uint8_9 );
+        
 
-        EEPROM.get( EEPROM_ADDRESS_serial_LEVEL, serial_level );
+        EEPROM.get( EEPROM_ADDRESS_SERIAL_LEVEL, serial_level );
         //EEPROM.get( EEPROM_ADDRESS_ST_MODE, st_mode );
         
        //EEPROM.get( EEPROM_ADDRESS_ST_TEST, st_test );
        //estos parametro inicializa en 0 independiente de como este en la eprrom ya que estos ejecutan el ST_LOOP
        set_st_test(ST_TEST_DEFAULT);
        set_st_mode(ST_MODE_DEFAULT );
-       
-        
+
+       EEPROM.get( EEPROM_ADDRESS_UINT16_0, uint16_0 );
+       EEPROM.get( EEPROM_ADDRESS_UINT16_1, uint16_1 );
+       EEPROM.get( EEPROM_ADDRESS_UINT16_2, uint16_2 );
+       EEPROM.get( EEPROM_ADDRESS_UINT16_3, uint16_3 );
+       EEPROM.get( EEPROM_ADDRESS_UINT16_4, uint16_4 );
+       EEPROM.get( EEPROM_ADDRESS_UINT16_5, uint16_5 );
+       EEPROM.get( EEPROM_ADDRESS_UINT16_6, uint16_6 );
+       EEPROM.get( EEPROM_ADDRESS_UINT16_7, uint16_7 );
+       EEPROM.get( EEPROM_ADDRESS_UINT16_8, uint16_8 );
+       EEPROM.get( EEPROM_ADDRESS_UINT16_9, uint16_9 );
+
+       EEPROM.get( EEPROM_ADDRESS_INT32_0, int32_0 );
+       EEPROM.get( EEPROM_ADDRESS_INT32_1, int32_1 ); 
+       EEPROM.get( EEPROM_ADDRESS_INT32_2, int32_2 );
+       EEPROM.get( EEPROM_ADDRESS_INT32_3, int32_3 );
+       EEPROM.get( EEPROM_ADDRESS_INT32_4, int32_4 );
+       EEPROM.get( EEPROM_ADDRESS_INT32_5, int32_5 );
+       EEPROM.get( EEPROM_ADDRESS_INT32_6, int32_6 );
+       EEPROM.get( EEPROM_ADDRESS_INT32_7, int32_7 );
+       EEPROM.get( EEPROM_ADDRESS_INT32_8, int32_8 );
+       EEPROM.get( EEPROM_ADDRESS_INT32_9, int32_9 );
+              
     }
 }
 
-uint16_t Cmemory::get_distance( void )
+uint8_t Cmemory::get_uint8_0( void )
 {
-    return distance;
+    return uint8_0;
 }
 
-void Cmemory::set_distance( uint16_t val )
+void Cmemory::set_uint8_0( uint8_t val )
 {
-    distance = val;
-    EEPROM.put( EEPROM_ADDRESS_DISTANCE, val );
-}
-
-float Cmemory::get_force( void )
-{
-    return force;
-}
-
-void Cmemory::set_force( float val )
-{
-    force = val;
-    EEPROM.put( EEPROM_ADDRESS_FORCE, val );
-}
-
-float Cmemory::get_reaction1( void )
-{
-    return reaction1;
-}
-
-void Cmemory::set_reaction1( float val )
-{
-   
-    reaction1 = val;
-    EEPROM.put( EEPROM_ADDRESS_REACTION_1, val );
-}
-
-float Cmemory::get_reaction2( void )
-{
-    return reaction2;
-}
-
-void Cmemory::set_reaction2( float val )
-{
-    reaction2 = val;
-    EEPROM.put( EEPROM_ADDRESS_REACTION_2, val );
+    uint8_0 = val;
+    EEPROM.put( EEPROM_ADDRESS_UINT8_0, val );
 }
 
 
-
-float Cmemory::get_flexion( void )
+uint8_t Cmemory::get_uint8_1( void )
 {
-    return flexion;
+    return uint8_1;
 }
 
-void Cmemory::set_flexion( float val )
+void Cmemory::set_uint8_1( uint8_t val )
 {
-    flexion = val;
-    EEPROM.put( EEPROM_ADDRESS_FLEXION, val );
+    uint8_1 = val;
+    EEPROM.put( EEPROM_ADDRESS_UINT8_1, val );
 }
 
-uint32_t Cmemory::get_step_cal( void )
+uint8_t Cmemory::get_uint8_2( void )
 {
-    return step_cal;
+    return uint8_2;
 }
 
-void Cmemory::set_step_cal( uint32_t val )
+void Cmemory::set_uint8_2( uint8_t val )
 {
-    step_cal = val;
-    EEPROM.put( EEPROM_ADDRESS_STEP_CAL, val );
+    uint8_2 = val;
+    EEPROM.put( EEPROM_ADDRESS_UINT8_2, val );
 }
 
-float Cmemory::get_step_k( void )
+uint8_t Cmemory::get_uint8_3( void )
 {
-    return step_k;
+    return uint8_3;
 }
 
-void Cmemory::set_step_k ( float val )
+void Cmemory::set_uint8_3( uint8_t val )
 {
-    step_k = val;
-    EEPROM.put( EEPROM_ADDRESS_STEP_K, val );
+    uint8_3 = val;
+    EEPROM.put( EEPROM_ADDRESS_UINT8_3, val );
 }
+
+
+uint8_t Cmemory::get_uint8_4( void )
+{
+    return uint8_4;
+}
+
+void Cmemory::set_uint8_4( uint8_t val )
+{
+    uint8_4 = val;
+    EEPROM.put( EEPROM_ADDRESS_UINT8_4, val );
+}
+
+uint8_t Cmemory::get_uint8_5( void )
+{
+    return uint8_5;
+}
+
+void Cmemory::set_uint8_5( uint8_t val )
+{
+    uint8_5 = val;
+    EEPROM.put( EEPROM_ADDRESS_UINT8_5, val );
+}
+
+
+uint8_t Cmemory::get_uint8_6( void )
+{
+    return uint8_6;
+}
+void Cmemory::set_uint8_6( uint8_t val )
+{
+    uint8_6 = val;
+    EEPROM.put( EEPROM_ADDRESS_UINT8_6, val );
+}
+
+uint8_t Cmemory::get_uint8_7( void )
+{
+    return uint8_7;
+}
+
+void Cmemory::set_uint8_7( uint8_t val )
+{
+    uint8_7 = val;
+    EEPROM.put( EEPROM_ADDRESS_UINT8_7, val );
+}
+
+uint8_t Cmemory::get_uint8_8( void )
+{
+    return uint8_8;
+}
+
+void Cmemory::set_uint8_8( uint8_t val )
+{
+    uint8_8 = val;
+    EEPROM.put( EEPROM_ADDRESS_UINT8_8, val );
+}
+
+uint8_t Cmemory::get_uint8_9( void )
+{
+    return uint8_9;
+}
+
+void Cmemory::set_uint8_9( uint8_t val )
+{
+    uint8_9 = val;
+    EEPROM.put( EEPROM_ADDRESS_UINT8_9, val );
+}
+
+
 
 uint8_t Cmemory::get_serial_level( void )
 {
@@ -153,7 +243,7 @@ uint8_t Cmemory::get_serial_level( void )
 void Cmemory::set_serial_level( uint8_t enable )
 {
     serial_level = enable;
-    EEPROM.put( EEPROM_ADDRESS_serial_LEVEL, serial_level );
+    EEPROM.put( EEPROM_ADDRESS_SERIAL_LEVEL, serial_level );
 }
 /*
  * Estos deberia ser booleano !!!!!
@@ -183,18 +273,242 @@ void Cmemory::set_st_mode( uint8_t mode )
 }
 
 
+uint16_t Cmemory::get_uint16_0( void )
+{
+    return uint16_0;
+}
+
+void Cmemory::set_uint16_0( uint16_t val )
+{
+    uint16_0 = val;
+    EEPROM.put( EEPROM_ADDRESS_UINT16_0, val );
+}
+
+uint16_t Cmemory::get_uint16_1( void )
+{
+    return uint16_1;
+}
+
+void Cmemory::set_uint16_1( uint16_t val )
+{
+    uint16_1 = val;
+    EEPROM.put( EEPROM_ADDRESS_UINT16_1, val );
+}
+
+uint16_t Cmemory::get_uint16_2( void )
+{
+    return uint16_2;
+}
+
+void Cmemory::set_uint16_2( uint16_t val )
+{
+    uint16_2 = val;
+    EEPROM.put( EEPROM_ADDRESS_UINT16_2, val );
+}
+
+uint16_t Cmemory::get_uint16_3( void )
+{
+    return uint16_3;
+}
+
+void Cmemory::set_uint16_3( uint16_t val )
+{
+    uint16_3 = val;
+    EEPROM.put( EEPROM_ADDRESS_UINT16_3, val );
+}
+
+uint16_t Cmemory::get_uint16_4( void )
+{
+    return uint16_4;
+}
+
+void Cmemory::set_uint16_4( uint16_t val )
+{
+    uint16_4 = val;
+    EEPROM.put( EEPROM_ADDRESS_UINT16_4, val );
+}
+
+uint16_t Cmemory::get_uint16_5( void )
+{
+    return uint16_5;
+}
+
+void Cmemory::set_uint16_5( uint16_t val )
+{
+    uint16_5 = val;
+    EEPROM.put( EEPROM_ADDRESS_UINT16_5, val );
+}
+
+uint16_t Cmemory::get_uint16_6( void )
+{
+    return uint16_6;
+}
+
+void Cmemory::set_uint16_6( uint16_t val )
+{
+    uint16_6 = val;
+    EEPROM.put( EEPROM_ADDRESS_UINT16_6, val );
+}
+
+uint16_t Cmemory::get_uint16_7( void )
+{
+    return uint16_7;
+}
+
+void Cmemory::set_uint16_7( uint16_t val )
+{
+    uint16_7 = val;
+    EEPROM.put( EEPROM_ADDRESS_UINT16_7, val );
+}
+
+uint16_t Cmemory::get_uint16_8( void )
+{
+    return uint16_8;
+}
+
+void Cmemory::set_uint16_8( uint16_t val )
+{
+    uint16_8 = val;
+    EEPROM.put( EEPROM_ADDRESS_UINT16_8, val );
+}
+
+uint16_t Cmemory::get_uint16_9( void )
+{
+    return uint16_9;
+}
+
+void Cmemory::set_uint16_9( uint16_t val )
+{
+    uint16_9 = val;
+    EEPROM.put( EEPROM_ADDRESS_UINT16_9, val );
+}
+
+
+
+int32_t Cmemory::get_int32_0( void )
+{
+    return int32_0;
+}
+
+void Cmemory::set_int32_0( int32_t val )
+{
+    int32_0 = val;
+    EEPROM.put( EEPROM_ADDRESS_INT32_0, val );
+}
+
+
+int32_t Cmemory::get_int32_1( void )
+{
+    return int32_1;
+}
+
+void Cmemory::set_int32_1( int32_t val )
+{
+    int32_1 = val;
+    EEPROM.put( EEPROM_ADDRESS_INT32_1, val );
+}
+
+int32_t Cmemory::get_int32_2( void )
+{
+    return int32_2;
+}
+
+void Cmemory::set_int32_2( int32_t val )
+{
+    int32_2 = val;
+    EEPROM.put( EEPROM_ADDRESS_INT32_2, val );
+}
+
+int32_t Cmemory::get_int32_3( void )
+{
+    return int32_3;
+}
+
+void Cmemory::set_int32_3( int32_t val )
+{
+    int32_3 = val;
+    EEPROM.put( EEPROM_ADDRESS_INT32_3, val );
+}
+
+
+int32_t Cmemory::get_int32_4( void )
+{
+    return int32_4;
+}
+
+void Cmemory::set_int32_4( int32_t val )
+{
+    int32_4 = val;
+    EEPROM.put( EEPROM_ADDRESS_INT32_4, val );
+}
+
+
+int32_t Cmemory::get_int32_5( void )
+{
+    return int32_5;
+}
+
+void Cmemory::set_int32_5( int32_t val )
+{
+    int32_5 = val;
+    EEPROM.put( EEPROM_ADDRESS_INT32_5, val );
+}
+
+int32_t Cmemory::get_int32_6( void )
+{
+    return int32_6;
+}
+
+void Cmemory::set_int32_6( int32_t val )
+{
+    int32_6 = val;
+    EEPROM.put( EEPROM_ADDRESS_INT32_6, val );
+}
+
+int32_t Cmemory::get_int32_7( void )
+{
+    return int32_7;
+}
+
+void Cmemory::set_int32_7( int32_t val )
+{
+    int32_7 = val;
+    EEPROM.put( EEPROM_ADDRESS_INT32_7, val );
+}
+
+int32_t Cmemory::get_int32_8( void )
+{
+    return int32_8;
+}
+
+void Cmemory::set_int32_8( int32_t val )
+{
+    int32_8 = val;
+    EEPROM.put( EEPROM_ADDRESS_INT32_8, val );
+}
+
+int32_t Cmemory::get_int32_9( void )
+{
+    return int32_9;
+}
+
+void Cmemory::set_int32_9( int32_t val )
+{
+    int32_9 = val;
+    EEPROM.put( EEPROM_ADDRESS_INT32_9, val );
+}
+
 // Lee por el puerto serie parametros de memoryuracion en formato json.
-// {info:'all-params'}        Envia todos los parametros en formato json.
-// {info:'all-calibration'}   Envia todos los parametros en formato json de calibracion de la flexion y el nivel de serialeo.
-// {info:'version'}           Envia  la version del firmware.
-// {info:'status'}            Devuelve el estatus del ensayo.
-// {info:'reaction_one'}      Devuelve la reaction1 del ensayo.
-// {info:'reaction_two'}      Devuelve la reaction2 del ensayo.
-// {info:'flexion'}           Devuelve la flexion del ensayo.
-// {info:'st_mode'}           Devuelve el modo del ensayo.
-// {info:'step_cal'}          Devuelve la cantidad de pasos contados para la calibracion de step_k.
-// {info:'step_k'}            Constante de calibracion de flexion.
-// {info:'serial_level'}         Nivel de serialeo por puerto serie.
+// {read:'all-params'}        Envia todos los parametros en formato json.
+// {read:'all-cfg'}           Envia todos los parametros de remoteLabLib
+// {read:'all-uint8'}         Envia todos los parametros unsigned 8 bits
+// {read:'all-uint16'}        Envia todos los parametros unsigned 16 bits
+// {read:'all-int32'}         Envia todos los parametros signed 32 bits
+ 
+// {read:'version'}           Envia  la version del firmware.
+// {read:'status'}            Devuelve el estatus del ensayo.
+
+// {read:'serial_level'}         Nivel de serialeo por puerto serie.
 
 
 // {serial_level:'0'}       serial_level:0=desactivado,
@@ -209,18 +523,48 @@ void Cmemory::set_st_mode( uint8_t mode )
  //   {cdd:'start',data:{distance:'20',force:'306'}} 
 
 
-// {distance:'290'}      distance      Distancia en mm donde se aplica la fuerza.
-// {force:'2000'}        force         Fuerza a aplicar en g.
-// {reaction_one:'1'}    reaction_one  Fuerza de reaccion uno, en g.
-// {reaction_two:'2'}    reaction_two  Fuerza de reaccion dos, en g.
-// {flexion:'0.12630'}   flexion       Flexion del ensayo, en cm.
+// {uint8_0:'250'}       uint8_0       parametro de 8 bits sin signo 
+// {uint8_1:'250'}       uint8_1       parametro de 8 bits sin signo 
+// {uint8_2:'250'}       uint8_2       parametro de 8 bits sin signo 
+// {uint8_3:'250'}       uint8_3       parametro de 8 bits sin signo 
+// {uint8_4:'250'}       uint8_4       parametro de 8 bits sin signo 
+// {uint8_5:'250'}       uint8_5       parametro de 8 bits sin signo 
+// {uint8_6:'250'}       uint8_6       parametro de 8 bits sin signo 
+// {uint8_7:'250'}       uint8_7       parametro de 8 bits sin signo 
+// {uint8_8:'250'}       uint8_8       parametro de 8 bits sin signo 
+// {uint8_9:'250'}       uint8_9       parametro de 8 bits sin signo
+
+// {uint16_0:'250'}       uint16_0       parametro de 16 bits sin signo
+// {uint16_1:'250'}       uint16_1       parametro de 16 bits sin signo 
+// {uint16_2:'250'}       uint16_2       parametro de 16 bits sin signo 
+// {uint16_3:'250'}       uint16_3       parametro de 16 bits sin signo 
+// {uint16_4:'250'}       uint16_4       parametro de 16 bits sin signo 
+// {uint16_5:'250'}       uint16_5       parametro de 16 bits sin signo 
+// {uint16_6:'250'}       uint16_6       parametro de 16 bits sin signo 
+// {uint16_7:'250'}       uint16_7       parametro de 16 bits sin signo 
+// {uint16_8:'250'}       uint16_8       parametro de 16 bits sin signo 
+// {uint16_9:'250'}       uint16_9       parametro de 16 bits sin signo 
+
+
+// {int32_0:'70000'}      int32_0       parametro de 32 bits con signo
+// {int32_1:'70000'}      int32_1       parametro de 32 bits con signo
+// {int32_2:'70000'}      int32_2       parametro de 32 bits con signo
+// {int32_3:'70000'}      int32_3       parametro de 32 bits con signo
+// {int32_4:'70000'}      int32_4       parametro de 32 bits con signo
+// {int32_5:'70000'}      int32_5       parametro de 32 bits con signo
+// {int32_6:'70000'}      int32_6       parametro de 32 bits con signo
+// {int32_7:'70000'}      int32_7       parametro de 32 bits con signo
+// {int32_8:'70000'}      int32_8       parametro de 32 bits con signo
+// {int32_9:'70000'}      int32_9       parametro de 32 bits con signo
+
+
+
 // {st_test:'1'}         st_test       0 ensayo desactivado. 
 //                       st_test       1 ensayo activado. 
 // {st_mode:'0'}         st_mode       ST_MODE_TEST                    0  ensayo activado.
 //                                     ST_MODE_HOME_M2                 1 Va al home del motor 2.
 //                                     ST_MODE_CELL                    2 Lee las celdas de carga.
-//  {step_cal:'2000'}    step_cal      Devuelve la cantidad de pasos contados para la calibracion de step_k.
-//  {step_k:'0.123456'}  step_k        Constante de calibracion de flexion.
+
                                    
 
 void Cmemory::host_cmd( void )
@@ -230,44 +574,59 @@ bool known_key = false;
     if ( Serial.available() ){
         StaticJsonDocument<512> doc;
         auto error = deserializeJson( doc, Serial );
-        if ( !error ) {
-          
-            if ( doc.containsKey("distance") ) {
-                set_distance( doc["distance"] );
+        if ( !error ) {     
+
+            if ( doc.containsKey("uint8_0") ) {
+                set_uint8_0( doc["uint8_0"] );
+                known_key = true;
+            }   
+
+            if ( doc.containsKey("uint8_1") ) {
+                set_uint8_1( doc["uint8_1"] );
+                known_key = true;
+            } 
+
+            if ( doc.containsKey("uint8_2") ) {
+                set_uint8_2( doc["uint8_2"] );
+                known_key = true;
+            } 
+
+            if ( doc.containsKey("uint8_3") ) {
+                set_uint8_3( doc["uint8_3"] );
                 known_key = true;
             }
 
-            if ( doc.containsKey("force") ) {
-                float temp = doc["force"];                
-                set_force( doc["force"] );
+            
+            if ( doc.containsKey("uint8_4") ) {
+                set_uint8_4( doc["uint8_4"] );
+                known_key = true;
+            } 
+
+            if ( doc.containsKey("uint8_5") ) {
+                set_uint8_5( doc["uint8_5"] );
+                known_key = true;
+            }   
+
+            if ( doc.containsKey("uint8_6") ) {
+                set_uint8_6( doc["uint8_6"] );
+                known_key = true;
+            } 
+
+            if ( doc.containsKey("uint8_7") ) {
+                set_uint8_7( doc["uint8_7"] );
+                known_key = true;
+            } 
+
+            if ( doc.containsKey("uint8_8") ) {
+                set_uint8_8( doc["uint8_8"] );
                 known_key = true;
             }
 
-            if ( doc.containsKey("reaction_one") ) {
-                set_reaction1( doc["reaction_one"] );
+            
+            if ( doc.containsKey("uint8_9") ) {
+                set_uint8_9( doc["uint8_9"] );
                 known_key = true;
             }
-
-            if ( doc.containsKey("reaction_two") ) {
-                set_reaction2( doc["reaction_two"] );
-                known_key = true;
-            }
-
-            if ( doc.containsKey("flexion") ) {
-                set_flexion( doc["flexion"] );
-                known_key = true;
-            }
-
-             if ( doc.containsKey("step_cal") ) {
-                set_step_cal( doc["step_cal"] );
-                known_key = true;
-            }
-
-            if ( doc.containsKey("step_k") ) {
-                set_step_k( doc["step_k"] );
-                known_key = true;
-            }
-                      
             
             
             if ( doc.containsKey("serial_level") ) {
@@ -279,34 +638,202 @@ bool known_key = false;
                 set_st_mode( doc["st_mode"] );
                 known_key = true;
             } 
+
+            if ( doc.containsKey("uint16_0") ) {
+                set_uint16_0( doc["uint16_0"] );
+                known_key = true;
+            }
+
+            if ( doc.containsKey("uint16_1") ) {
+                set_uint16_1( doc["uint16_1"] );
+                known_key = true;
+            }
+
+            if ( doc.containsKey("uint16_2") ) {
+                set_uint16_2( doc["uint16_2"] );
+                known_key = true;
+            }
+
+            if ( doc.containsKey("uint16_3") ) {
+                set_uint16_3( doc["uint16_3"] );
+                known_key = true;
+            }
+
+            if ( doc.containsKey("uint16_4") ) {
+                set_uint16_4( doc["uint16_4"] );
+                known_key = true;
+            }
+
+            if ( doc.containsKey("uint16_5") ) {
+                set_uint16_5( doc["uint16_5"] );
+                known_key = true;
+            }
+
+            if ( doc.containsKey("uint16_6") ) {
+                set_uint16_6( doc["uint16_6"] );
+                known_key = true;
+            }
+
+            if ( doc.containsKey("uint16_7") ) {
+                set_uint16_7( doc["uint16_7"] );
+                known_key = true;
+            }
+
+            if ( doc.containsKey("uint16_8") ) {
+                set_uint16_8( doc["uint16_8"] );
+                known_key = true;
+            }
+
+            if ( doc.containsKey("uint16_9") ) {
+                set_uint16_9( doc["uint16_9"] );
+                known_key = true;
+            }
+
+             if ( doc.containsKey("int32_0") ) {
+                set_int32_0( doc["int32_0"] );
+                known_key = true;
+            }
+
+            if ( doc.containsKey("int32_1") ) {
+                set_int32_1( doc["int32_1"] );
+                known_key = true;
+            }
+
+            if ( doc.containsKey("int32_2") ) {
+                set_int32_2( doc["int32_2"] );
+                known_key = true;
+            }
+
+            if ( doc.containsKey("int32_3") ) {
+                set_int32_3( doc["int32_3"] );
+                known_key = true;
+            }
+
+            if ( doc.containsKey("int32_4") ) {
+                set_int32_4( doc["int32_4"] );
+                known_key = true;
+            }
+
+            if ( doc.containsKey("int32_5") ) {
+                set_int32_5( doc["int32_5"] );
+                known_key = true;
+            }
+
+            if ( doc.containsKey("int32_6") ) {
+                set_int32_6( doc["int32_6"] );
+                known_key = true;
+            }
+
+            if ( doc.containsKey("int32_7") ) {
+                set_int32_7( doc["int32_7"] );
+                known_key = true;
+            }
+
+            if ( doc.containsKey("int32_8") ) {
+                set_int32_0( doc["int32_8"] );
+                known_key = true;
+            }
+
+            if ( doc.containsKey("int32_9") ) {
+                set_int32_9( doc["int32_9"] );
+                known_key = true;
+            }
+       
+
                    
 
-            if ( doc.containsKey("info") ) {
-                String key = doc["info"];
+            if ( doc.containsKey("read") ) {
+                String key = doc["read"];
 
                 if( key == "all-params" ) {
-                    send_all_params( doc );
-                }else if( key == "all-calibration" ) {
-                    send_all_calibration( doc );
-                }else if( key == "version" ) {
+                    send_all_parameters( doc );
+                }
+                else if( key == "all-cfg" ) {
+                    send_all_cfg( doc );
+                }
+                else if( key == "all-uint8" ) {
+                    send_all_uint8( doc );
+                } else if( key == "all-uint16" ) {
+                    send_all_uint16( doc );
+                }
+                else if( key == "all-int32" ) {
+                    send_all_int32( doc );
+                }      
+                
+
+                
+                
+                else if( key == "version" ) {
                     send_version( doc );
                 }else if( key == "status" ) {
                     send_status( doc );
-                }else if( key == "reaction_one" ) {
-                    send_reaction_one( doc );
-                }else if( key == "reaction_two" ) {
-                    send_reaction_two( doc );
-                }else if( key == "flexion" ) {
-                    send_flexion( doc );
                 }else if( key == "st_mode" ) {
                     send_st_mode( doc );
-                }else if( key == "step_cal" ) {
-                    send_step_cal( doc );
-                }else if( key == "step_k" ) {
-                    send_step_k( doc );
                 }else if( key == "serial_level" ) {
                     send_serial_level( doc );
+                }else if( key == "uint8_0" ) {
+                    send_uint8_0( doc );
+                }else if( key == "uint8_1" ) {
+                    send_uint8_1( doc );
+                }else if( key == "uint8_2" ) {
+                    send_uint8_2( doc );
+                }else if( key == "uint8_3" ) {
+                    send_uint8_3( doc );
+                }else if( key == "uint8_4" ) {
+                    send_uint8_4( doc );
+                }else if( key == "uint8_5" ) {
+                    send_uint8_5( doc );
+                }else if( key == "uint8_6" ) {
+                    send_uint8_6( doc );
+                }else if( key == "uint8_7" ) {
+                    send_uint8_7( doc );
+                }else if( key == "uint8_8" ) {
+                    send_uint8_8( doc );
+                }else if( key == "uint8_9" ) {
+                    send_uint8_9( doc );
+                }else if( key == "uint16_0" ) {
+                    send_uint16_0( doc );
+                }else if( key == "uint16_1" ) {
+                    send_uint16_1( doc );
+                }else if( key == "uint16_2" ) {
+                    send_uint16_2( doc );
+                }else if( key == "uint16_3" ) {
+                    send_uint16_3( doc );
+                }else if( key == "uint16_4" ) {
+                    send_uint16_4( doc );
+                }else if( key == "uint16_5" ) {
+                    send_uint16_5( doc );
+                }else if( key == "uint16_6" ) {
+                    send_uint16_6( doc );
+                }else if( key == "uint16_7" ) {
+                    send_uint16_7( doc );
+                }else if( key == "uint16_8" ) {
+                    send_uint16_8( doc );
+                }else if( key == "uint16_9" ) {
+                    send_uint16_9( doc );
+                }else if( key == "int32_0" ) {
+                    send_int32_0( doc );
+                }else if( key == "int32_1" ) {
+                    send_int32_1( doc );
+                }else if( key == "int32_2" ) {
+                    send_int32_2( doc );
+                }else if( key == "int32_3" ) {
+                    send_int32_3( doc );
+                }else if( key == "int32_4" ) {
+                    send_int32_4( doc );
+                }else if( key == "int32_5" ) {
+                    send_int32_5( doc );
+                }else if( key == "int32_6" ) {
+                    send_int32_6( doc );
+                }else if( key == "int32_7" ) {
+                    send_int32_7( doc );
+                }else if( key == "int32_8" ) {
+                    send_int32_8( doc );
+                }else if( key == "int32_9" ) {
+                    send_int32_9( doc );
                 }
+                
+                      
                 
             }
 
@@ -318,11 +845,11 @@ bool known_key = false;
             if ( doc.containsKey("cdd") ) { //Verifica "cdd".
                 String key = doc["cdd"];
                  if( key == "start" ) {    //Verifica "start".
-                     const char* key1 =doc["data"]["distance"];
-                     const char* key2 =doc["data"]["force"];
+                     const char* key1 =doc["data"]["uint8_0"];
+                     const char* key2 =doc["data"]["uint8_1"];
                     if (key1 && key2) {   //Verifica "distance". "force".
-                       set_distance( doc["data"]["distance"]);
-                       set_force( doc["data"]["force"] );  
+                       set_uint8_0( doc["data"]["uint8_0"]);
+                       set_uint8_1( doc["data"]["uint8_1"] );  
                        set_st_test( 1 );  // Comienza el ensayo.                      
                        send_ack( doc );
                      }
@@ -330,8 +857,7 @@ bool known_key = false;
                  }
              }           
 
-
-                     
+                    
                       
             if ( doc.containsKey("cmd") ) {
                 String key = doc["cmd"];                
@@ -351,14 +877,41 @@ bool known_key = false;
  *  Envia todos los parametros del experimento en formato json.
  */
 
-void Cmemory::send_all_params( JsonDocument& doc )
+void Cmemory::send_all_parameters( JsonDocument& doc )
 {
-    doc["distance"] = get_distance();
-    doc["force"] =  get_force();
-    doc["reaction_one"] = get_reaction1();
-    doc["reaction_two"] =  get_reaction2();
-    doc["flexion"] = get_flexion();             
-    doc["st_test"] = get_st_test();    
+    doc["uint8_0"] = get_uint8_0();
+    doc["uint8_1"] = get_uint8_1();
+    doc["uint8_2"] = get_uint8_2();
+    doc["uint8_3"] = get_uint8_3();
+    doc["uint8_4"] = get_uint8_4();
+    doc["uint8_5"] = get_uint8_5();
+    doc["uint8_6"] = get_uint8_6();
+    doc["uint8_7"] = get_uint8_7();
+    doc["uint8_8"] = get_uint8_8();
+    doc["uint8_9"] = get_uint8_9(); 
+     
+    doc["uint16_0"] = get_uint16_0();
+    doc["uint16_1"] = get_uint16_1();
+    doc["uint16_2"] = get_uint16_2();
+    doc["uint16_3"] = get_uint16_3();
+    doc["uint16_4"] = get_uint16_4();
+    doc["uint16_5"] = get_uint16_5();
+    doc["uint16_6"] = get_uint16_6();
+    doc["uint16_7"] = get_uint16_7();
+    doc["uint16_8"] = get_uint16_8();
+    doc["uint16_9"] = get_uint16_9();  
+
+
+    doc["int32_0"] = get_int32_0();
+    doc["int32_1"] = get_int32_1();
+    doc["int32_2"] = get_int32_2();
+    doc["int32_3"] = get_int32_3();
+    doc["int32_4"] = get_int32_4();
+    doc["int32_5"] = get_int32_5();
+    doc["int32_6"] = get_int32_6();
+    doc["int32_7"] = get_int32_7();
+    doc["int32_8"] = get_int32_8();
+    doc["int32_9"] = get_int32_9();
    
     serializeJsonPretty( doc, Serial );
 }
@@ -367,11 +920,134 @@ void Cmemory::send_all_params( JsonDocument& doc )
  *  Envia todos los parametros de calibracion de la flexion y el nivel de serialgeo.
  */
 
-void Cmemory::send_all_calibration( JsonDocument& doc )
+void Cmemory::send_all_uint8( JsonDocument& doc )
 {
-    doc["step_cal"] = get_step_cal();
-    doc["step_k"] =  get_step_k();
+    doc["uint8_0"] = get_uint8_0();
+    doc["uint8_1"] = get_uint8_1();
+    doc["uint8_2"] = get_uint8_2();
+    doc["uint8_3"] = get_uint8_3();
+    doc["uint8_4"] = get_uint8_4();
+    doc["uint8_5"] = get_uint8_5();
+    doc["uint8_6"] = get_uint8_6();
+    doc["uint8_7"] = get_uint8_7();
+    doc["uint8_8"] = get_uint8_8();
+    doc["uint8_9"] = get_uint8_9();
+    serializeJsonPretty( doc, Serial );
+}
+
+void Cmemory::send_all_uint16( JsonDocument& doc )
+{
+    doc["uint16_0"] = get_uint16_0();
+    doc["uint16_1"] = get_uint16_1();
+    doc["uint16_2"] = get_uint16_2();
+    doc["uint16_3"] = get_uint16_3();
+    doc["uint16_4"] = get_uint16_4();
+    doc["uint16_5"] = get_uint16_5();
+    doc["uint16_6"] = get_uint16_6();
+    doc["uint16_7"] = get_uint16_7();
+    doc["uint16_8"] = get_uint16_8();
+    doc["uint16_9"] = get_uint16_9();
+    serializeJsonPretty( doc, Serial );
+}
+
+
+void Cmemory::send_all_int32( JsonDocument& doc )
+{
+    doc["int32_0"] = get_int32_0();
+    doc["int32_1"] = get_int32_1();
+    doc["int32_2"] = get_int32_2();
+    doc["int32_3"] = get_int32_3();
+    doc["int32_4"] = get_int32_4();
+    doc["int32_5"] = get_int32_5();
+    doc["int32_6"] = get_int32_6();
+    doc["int32_7"] = get_int32_7();
+    doc["int32_8"] = get_int32_8();
+    doc["int32_9"] = get_int32_9();
+    serializeJsonPretty( doc, Serial );
+}
+
+
+
+
+void Cmemory::send_all_cfg( JsonDocument& doc )
+{
+    doc["version"] = FIRMWARE_VERSION;
+    doc["st_mode"] =  get_st_mode();
     doc["serial_level"] =  get_serial_level();
+    doc["status"] = get_st_test();
+    
+    serializeJsonPretty( doc, Serial );
+}
+
+void Cmemory::send_uint8_0( JsonDocument& doc )
+{
+    doc["uint8_0"] =  get_uint8_0();
+
+    serializeJsonPretty( doc, Serial );
+}
+
+void Cmemory::send_uint8_1( JsonDocument& doc )
+{
+    doc["uint8_1"] =  get_uint8_1();
+
+    serializeJsonPretty( doc, Serial );
+}
+
+void Cmemory::send_uint8_2( JsonDocument& doc )
+{
+    doc["uint8_2"] =  get_uint8_2();
+
+    serializeJsonPretty( doc, Serial );
+}
+
+void Cmemory::send_uint8_3( JsonDocument& doc )
+{
+    doc["uint8_3"] =  get_uint8_3();
+
+    serializeJsonPretty( doc, Serial );
+}
+
+
+void Cmemory::send_uint8_4( JsonDocument& doc )
+{
+    doc["uint8_4"] =  get_uint8_4();
+
+    serializeJsonPretty( doc, Serial );
+}
+
+void Cmemory::send_uint8_5( JsonDocument& doc )
+{
+    doc["uint8_5"] =  get_uint8_5();
+
+    serializeJsonPretty( doc, Serial );
+}
+
+void Cmemory::send_uint8_6( JsonDocument& doc )
+{
+    doc["uint8_6"] =  get_uint8_6();
+
+    serializeJsonPretty( doc, Serial );
+}
+
+void Cmemory::send_uint8_7( JsonDocument& doc )
+{
+    doc["uint8_7"] =  get_uint8_7();
+
+    serializeJsonPretty( doc, Serial );
+}
+
+void Cmemory::send_uint8_8( JsonDocument& doc )
+{
+    doc["uint8_8"] =  get_uint8_8();
+
+    serializeJsonPretty( doc, Serial );
+}
+
+
+void Cmemory::send_uint8_9( JsonDocument& doc )
+{
+    doc["uint8_9"] =  get_uint8_9();
+
     serializeJsonPretty( doc, Serial );
 }
 
@@ -393,45 +1069,6 @@ void Cmemory::send_version( JsonDocument& doc )
     serializeJsonPretty( doc, Serial );
 }
 
-// Envia la reaccion 1
-void Cmemory::send_reaction_one( JsonDocument& doc )
-{
-    doc["reaction_one"] =  get_reaction1();;
-
-    serializeJsonPretty( doc, Serial );
-}
-
-// Envia la reaccion 2
-void Cmemory::send_reaction_two( JsonDocument& doc )
-{
-    doc["reaction_two"] =  get_reaction2();;
-
-    serializeJsonPretty( doc, Serial );
-}
-
-// Envia la flexion de contar los pasos del motor2
-void Cmemory::send_flexion( JsonDocument& doc )
-{
-    doc["flexion"] =  get_flexion();
-
-    serializeJsonPretty( doc, Serial );
-}
-
-// Envia la cantidad de pasos contados para la calibracion de ktep.
-void Cmemory::send_step_cal( JsonDocument& doc )
-{
-    doc["step_cal"] =  get_step_cal();
-
-    serializeJsonPretty( doc, Serial );
-}
-
-// Envia step_k
-void Cmemory::send_step_k( JsonDocument& doc )
-{
-    doc["step_k"] =  get_step_k();
-
-    serializeJsonPretty( doc, Serial );
-}
 
 // Envia el nivel de serialeo
 void Cmemory::send_serial_level( JsonDocument& doc )
@@ -444,7 +1081,7 @@ void Cmemory::send_serial_level( JsonDocument& doc )
 // Envia el estatus del ensayo.
 void Cmemory::send_status( JsonDocument& doc )
 {
-    doc["status"] = get_st_test();;
+    doc["status"] = get_st_test();
 
     serializeJsonPretty( doc, Serial );
 }
@@ -452,10 +1089,134 @@ void Cmemory::send_status( JsonDocument& doc )
 // Envia el modo del ensayo.
 void Cmemory::send_st_mode( JsonDocument& doc )
 {
-    doc["st_mode"] = get_st_mode();;
+    doc["st_mode"] = get_st_mode();
 
     serializeJsonPretty( doc, Serial );
 }
+
+void Cmemory::send_uint16_0( JsonDocument& doc )
+{
+    doc["uint16_0"] =  get_uint16_0();
+    serializeJsonPretty( doc, Serial );
+}
+
+void Cmemory::send_uint16_1( JsonDocument& doc )
+{
+    doc["uint16_1"] =  get_uint16_1();
+    serializeJsonPretty( doc, Serial );
+}
+
+void Cmemory::send_uint16_2( JsonDocument& doc )
+{
+    doc["uint16_2"] =  get_uint16_2();
+    serializeJsonPretty( doc, Serial );
+}
+
+void Cmemory::send_uint16_3( JsonDocument& doc )
+{
+    doc["uint16_3"] =  get_uint16_3();
+    serializeJsonPretty( doc, Serial );
+}
+
+void Cmemory::send_uint16_4( JsonDocument& doc )
+{
+    doc["uint16_4"] =  get_uint16_4();
+    serializeJsonPretty( doc, Serial );
+}
+
+void Cmemory::send_uint16_5( JsonDocument& doc )
+{
+    doc["uint16_5"] =  get_uint16_5();
+    serializeJsonPretty( doc, Serial );
+}
+void Cmemory::send_uint16_6( JsonDocument& doc )
+{
+    doc["uint16_6"] =  get_uint16_6();
+    serializeJsonPretty( doc, Serial );
+}
+
+void Cmemory::send_uint16_7( JsonDocument& doc )
+{
+    doc["uint16_7"] =  get_uint16_7();
+    serializeJsonPretty( doc, Serial );
+}
+
+
+void Cmemory::send_uint16_8( JsonDocument& doc )
+{
+    doc["uint16_8"] =  get_uint16_8();
+    serializeJsonPretty( doc, Serial );
+}
+
+
+void Cmemory::send_uint16_9( JsonDocument& doc )
+{
+    doc["uint16_9"] =  get_uint16_9();
+    serializeJsonPretty( doc, Serial );
+}
+
+void Cmemory::send_int32_0( JsonDocument& doc )
+{
+    doc["int32_0"] =  get_int32_0();
+    serializeJsonPretty( doc, Serial );
+}
+
+void Cmemory::send_int32_1( JsonDocument& doc )
+{
+    doc["int32_1"] =  get_int32_1();
+    serializeJsonPretty( doc, Serial );
+}
+
+void Cmemory::send_int32_2( JsonDocument& doc )
+{
+    doc["int32_2"] =  get_int32_2();
+    serializeJsonPretty( doc, Serial );
+}
+
+void Cmemory::send_int32_3( JsonDocument& doc )
+{
+    doc["int32_3"] =  get_int32_3();
+    serializeJsonPretty( doc, Serial );
+}
+
+void Cmemory::send_int32_4( JsonDocument& doc )
+{
+    doc["int32_4"] =  get_int32_4();
+    serializeJsonPretty( doc, Serial );
+}
+
+void Cmemory::send_int32_5( JsonDocument& doc )
+{
+    doc["int32_5"] =  get_int32_5();
+    serializeJsonPretty( doc, Serial );
+}
+
+
+void Cmemory::send_int32_6( JsonDocument& doc )
+{
+    doc["int32_6"] =  get_int32_6();
+    serializeJsonPretty( doc, Serial );
+}
+
+void Cmemory::send_int32_7( JsonDocument& doc )
+{
+    doc["int32_7"] =  get_int32_7();
+    serializeJsonPretty( doc, Serial );
+}
+
+
+void Cmemory::send_int32_8( JsonDocument& doc )
+{
+    doc["int32_8"] =  get_int32_8();
+    serializeJsonPretty( doc, Serial );
+}
+
+void Cmemory::send_int32_9( JsonDocument& doc )
+{
+    doc["int32_9"] =  get_int32_9();
+    serializeJsonPretty( doc, Serial );
+}
+
 
 // Envia el resultado en formato json
 void Cmemory::send_ok( JsonDocument& doc )
