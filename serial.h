@@ -1,5 +1,5 @@
 /*
- * File:   Clase para loguear mensajes formateados en arduino.
+ * File:   Clase para serialuear mensajes formateados en arduino.
  *
  * - Compiler:           Arduino 1.8.13
  * - Supported devices:  Mega
@@ -13,22 +13,22 @@
  *      Universidad de la Marina Mercante.
  */
  
-#ifndef LOG_H
-#define LOG_H
+#ifndef serial_H
+#define serial_H
 
 #include "Arduino.h"
 
-#define LOG_SERIAL_SPEED                115200
+#define serial_SERIAL_SPEED                115200
 
-#define LOG_DISABLED                    0           // Log desactivado.
-#define LOG_MSG                         1           // Logea mensajes
-#define LOG_CTRL_JSON                   2           // Log habilitado en formato json.
-#define LOG_CTRL_ARDUINO_PLOTTER        3           // Log habilitado en formato arduino serial plotter.
+#define serial_DISABLED                    0           // serial desactivado.
+#define serial_MSG                         1           // serialea mensajes
+#define serial_CTRL_JSON                   2           // serial habilitado en formato json.
+#define serial_CTRL_ARDUINO_PLOTTER        3           // serial habilitado en formato arduino serial plotter.
 
-class Clog
+class Cserial
 {
   public:
-    Clog();
+    Cserial();
     void init( uint8_t );
     void msg( const __FlashStringHelper *fmt, ... );
     void ctrl( uint16_t raw, uint16_t filtered, uint8_t state, uint16_t danger_point );
@@ -37,7 +37,7 @@ class Clog
   private:
     void msg_ctrl( const __FlashStringHelper *fmt, ... );
 
-    uint8_t level;            // Nivel de log (0 = desactivado).
+    uint8_t level;            // Nivel de serial (0 = desactivado).
 };
 
-#endif // LOG_H
+#endif // serial_H

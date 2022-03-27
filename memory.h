@@ -13,23 +13,17 @@
  *      Universidad de la Marina Mercante.
  */
  
-#ifndef CONFIG_H
-#define CONFIG_H
+#ifndef memory_H
+#define memory_H
 
 #include "Arduino.h"
 #include "precompilation.h"
 #include <ArduinoJson.h>
 
-#define FIRMWARE_VERSION                "3.0.01"  // Comentarios - Se ordeno st_loop
-                                                  // se pasason diff de V3.0.00 probada en el campo
-                                                  // Se saco soporte que ya no se usa. button.cpp/h cell.cpp/h
-                                                  // Se agrego soporte para calibracion desde el front-end
-                                                  // STEP_CAL_DEFAULT                2500           
-                                                 //  STEP_K_DEFAULT                  0.000458       PROBAR 
-                                                 //  {info:'all-calibration'}   Envia todos los parametros en formato json de calibracion de la flexion y el nivel de logeo.
+#define FIRMWARE_VERSION                "0.0.00"
                                                   
                                                   
-//#define EEPROM_ADDRESS_CONFIG         4       // Direccion en la epprom donde se almacena la configuracion.
+//#define EEPROM_ADDRESS_memory         4       // Direccion en la epprom donde se almacena la memoryuracion.
 #define MAGIC_NUMBER                    33    // Numero magico para detectar memoria sin inicializar.
 
 
@@ -48,14 +42,14 @@
 #define FORCE_MAX                       5000           // Fuerza maxima aplicada en el experimento. 
 #define FORCE_MIN                       1000           // Fuerza minima aplicada en el experimento.
 
-// Mapa de direcciones de los campos de configuracion en la EEPROM.
+// Mapa de direcciones de los campos de memoryuracion en la EEPROM.
 #define EEPROM_ADDRESS_MAGIC_NUMBER     0
 #define EEPROM_ADDRESS_DISTANCE        (EEPROM_ADDRESS_MAGIC_NUMBER + sizeof(uint8_t))
 #define EEPROM_ADDRESS_FORCE           (EEPROM_ADDRESS_DISTANCE + sizeof(uint16_t))
 #define EEPROM_ADDRESS_REACTION_1      (EEPROM_ADDRESS_FORCE + sizeof(float))
 #define EEPROM_ADDRESS_REACTION_2      (EEPROM_ADDRESS_REACTION_1 + sizeof(float))
-#define EEPROM_ADDRESS_LOG_LEVEL       (EEPROM_ADDRESS_REACTION_2 + sizeof(float))
-#define EEPROM_ADDRESS_ST_TEST         (EEPROM_ADDRESS_LOG_LEVEL + sizeof(uint8_t))  
+#define EEPROM_ADDRESS_serial_LEVEL       (EEPROM_ADDRESS_REACTION_2 + sizeof(float))
+#define EEPROM_ADDRESS_ST_TEST         (EEPROM_ADDRESS_serial_LEVEL + sizeof(uint8_t))  
 #define EEPROM_ADDRESS_ST_MODE         (EEPROM_ADDRESS_ST_TEST + sizeof(uint8_t))  
 #define EEPROM_ADDRESS_FLEXION         (EEPROM_ADDRESS_ST_MODE + sizeof(uint8_t))  
 #define EEPROM_ADDRESS_STEP_CAL        (EEPROM_ADDRESS_FLEXION + sizeof(float))   
@@ -72,10 +66,10 @@
 #define ST_MODE_CELL                    2               // Muestra el valor de las celdas.
 
 
-class CConfig
+class Cmemory
 {
   public:
-    CConfig();
+    Cmemory();
     uint16_t get_distance( void );
     void set_distance( uint16_t );
     
@@ -97,8 +91,8 @@ class CConfig
     float get_step_k( void );
     void set_step_k( float );
 
-    uint8_t get_log_level( void );
-    void set_log_level( uint8_t enable );
+    uint8_t get_serial_level( void );
+    void set_serial_level( uint8_t enable );
 
     uint8_t get_st_test( void );
     void set_st_test( uint8_t enable );
@@ -110,7 +104,7 @@ class CConfig
     void send_test_finish(void);
 
   private:
-    uint8_t log_level;          // 0 = log de informacion de control desactivada.
+    uint8_t serial_level;          // 0 = serial de informacion de control desactivada.
     uint8_t st_test;            // Estado del ensayo 
     uint8_t st_mode;            // Modo del ensayo
 
@@ -133,7 +127,7 @@ class CConfig
     void  send_reaction_two( JsonDocument& doc );    
     void send_flexion( JsonDocument& doc );
 
-    void send_log_level( JsonDocument& doc );
+    void send_serial_level( JsonDocument& doc );
     void send_st_mode( JsonDocument& doc );
     void send_step_cal( JsonDocument& doc );
     void send_step_k( JsonDocument& doc );
@@ -141,4 +135,4 @@ class CConfig
     
 };
 
-#endif // CONFIG_H
+#endif // memory_H

@@ -13,21 +13,15 @@
  *      Universidad de la Marina Mercante.
  */
  
-#include "cfg.h"
-#include "log.h"
-#include "motor.h"
-#include "cell.h"
+#include "memory.h"
+#include "serial.h"
+
 
 #include <EEPROM.h>
 
-/*
- * Para evitar crear estas clases se debe implemetar maquinas de estado que controlen el motor y las celdas en el main
- * asi poder intercactuar con ella mediante la memoria.
- */
 
-CMotor   Motor_host;
 
-CConfig::CConfig()
+Cmemory::Cmemory()
 {
 uint8_t magic_number;
 
@@ -45,8 +39,8 @@ uint8_t magic_number;
         set_step_cal( STEP_CAL_DEFAULT );
         set_step_k( STEP_K_DEFAULT );        
         
-        //set_log_level( LOG_DISABLED );
-        set_log_level( LOG_MSG ); // cuando cambias el magic numbre setea los mensajes de logeo (Arduino 1,primer inicio")        
+        //set_serial_level( serial_DISABLED );
+        set_serial_level( serial_MSG ); // cuando cambias el magic numbre setea los mensajes de serialeo (Arduino 1,primer inicio")        
         set_st_test(ST_TEST_DEFAULT);
         set_st_mode(ST_MODE_DEFAULT );
 
@@ -60,7 +54,7 @@ uint8_t magic_number;
         EEPROM.get( EEPROM_ADDRESS_STEP_CAL, step_cal );
         EEPROM.get( EEPROM_ADDRESS_STEP_K, step_k );
 
-        EEPROM.get( EEPROM_ADDRESS_LOG_LEVEL, log_level );
+        EEPROM.get( EEPROM_ADDRESS_serial_LEVEL, serial_level );
         //EEPROM.get( EEPROM_ADDRESS_ST_MODE, st_mode );
         
        //EEPROM.get( EEPROM_ADDRESS_ST_TEST, st_test );
@@ -72,46 +66,46 @@ uint8_t magic_number;
     }
 }
 
-uint16_t CConfig::get_distance( void )
+uint16_t Cmemory::get_distance( void )
 {
     return distance;
 }
 
-void CConfig::set_distance( uint16_t val )
+void Cmemory::set_distance( uint16_t val )
 {
     distance = val;
     EEPROM.put( EEPROM_ADDRESS_DISTANCE, val );
 }
 
-float CConfig::get_force( void )
+float Cmemory::get_force( void )
 {
     return force;
 }
 
-void CConfig::set_force( float val )
+void Cmemory::set_force( float val )
 {
     force = val;
     EEPROM.put( EEPROM_ADDRESS_FORCE, val );
 }
 
-float CConfig::get_reaction1( void )
+float Cmemory::get_reaction1( void )
 {
     return reaction1;
 }
 
-void CConfig::set_reaction1( float val )
+void Cmemory::set_reaction1( float val )
 {
    
     reaction1 = val;
     EEPROM.put( EEPROM_ADDRESS_REACTION_1, val );
 }
 
-float CConfig::get_reaction2( void )
+float Cmemory::get_reaction2( void )
 {
     return reaction2;
 }
 
-void CConfig::set_reaction2( float val )
+void Cmemory::set_reaction2( float val )
 {
     reaction2 = val;
     EEPROM.put( EEPROM_ADDRESS_REACTION_2, val );
@@ -119,80 +113,80 @@ void CConfig::set_reaction2( float val )
 
 
 
-float CConfig::get_flexion( void )
+float Cmemory::get_flexion( void )
 {
     return flexion;
 }
 
-void CConfig::set_flexion( float val )
+void Cmemory::set_flexion( float val )
 {
     flexion = val;
     EEPROM.put( EEPROM_ADDRESS_FLEXION, val );
 }
 
-uint32_t CConfig::get_step_cal( void )
+uint32_t Cmemory::get_step_cal( void )
 {
     return step_cal;
 }
 
-void CConfig::set_step_cal( uint32_t val )
+void Cmemory::set_step_cal( uint32_t val )
 {
     step_cal = val;
     EEPROM.put( EEPROM_ADDRESS_STEP_CAL, val );
 }
 
-float CConfig::get_step_k( void )
+float Cmemory::get_step_k( void )
 {
     return step_k;
 }
 
-void CConfig::set_step_k ( float val )
+void Cmemory::set_step_k ( float val )
 {
     step_k = val;
     EEPROM.put( EEPROM_ADDRESS_STEP_K, val );
 }
 
-uint8_t CConfig::get_log_level( void )
+uint8_t Cmemory::get_serial_level( void )
 {
-    return log_level;
+    return serial_level;
 }
 
-void CConfig::set_log_level( uint8_t enable )
+void Cmemory::set_serial_level( uint8_t enable )
 {
-    log_level = enable;
-    EEPROM.put( EEPROM_ADDRESS_LOG_LEVEL, log_level );
+    serial_level = enable;
+    EEPROM.put( EEPROM_ADDRESS_serial_LEVEL, serial_level );
 }
 /*
  * Estos deberia ser booleano !!!!!
  * 
  */
  
-uint8_t CConfig::get_st_test( void )
+uint8_t Cmemory::get_st_test( void )
 {
     return st_test;
 }
 
-void CConfig::set_st_test( uint8_t enable )
+void Cmemory::set_st_test( uint8_t enable )
 {
     st_test = enable;
     EEPROM.put( EEPROM_ADDRESS_ST_TEST, st_test );
 }
 
-uint8_t CConfig::get_st_mode( void )
+uint8_t Cmemory::get_st_mode( void )
 {
     return st_mode;
 }
 
-void CConfig::set_st_mode( uint8_t mode )
+void Cmemory::set_st_mode( uint8_t mode )
 {
     st_mode = mode;
     EEPROM.put( EEPROM_ADDRESS_ST_MODE, st_mode );
 }
 
 
-// Lee por el puerto serie parametros de configuracion en formato json.
+// Lee por el puerto serie parametros de memoryuracion en formato json.
 // {info:'all-params'}        Envia todos los parametros en formato json.
-// {info:'all-calibration'}   Envia todos los parametros en formato json de calibracion de la flexion y el nivel de logeo.
+// {info:'all-calibration'}   Envia todos los parametros en formato json de calibracion de la flexion y el nivel de serialeo.
 // {info:'version'}           Envia  la version del firmware.
 // {info:'status'}            Devuelve el estatus del ensayo.
 // {info:'reaction_one'}      Devuelve la reaction1 del ensayo.
@@ -201,13 +195,13 @@ void CConfig::set_st_mode( uint8_t mode )
 // {info:'st_mode'}           Devuelve el modo del ensayo.
 // {info:'step_cal'}          Devuelve la cantidad de pasos contados para la calibracion de step_k.
 // {info:'step_k'}            Constante de calibracion de flexion.
-// {info:'log_level'}         Nivel de logeo por puerto serie.
+// {info:'serial_level'}         Nivel de serialeo por puerto serie.
 
 
-// {log_level:'0'}       log_level:0=desactivado,
-// {log_level:'1'}                 1=mensajes.
-// {log_level:'2'}                 2=info control estandar.
-// {log_level:'3'}                 3=info control arduino plotter.
+// {serial_level:'0'}       serial_level:0=desactivado,
+// {serial_level:'1'}                 1=mensajes.
+// {serial_level:'2'}                 2=info control estandar.
+// {serial_level:'3'}                 3=info control arduino plotter.
 
 // {cmd:'start'}       Comienza el ensayo.
 
@@ -239,7 +233,7 @@ void CConfig::set_st_mode( uint8_t mode )
 //  {step_k:'0.123456'}  step_k        Constante de calibracion de flexion.
                                    
 
-void CConfig::host_cmd( void )
+void Cmemory::host_cmd( void )
 {
 bool known_key = false;
 
@@ -300,8 +294,8 @@ bool known_key = false;
             }
             */ 
             
-            if ( doc.containsKey("log_level") ) {
-                set_log_level( doc["log_level"] );
+            if ( doc.containsKey("serial_level") ) {
+                set_serial_level( doc["serial_level"] );
                 known_key = true;
             }  
 
@@ -334,8 +328,8 @@ bool known_key = false;
                     send_step_cal( doc );
                 }else if( key == "step_k" ) {
                     send_step_k( doc );
-                }else if( key == "log_level" ) {
-                    send_log_level( doc );
+                }else if( key == "serial_level" ) {
+                    send_serial_level( doc );
                 }
                 
             }
@@ -360,51 +354,6 @@ bool known_key = false;
                  }
              }           
 
-              // Comandos de movimientos del motor 1.
-              
-             if ( doc.containsKey("m1_fwd") ) {                                            
-                    
-                    Motor_host.fwd_m1(doc["m1_fwd"]);                
-                    send_ack( doc );                          
-            } 
-             if ( doc.containsKey("m1_rwd") ) {
-                
-                    Motor_host.rwd_m1(doc["m1_rwd"]);                
-                    send_ack( doc );                          
-            } 
-             if ( doc.containsKey("step_m1_fwd") ) {
-                
-                    Motor_host.step_m1_fwd(doc["step_m1_fwd"]);                
-                    send_ack( doc );                          
-            }
-            if ( doc.containsKey("step_m1_rwd") ) {
-                
-                    Motor_host.step_m1_rwd(doc["step_m1_rwd"]);                
-                    send_ack( doc );                          
-            }
-
-            // Comandos de movimientos del motor 2.
-              
-             if ( doc.containsKey("m2_up") ) {                                            
-                    
-                    Motor_host.up_m2(doc["m2_up"]);                
-                    send_ack( doc );                          
-            } 
-             if ( doc.containsKey("m2_down") ) {
-                
-                    Motor_host.down_m2(doc["m2_down"]);                
-                    send_ack( doc );                          
-            } 
-             if ( doc.containsKey("step_m2_up") ) {
-                
-                    Motor_host.step_m2_up(doc["step_m2_up"]);                
-                    send_ack( doc );                          
-            }
-            if ( doc.containsKey("step_m2_down") ) {
-                
-                    Motor_host.step_m2_down(doc["step_m2_down"]);                
-                    send_ack( doc );                          
-            }
 
                      
                       
@@ -426,7 +375,7 @@ bool known_key = false;
  *  Envia todos los parametros del experimento en formato json.
  */
 
-void CConfig::send_all_params( JsonDocument& doc )
+void Cmemory::send_all_params( JsonDocument& doc )
 {
     doc["distance"] = get_distance();
     doc["force"] =  get_force();
@@ -439,19 +388,19 @@ void CConfig::send_all_params( JsonDocument& doc )
 }
 
 /*
- *  Envia todos los parametros de calibracion de la flexion y el nivel de loggeo.
+ *  Envia todos los parametros de calibracion de la flexion y el nivel de serialgeo.
  */
 
-void CConfig::send_all_calibration( JsonDocument& doc )
+void Cmemory::send_all_calibration( JsonDocument& doc )
 {
     doc["step_cal"] = get_step_cal();
     doc["step_k"] =  get_step_k();
-    doc["log_level"] =  get_log_level();
+    doc["serial_level"] =  get_serial_level();
     serializeJsonPretty( doc, Serial );
 }
 
 //Envia el status del test
-void CConfig::send_test_finish( void )
+void Cmemory::send_test_finish( void )
 {
     StaticJsonDocument<512> doc;   
     doc["st_test"] = get_st_test();  
@@ -461,7 +410,7 @@ void CConfig::send_test_finish( void )
 
 
 // Envia la version del firmware.
-void CConfig::send_version( JsonDocument& doc )
+void Cmemory::send_version( JsonDocument& doc )
 {
     doc["version"] = FIRMWARE_VERSION;
 
@@ -469,7 +418,7 @@ void CConfig::send_version( JsonDocument& doc )
 }
 
 // Envia la reaccion 1
-void CConfig::send_reaction_one( JsonDocument& doc )
+void Cmemory::send_reaction_one( JsonDocument& doc )
 {
     doc["reaction_one"] =  get_reaction1();;
 
@@ -477,7 +426,7 @@ void CConfig::send_reaction_one( JsonDocument& doc )
 }
 
 // Envia la reaccion 2
-void CConfig::send_reaction_two( JsonDocument& doc )
+void Cmemory::send_reaction_two( JsonDocument& doc )
 {
     doc["reaction_two"] =  get_reaction2();;
 
@@ -485,7 +434,7 @@ void CConfig::send_reaction_two( JsonDocument& doc )
 }
 
 // Envia la flexion de contar los pasos del motor2
-void CConfig::send_flexion( JsonDocument& doc )
+void Cmemory::send_flexion( JsonDocument& doc )
 {
     doc["flexion"] =  get_flexion();
 
@@ -493,7 +442,7 @@ void CConfig::send_flexion( JsonDocument& doc )
 }
 
 // Envia la cantidad de pasos contados para la calibracion de ktep.
-void CConfig::send_step_cal( JsonDocument& doc )
+void Cmemory::send_step_cal( JsonDocument& doc )
 {
     doc["step_cal"] =  get_step_cal();
 
@@ -501,23 +450,23 @@ void CConfig::send_step_cal( JsonDocument& doc )
 }
 
 // Envia step_k
-void CConfig::send_step_k( JsonDocument& doc )
+void Cmemory::send_step_k( JsonDocument& doc )
 {
     doc["step_k"] =  get_step_k();
 
     serializeJsonPretty( doc, Serial );
 }
 
-// Envia el nivel de logeo
-void CConfig::send_log_level( JsonDocument& doc )
+// Envia el nivel de serialeo
+void Cmemory::send_serial_level( JsonDocument& doc )
 {
-    doc["log_level"] =  get_log_level();
+    doc["serial_level"] =  get_serial_level();
 
     serializeJsonPretty( doc, Serial );
 }
 
 // Envia el estatus del ensayo.
-void CConfig::send_status( JsonDocument& doc )
+void Cmemory::send_status( JsonDocument& doc )
 {
     doc["status"] = get_st_test();;
 
@@ -525,7 +474,7 @@ void CConfig::send_status( JsonDocument& doc )
 }
 
 // Envia el modo del ensayo.
-void CConfig::send_st_mode( JsonDocument& doc )
+void Cmemory::send_st_mode( JsonDocument& doc )
 {
     doc["st_mode"] = get_st_mode();;
 
@@ -533,7 +482,7 @@ void CConfig::send_st_mode( JsonDocument& doc )
 }
 
 // Envia el resultado en formato json
-void CConfig::send_ok( JsonDocument& doc )
+void Cmemory::send_ok( JsonDocument& doc )
 {
     doc[ "result" ] = "ok";
 
@@ -541,7 +490,7 @@ void CConfig::send_ok( JsonDocument& doc )
 }
 
 // Envia el resultado en formato json
-void CConfig::send_ack( JsonDocument& doc )
+void Cmemory::send_ack( JsonDocument& doc )
 {
     doc[ "result" ] = "ack";
 

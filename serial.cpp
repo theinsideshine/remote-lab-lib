@@ -1,5 +1,5 @@
 /*
- * File:   Clase para loguear mensajes formateados en arduino.
+ * File:   Clase para serialuear mensajes formateados en arduino.
  *
  * - Compiler:           Arduino 1.8.13
  * - Supported devices:  Mega
@@ -12,34 +12,34 @@
  *
  *      Universidad de la Marina Mercante.
  */
-#include "log.h"
+#include "serial.h"
 
-Clog::Clog()
+Cserial::Cserial()
 {
-    level = LOG_CTRL_JSON;
+    level = serial_CTRL_JSON;
 }
 
-void Clog::init( uint8_t level )
+void Cserial::init( uint8_t level )
 {
-    Serial.begin( LOG_SERIAL_SPEED );
+    Serial.begin( serial_SERIAL_SPEED );
     set_level( level );    
 }
 
-void Clog::set_level( uint8_t level )
+void Cserial::set_level( uint8_t level )
 {
     this->level = level;
 }
 
-// Muestra informacion de logueo por el puerto serie, precedidos
+// Muestra informacion de serialueo por el puerto serie, precedidos
 // por los milisegundos desde el reset.
 // Implementa un wrapper de la funcion print de C para usar string
 // formateados, ejemplo: ("distancia %d", var)
 // NOTA: para ahorrar memoria RAM usa la version vsnprintf_P para que los
 //       string se almacenen en la flash. Hay que anteponer el modificador
-//       F(), ejemplo: log_msg( F("valor = %d"), var );
-void Clog::msg( const __FlashStringHelper *fmt, ... )
+//       F(), ejemplo: serial_msg( F("valor = %d"), var );
+void Cserial::msg( const __FlashStringHelper *fmt, ... )
 {
-    if( level ==  LOG_MSG  ){
+    if( level ==  serial_MSG  ){
         char buf[ 128 ];
         va_list args;
 
@@ -53,14 +53,14 @@ void Clog::msg( const __FlashStringHelper *fmt, ... )
     }
 }
 
-// Muestra informacion de logueo por el puerto serie, precedidos
+// Muestra informacion de serialueo por el puerto serie, precedidos
 // por los milisegundos desde el reset.
 // Implementa un wrapper de la funcion print de C para usar string
 // formateados, ejemplo: ("distancia %d", var)
 // NOTA: para ahorrar memoria RAM usa la version vsnprintf_P para que los
 //       string se almacenen en la flash. Hay que anteponer el modificador
-//       F(), ejemplo: log_msg( F("valor = %d"), var );
-void Clog::msg_ctrl( const __FlashStringHelper *fmt, ... )
+//       F(), ejemplo: serial_msg( F("valor = %d"), var );
+void Cserial::msg_ctrl( const __FlashStringHelper *fmt, ... )
 {
 char buf[ 256 ];
 va_list args;
@@ -72,15 +72,15 @@ va_list args;
     Serial.println( buf );
 }
 
-// Loguea la informacion de control. Hay dos opciones, la primera es para logeos
+// serialuea la informacion de control. Hay dos opciones, la primera es para serialeos
 // para pos-procesar con excel. Y la segunda es para procesarla en tiempo real con
 // la utilidad plotter de arduino.
-void Clog::ctrl( uint16_t raw, uint16_t filtered, uint8_t state, uint16_t danger_point )
+void Cserial::ctrl( uint16_t raw, uint16_t filtered, uint8_t state, uint16_t danger_point )
 {
-    if( level == LOG_CTRL_JSON ){
-      msg_ctrl( F("{\"info\":\"log\",\"time\":%lu,\"raw\":%d,\"filtered\":%d,\"state\":%d}"),
+    if( level == serial_CTRL_JSON ){
+      msg_ctrl( F("{\"info\":\"serial\",\"time\":%lu,\"raw\":%d,\"filtered\":%d,\"state\":%d}"),
                  millis() , raw, filtered, state, danger_point );
-    }else if( level == LOG_CTRL_ARDUINO_PLOTTER ) {
+    }else if( level == serial_CTRL_ARDUINO_PLOTTER ) {
         // Escala el estado para mejorar la visualizacion.
         uint16_t scale = map( state, 0, 3, 0, 5000 );
 
