@@ -28,18 +28,7 @@ uint8_t magic_number;
 
     if( magic_number != MAGIC_NUMBER ){
         magic_number = MAGIC_NUMBER;
-        EEPROM.put( EEPROM_ADDRESS_MAGIC_NUMBER, magic_number );
-
-        set_uint8_0( UINT8_0_DEFAULT );
-        set_uint8_1( UINT8_1_DEFAULT );
-        set_uint8_2( UINT8_2_DEFAULT );
-        set_uint8_3( UINT8_3_DEFAULT );
-        set_uint8_4( UINT8_4_DEFAULT );
-        set_uint8_5( UINT8_5_DEFAULT );
-        set_uint8_6( UINT8_6_DEFAULT );
-        set_uint8_7( UINT8_7_DEFAULT );
-        set_uint8_8( UINT8_8_DEFAULT );
-        set_uint8_9( UINT8_9_DEFAULT );
+        EEPROM.put( EEPROM_ADDRESS_MAGIC_NUMBER, magic_number );  
 
 
          //set_serial_level( serial_DISABLED );
@@ -47,29 +36,29 @@ uint8_t magic_number;
         set_st_test(ST_TEST_DEFAULT);
         set_st_mode(ST_MODE_DEFAULT );
 
-        set_uint16_0( UINT16_0_DEFAULT );
-        set_uint16_1( UINT16_1_DEFAULT );
-        set_uint16_2( UINT16_3_DEFAULT );
-        set_uint16_3( UINT16_3_DEFAULT );
-        set_uint16_4( UINT16_4_DEFAULT );
-        set_uint16_5( UINT16_5_DEFAULT );
-        set_uint16_6( UINT16_6_DEFAULT );
-        set_uint16_7( UINT16_7_DEFAULT );
-        set_uint16_8( UINT16_8_DEFAULT );
-        set_uint16_9( UINT16_9_DEFAULT );    
+        set_input0( INPUT_0_DEFAULT );
+        set_input1( INPUT_1_DEFAULT );
+        set_input2( INPUT_2_DEFAULT );
+        set_input3( INPUT_3_DEFAULT );
+        set_input4( INPUT_4_DEFAULT );
 
-
-        set_int32_0( INT32_0_DEFAULT );
-        set_int32_1( INT32_1_DEFAULT );
-        set_int32_2( INT32_2_DEFAULT );
-        set_int32_3( INT32_3_DEFAULT );
-        set_int32_4( INT32_4_DEFAULT );
-        set_int32_5( INT32_5_DEFAULT );
-        set_int32_6( INT32_6_DEFAULT );
-        set_int32_7( INT32_7_DEFAULT );
-        set_int32_8( INT32_8_DEFAULT );
-        set_int32_9( INT32_9_DEFAULT );
-
+        set_output0( OUTPUT_0_DEFAULT );
+        set_output1( OUTPUT_1_DEFAULT );
+        set_output2( OUTPUT_2_DEFAULT );
+        set_output3( OUTPUT_3_DEFAULT );
+        set_output4( OUTPUT_4_DEFAULT );
+/*
+        set_cfg0( CFG_0_DEFAULT );
+        set_cfg1( CFG_1_DEFAULT ); 
+        set_cfg2( CFG_3_DEFAULT );
+        set_cfg3( CFG_2_DEFAULT );
+        set_cfg4( CFG_4_DEFAULT );
+        set_cfg5( CFG_5_DEFAULT );
+        set_cfg6( CFG_6_DEFAULT ); 
+        set_cfg7( CFG_7_DEFAULT );
+        set_cfg8( CFG_8_DEFAULT );
+        set_cfg9( CFG_9_DEFAULT );       
+*/
 
         set_float_0( FLOAT_0_DEFAULT );
         set_float_1( FLOAT_1_DEFAULT );
@@ -127,18 +116,7 @@ uint8_t magic_number;
         set_float_49( FLOAT_49_DEFAULT );
     
     }else {
-        EEPROM.get( EEPROM_ADDRESS_UINT8_0, uint8_0 );
-        EEPROM.get( EEPROM_ADDRESS_UINT8_1, uint8_1 );
-        EEPROM.get( EEPROM_ADDRESS_UINT8_2, uint8_2 );
-        EEPROM.get( EEPROM_ADDRESS_UINT8_3, uint8_3 );
-        EEPROM.get( EEPROM_ADDRESS_UINT8_4, uint8_4 );
-        EEPROM.get( EEPROM_ADDRESS_UINT8_5, uint8_5 );
-        EEPROM.get( EEPROM_ADDRESS_UINT8_6, uint8_6 );
-        EEPROM.get( EEPROM_ADDRESS_UINT8_7, uint8_7 );
-        EEPROM.get( EEPROM_ADDRESS_UINT8_8, uint8_8 );
-        EEPROM.get( EEPROM_ADDRESS_UINT8_9, uint8_9 );
         
-
         EEPROM.get( EEPROM_ADDRESS_SERIAL_LEVEL, serial_level );
         //EEPROM.get( EEPROM_ADDRESS_ST_MODE, st_mode );
         
@@ -147,28 +125,32 @@ uint8_t magic_number;
        set_st_test(ST_TEST_DEFAULT);
        set_st_mode(ST_MODE_DEFAULT );
 
-       EEPROM.get( EEPROM_ADDRESS_UINT16_0, uint16_0 );
-       EEPROM.get( EEPROM_ADDRESS_UINT16_1, uint16_1 );
-       EEPROM.get( EEPROM_ADDRESS_UINT16_2, uint16_2 );
-       EEPROM.get( EEPROM_ADDRESS_UINT16_3, uint16_3 );
-       EEPROM.get( EEPROM_ADDRESS_UINT16_4, uint16_4 );
-       EEPROM.get( EEPROM_ADDRESS_UINT16_5, uint16_5 );
-       EEPROM.get( EEPROM_ADDRESS_UINT16_6, uint16_6 );
-       EEPROM.get( EEPROM_ADDRESS_UINT16_7, uint16_7 );
-       EEPROM.get( EEPROM_ADDRESS_UINT16_8, uint16_8 );
-       EEPROM.get( EEPROM_ADDRESS_UINT16_9, uint16_9 );
+       EEPROM.get( EEPROM_ADDRESS_INPUT_0, input0 );
+       EEPROM.get( EEPROM_ADDRESS_INPUT_1, input1 );
+       EEPROM.get( EEPROM_ADDRESS_INPUT_2, input2 );
+       EEPROM.get( EEPROM_ADDRESS_INPUT_3, input3 );
+       EEPROM.get( EEPROM_ADDRESS_INPUT_4, input4 );
 
-       EEPROM.get( EEPROM_ADDRESS_INT32_0, int32_0 );
-       EEPROM.get( EEPROM_ADDRESS_INT32_1, int32_1 ); 
-       EEPROM.get( EEPROM_ADDRESS_INT32_2, int32_2 );
-       EEPROM.get( EEPROM_ADDRESS_INT32_3, int32_3 );
-       EEPROM.get( EEPROM_ADDRESS_INT32_4, int32_4 );
-       EEPROM.get( EEPROM_ADDRESS_INT32_5, int32_5 );
-       EEPROM.get( EEPROM_ADDRESS_INT32_6, int32_6 );
-       EEPROM.get( EEPROM_ADDRESS_INT32_7, int32_7 );
-       EEPROM.get( EEPROM_ADDRESS_INT32_8, int32_8 );
-       EEPROM.get( EEPROM_ADDRESS_INT32_9, int32_9 );
+       EEPROM.get( EEPROM_ADDRESS_OUTPUT_0, output0 );
+       EEPROM.get( EEPROM_ADDRESS_OUTPUT_1, output1 );
+       EEPROM.get( EEPROM_ADDRESS_OUTPUT_2, output2 );
+       EEPROM.get( EEPROM_ADDRESS_OUTPUT_3, output3 );
+       EEPROM.get( EEPROM_ADDRESS_OUTPUT_4, output4 );
 
+
+       EEPROM.get( EEPROM_ADDRESS_CFG_0, cfg0 );
+       EEPROM.get( EEPROM_ADDRESS_CFG_1, cfg1 );
+       EEPROM.get( EEPROM_ADDRESS_CFG_2, cfg2 );
+       EEPROM.get( EEPROM_ADDRESS_CFG_3, cfg3 );
+       EEPROM.get( EEPROM_ADDRESS_CFG_4, cfg4 );
+       EEPROM.get( EEPROM_ADDRESS_CFG_5, cfg5 );
+       EEPROM.get( EEPROM_ADDRESS_CFG_6, cfg6 );
+       EEPROM.get( EEPROM_ADDRESS_CFG_7, cfg7 );
+       EEPROM.get( EEPROM_ADDRESS_CFG_8, cfg8 );
+       EEPROM.get( EEPROM_ADDRESS_CFG_9, cfg9 );
+       
+
+      
        EEPROM.get( EEPROM_ADDRESS_FLOAT_0, float_0 );
        EEPROM.get( EEPROM_ADDRESS_FLOAT_1, float_1 );
        EEPROM.get( EEPROM_ADDRESS_FLOAT_2, float_2 );
@@ -228,119 +210,6 @@ uint8_t magic_number;
     }
 }
 
-uint8_t Cmemory::get_uint8_0( void )
-{
-    return uint8_0;
-}
-
-void Cmemory::set_uint8_0( uint8_t val )
-{
-    uint8_0 = val;
-    EEPROM.put( EEPROM_ADDRESS_UINT8_0, val );
-}
-
-
-uint8_t Cmemory::get_uint8_1( void )
-{
-    return uint8_1;
-}
-
-void Cmemory::set_uint8_1( uint8_t val )
-{
-    uint8_1 = val;
-    EEPROM.put( EEPROM_ADDRESS_UINT8_1, val );
-}
-
-uint8_t Cmemory::get_uint8_2( void )
-{
-    return uint8_2;
-}
-
-void Cmemory::set_uint8_2( uint8_t val )
-{
-    uint8_2 = val;
-    EEPROM.put( EEPROM_ADDRESS_UINT8_2, val );
-}
-
-uint8_t Cmemory::get_uint8_3( void )
-{
-    return uint8_3;
-}
-
-void Cmemory::set_uint8_3( uint8_t val )
-{
-    uint8_3 = val;
-    EEPROM.put( EEPROM_ADDRESS_UINT8_3, val );
-}
-
-
-uint8_t Cmemory::get_uint8_4( void )
-{
-    return uint8_4;
-}
-
-void Cmemory::set_uint8_4( uint8_t val )
-{
-    uint8_4 = val;
-    EEPROM.put( EEPROM_ADDRESS_UINT8_4, val );
-}
-
-uint8_t Cmemory::get_uint8_5( void )
-{
-    return uint8_5;
-}
-
-void Cmemory::set_uint8_5( uint8_t val )
-{
-    uint8_5 = val;
-    EEPROM.put( EEPROM_ADDRESS_UINT8_5, val );
-}
-
-
-uint8_t Cmemory::get_uint8_6( void )
-{
-    return uint8_6;
-}
-void Cmemory::set_uint8_6( uint8_t val )
-{
-    uint8_6 = val;
-    EEPROM.put( EEPROM_ADDRESS_UINT8_6, val );
-}
-
-uint8_t Cmemory::get_uint8_7( void )
-{
-    return uint8_7;
-}
-
-void Cmemory::set_uint8_7( uint8_t val )
-{
-    uint8_7 = val;
-    EEPROM.put( EEPROM_ADDRESS_UINT8_7, val );
-}
-
-uint8_t Cmemory::get_uint8_8( void )
-{
-    return uint8_8;
-}
-
-void Cmemory::set_uint8_8( uint8_t val )
-{
-    uint8_8 = val;
-    EEPROM.put( EEPROM_ADDRESS_UINT8_8, val );
-}
-
-uint8_t Cmemory::get_uint8_9( void )
-{
-    return uint8_9;
-}
-
-void Cmemory::set_uint8_9( uint8_t val )
-{
-    uint8_9 = val;
-    EEPROM.put( EEPROM_ADDRESS_UINT8_9, val );
-}
-
-
 
 uint8_t Cmemory::get_serial_level( void )
 {
@@ -352,10 +221,7 @@ void Cmemory::set_serial_level( uint8_t enable )
     serial_level = enable;
     EEPROM.put( EEPROM_ADDRESS_SERIAL_LEVEL, serial_level );
 }
-/*
- * Estos deberia ser booleano !!!!!
- * 
- */
+
  
 uint8_t Cmemory::get_st_test( void )
 {
@@ -380,230 +246,137 @@ void Cmemory::set_st_mode( uint8_t mode )
 }
 
 
-uint16_t Cmemory::get_uint16_0( void )
-{
-    return uint16_0;
-}
 
-void Cmemory::set_uint16_0( uint16_t val )
-{
-    uint16_0 = val;
-    EEPROM.put( EEPROM_ADDRESS_UINT16_0, val );
+float Cmemory::get_input0( void )
+{return input0;}
+void Cmemory::set_input0( float val )
+{ input0 = val;
+  EEPROM.put( EEPROM_ADDRESS_INPUT_0, val );
 }
-
-uint16_t Cmemory::get_uint16_1( void )
-{
-    return uint16_1;
+float Cmemory::get_input1( void )
+{return input1;}
+void Cmemory::set_input1( float val )
+{ input1 = val;
+  EEPROM.put( EEPROM_ADDRESS_INPUT_1, val );
 }
-
-void Cmemory::set_uint16_1( uint16_t val )
-{
-    uint16_1 = val;
-    EEPROM.put( EEPROM_ADDRESS_UINT16_1, val );
+float Cmemory::get_input2( void )
+{return input2;}
+void Cmemory::set_input2( float val )
+{ input2 = val;
+  EEPROM.put( EEPROM_ADDRESS_INPUT_2, val );
 }
-
-uint16_t Cmemory::get_uint16_2( void )
-{
-    return uint16_2;
+float Cmemory::get_input3( void )
+{return input3;}
+void Cmemory::set_input3( float val )
+{ input3 = val;
+  EEPROM.put( EEPROM_ADDRESS_INPUT_3, val );
 }
-
-void Cmemory::set_uint16_2( uint16_t val )
-{
-    uint16_2 = val;
-    EEPROM.put( EEPROM_ADDRESS_UINT16_2, val );
-}
-
-uint16_t Cmemory::get_uint16_3( void )
-{
-    return uint16_3;
-}
-
-void Cmemory::set_uint16_3( uint16_t val )
-{
-    uint16_3 = val;
-    EEPROM.put( EEPROM_ADDRESS_UINT16_3, val );
-}
-
-uint16_t Cmemory::get_uint16_4( void )
-{
-    return uint16_4;
-}
-
-void Cmemory::set_uint16_4( uint16_t val )
-{
-    uint16_4 = val;
-    EEPROM.put( EEPROM_ADDRESS_UINT16_4, val );
-}
-
-uint16_t Cmemory::get_uint16_5( void )
-{
-    return uint16_5;
-}
-
-void Cmemory::set_uint16_5( uint16_t val )
-{
-    uint16_5 = val;
-    EEPROM.put( EEPROM_ADDRESS_UINT16_5, val );
-}
-
-uint16_t Cmemory::get_uint16_6( void )
-{
-    return uint16_6;
-}
-
-void Cmemory::set_uint16_6( uint16_t val )
-{
-    uint16_6 = val;
-    EEPROM.put( EEPROM_ADDRESS_UINT16_6, val );
-}
-
-uint16_t Cmemory::get_uint16_7( void )
-{
-    return uint16_7;
-}
-
-void Cmemory::set_uint16_7( uint16_t val )
-{
-    uint16_7 = val;
-    EEPROM.put( EEPROM_ADDRESS_UINT16_7, val );
-}
-
-uint16_t Cmemory::get_uint16_8( void )
-{
-    return uint16_8;
-}
-
-void Cmemory::set_uint16_8( uint16_t val )
-{
-    uint16_8 = val;
-    EEPROM.put( EEPROM_ADDRESS_UINT16_8, val );
-}
-
-uint16_t Cmemory::get_uint16_9( void )
-{
-    return uint16_9;
-}
-
-void Cmemory::set_uint16_9( uint16_t val )
-{
-    uint16_9 = val;
-    EEPROM.put( EEPROM_ADDRESS_UINT16_9, val );
+float Cmemory::get_input4( void )
+{return input4;}
+void Cmemory::set_input4( float val )
+{ input4 = val;
+  EEPROM.put( EEPROM_ADDRESS_INPUT_4, val );
 }
 
 
 
-int32_t Cmemory::get_int32_0( void )
-{
-    return int32_0;
+float Cmemory::get_output0( void )
+{return output0;}
+void Cmemory::set_output0( float val )
+{ output0 = val;
+  EEPROM.put( EEPROM_ADDRESS_OUTPUT_0, val );
 }
-
-void Cmemory::set_int32_0( int32_t val )
-{
-    int32_0 = val;
-    EEPROM.put( EEPROM_ADDRESS_INT32_0, val );
+float Cmemory::get_output1( void )
+{return output1;}
+void Cmemory::set_output1( float val )
+{ output1 = val;
+  EEPROM.put( EEPROM_ADDRESS_OUTPUT_1, val );
 }
-
-
-int32_t Cmemory::get_int32_1( void )
-{
-    return int32_1;
+float Cmemory::get_output2( void )
+{return output2;}
+void Cmemory::set_output2( float val )
+{ output2 = val;
+  EEPROM.put( EEPROM_ADDRESS_OUTPUT_2, val );
 }
-
-void Cmemory::set_int32_1( int32_t val )
-{
-    int32_1 = val;
-    EEPROM.put( EEPROM_ADDRESS_INT32_1, val );
+float Cmemory::get_output3( void )
+{return output3;}
+void Cmemory::set_output3( float val )
+{ output3 = val;
+  EEPROM.put( EEPROM_ADDRESS_OUTPUT_3, val );
 }
-
-int32_t Cmemory::get_int32_2( void )
-{
-    return int32_2;
-}
-
-void Cmemory::set_int32_2( int32_t val )
-{
-    int32_2 = val;
-    EEPROM.put( EEPROM_ADDRESS_INT32_2, val );
-}
-
-int32_t Cmemory::get_int32_3( void )
-{
-    return int32_3;
-}
-
-void Cmemory::set_int32_3( int32_t val )
-{
-    int32_3 = val;
-    EEPROM.put( EEPROM_ADDRESS_INT32_3, val );
+float Cmemory::get_output4( void )
+{return output4;}
+void Cmemory::set_output4( float val )
+{ output4 = val;
+  EEPROM.put( EEPROM_ADDRESS_OUTPUT_4, val );
 }
 
 
-int32_t Cmemory::get_int32_4( void )
-{
-    return int32_4;
-}
-
-void Cmemory::set_int32_4( int32_t val )
-{
-    int32_4 = val;
-    EEPROM.put( EEPROM_ADDRESS_INT32_4, val );
-}
 
 
-int32_t Cmemory::get_int32_5( void )
-{
-    return int32_5;
+
+float Cmemory::get_cfg0( void )
+{return cfg0;}
+void Cmemory::set_cfg0( float val )
+{ cfg0 = val;
+  EEPROM.put( EEPROM_ADDRESS_CFG_0, val );
+}
+float Cmemory::get_cfg1( void )
+{return cfg1;}
+void Cmemory::set_cfg1( float val )
+{ cfg1 = val;
+ EEPROM.put( EEPROM_ADDRESS_CFG_1, val );
+}
+float Cmemory::get_cfg2( void )
+{return cfg2;}
+void Cmemory::set_cfg2( float val )
+{ cfg2 = val;
+ EEPROM.put( EEPROM_ADDRESS_CFG_2, val );
+}
+float Cmemory::get_cfg3( void )
+{return cfg3;}
+void Cmemory::set_cfg3( float val )
+{ cfg3 = val;
+ EEPROM.put( EEPROM_ADDRESS_CFG_3, val );
+}
+float Cmemory::get_cfg4( void )
+{return cfg4;}
+void Cmemory::set_cfg4( float val )
+{ cfg4 = val;
+  EEPROM.put( EEPROM_ADDRESS_CFG_4, val );
+}
+float Cmemory::get_cfg5( void )
+{return cfg5;}
+void Cmemory::set_cfg5( float val )
+{ cfg5 = val;
+  EEPROM.put( EEPROM_ADDRESS_CFG_5, val );
+}
+float Cmemory::get_cfg6( void )
+{return cfg6;}
+void Cmemory::set_cfg6( float val )
+{ cfg6 = val;
+  EEPROM.put( EEPROM_ADDRESS_CFG_6, val );
+}
+float Cmemory::get_cfg7( void )
+{return cfg7;}
+void Cmemory::set_cfg7( float val )
+{ cfg7 = val;
+  EEPROM.put( EEPROM_ADDRESS_CFG_7, val );
+}
+float Cmemory::get_cfg8( void )
+{return cfg8;}
+void Cmemory::set_cfg8( float val )
+{ cfg8 = val;
+  EEPROM.put( EEPROM_ADDRESS_CFG_8, val );
+}
+float Cmemory::get_cfg9( void )
+{return cfg9;}
+void Cmemory::set_cfg9( float val )
+{ cfg9 = val;
+   EEPROM.put( EEPROM_ADDRESS_CFG_9, val );
 }
 
-void Cmemory::set_int32_5( int32_t val )
-{
-    int32_5 = val;
-    EEPROM.put( EEPROM_ADDRESS_INT32_5, val );
-}
 
-int32_t Cmemory::get_int32_6( void )
-{
-    return int32_6;
-}
-
-void Cmemory::set_int32_6( int32_t val )
-{
-    int32_6 = val;
-    EEPROM.put( EEPROM_ADDRESS_INT32_6, val );
-}
-
-int32_t Cmemory::get_int32_7( void )
-{
-    return int32_7;
-}
-
-void Cmemory::set_int32_7( int32_t val )
-{
-    int32_7 = val;
-    EEPROM.put( EEPROM_ADDRESS_INT32_7, val );
-}
-
-int32_t Cmemory::get_int32_8( void )
-{
-    return int32_8;
-}
-
-void Cmemory::set_int32_8( int32_t val )
-{
-    int32_8 = val;
-    EEPROM.put( EEPROM_ADDRESS_INT32_8, val );
-}
-
-int32_t Cmemory::get_int32_9( void )
-{
-    return int32_9;
-}
-
-void Cmemory::set_int32_9( int32_t val )
-{
-    int32_9 = val;
-    EEPROM.put( EEPROM_ADDRESS_INT32_9, val );
-}
 
 float Cmemory::get_float_0( void )
 {return float_0;}
@@ -914,50 +687,6 @@ void Cmemory::set_float_49( float val )
   EEPROM.put( EEPROM_ADDRESS_FLOAT_49, val );
 }
 
-// Lee por el puerto serie parametros de memoryuracion en formato json.
-// {read:'all-params'}        Envia todos los parametros en formato json.
-// {read:'all-cfg'}           Envia todos los parametros de remoteLabLib
-// {read:'all-uint8'}         Envia todos los parametros unsigned 8 bits
-// {read:'all-uint16'}        Envia todos los parametros unsigned 16 bits
-// {read:'all-int32'}         Envia todos los parametros signed 32 bits
-// {read:'all-float'}         Envia todos los parametros float
- 
-// {read:'version'}           Envia  la version del firmware.
-// {read:'status'}            Devuelve el estatus del ensayo.
-
-// {read:'serial_level'}         Nivel de serialeo por puerto serie.
-
-
-// {serial_level:'0'}       serial_level:0=desactivado,
-// {serial_level:'1'}                 1=mensajes.
-// {serial_level:'2'}                 2=info control estandar.
-// {serial_level:'3'}                 3=info control arduino plotter.
-
-// {cmd:'start'}       Comienza el ensayo.
-
-
-
- //   {cdd:'start',data:{distance:'20',force:'306'}} 
-
-
-// {uint8_0:'250'}       uint8_0       parametro de 8 bits sin signo 
-// {uint8_x:'250'}       uint8_x       parametro de 8 bits sin signo 
-
-// {uint16_0:'250'}       uint16_0     parametro de 16 bits sin signo
-// {uint16_x:'250'}       uint16_x     parametro de 16 bits sin signo 
-
-// {int32_0:'70000'}      int32_0       parametro de 32 bits con signo
-// {int32_x:'70000'}      int32_x       parametro de 32 bits con signo
-
-// {float_0:'70.123'}      float_0      parametro float
-// {float_x:'70.123'}      float_x      parametro float
-
-// {st_test:'1'}         st_test       0 ensayo desactivado. 
-//                       st_test       1 ensayo activado. 
-// {st_mode:'0'}         st_mode       ST_MODE_TEST                    0  ensayo activado.
-//                                     ST_MODE_HOME_M2                 1 Va al home del motor 2.
-//                                     ST_MODE_CELL                    2 Lee las celdas de carga.
-
                                    
 
 void Cmemory::host_cmd( void )
@@ -968,60 +697,7 @@ bool known_key = false;
         StaticJsonDocument<512> doc;
         auto error = deserializeJson( doc, Serial );
         if ( !error ) {     
-
-            if ( doc.containsKey("uint8_0") ) {
-                set_uint8_0( doc["uint8_0"] );
-                known_key = true;
-            }   
-
-            if ( doc.containsKey("uint8_1") ) {
-                set_uint8_1( doc["uint8_1"] );
-                known_key = true;
-            } 
-
-            if ( doc.containsKey("uint8_2") ) {
-                set_uint8_2( doc["uint8_2"] );
-                known_key = true;
-            } 
-
-            if ( doc.containsKey("uint8_3") ) {
-                set_uint8_3( doc["uint8_3"] );
-                known_key = true;
-            }
-
-            
-            if ( doc.containsKey("uint8_4") ) {
-                set_uint8_4( doc["uint8_4"] );
-                known_key = true;
-            } 
-
-            if ( doc.containsKey("uint8_5") ) {
-                set_uint8_5( doc["uint8_5"] );
-                known_key = true;
-            }   
-
-            if ( doc.containsKey("uint8_6") ) {
-                set_uint8_6( doc["uint8_6"] );
-                known_key = true;
-            } 
-
-            if ( doc.containsKey("uint8_7") ) {
-                set_uint8_7( doc["uint8_7"] );
-                known_key = true;
-            } 
-
-            if ( doc.containsKey("uint8_8") ) {
-                set_uint8_8( doc["uint8_8"] );
-                known_key = true;
-            }
-
-            
-            if ( doc.containsKey("uint8_9") ) {
-                set_uint8_9( doc["uint8_9"] );
-                known_key = true;
-            }
-            
-            
+                      
             if ( doc.containsKey("serial_level") ) {
                 set_serial_level( doc["serial_level"] );
                 known_key = true;
@@ -1032,105 +708,95 @@ bool known_key = false;
                 known_key = true;
             } 
 
-            if ( doc.containsKey("uint16_0") ) {
-                set_uint16_0( doc["uint16_0"] );
+
+
+            if ( doc.containsKey("input0") ) {
+                set_input0( doc["input0"] );
+                known_key = true;
+            }
+            if ( doc.containsKey("input1") ) {
+                set_input1( doc["input1"] );
+                known_key = true;
+            }
+            if ( doc.containsKey("input2") ) {
+                set_input2( doc["input2"] );
+                known_key = true;
+            }
+            if ( doc.containsKey("input3") ) {
+                set_input3( doc["input3"] );
+                known_key = true;
+            }
+            if ( doc.containsKey("input4") ) {
+                set_input4( doc["input4"] );
                 known_key = true;
             }
 
-            if ( doc.containsKey("uint16_1") ) {
-                set_uint16_1( doc["uint16_1"] );
+
+
+            if ( doc.containsKey("output0") ) {
+                set_output0( doc["output0"] );
+                known_key = true;
+            }
+            if ( doc.containsKey("output1") ) {
+                set_output1( doc["output1"] );
+                known_key = true;
+            }
+            if ( doc.containsKey("output2") ) {
+                set_output2( doc["output2"] );
+                known_key = true;
+            }
+            if ( doc.containsKey("output3") ) {
+                set_output3( doc["output3"] );
+                known_key = true;
+            }
+            if ( doc.containsKey("output4") ) {
+                set_output4( doc["output4"] );
                 known_key = true;
             }
 
-            if ( doc.containsKey("uint16_2") ) {
-                set_uint16_2( doc["uint16_2"] );
+
+            if ( doc.containsKey("cfg0") ) {
+                set_cfg0( doc["cfg0"] );
+                known_key = true;
+            }
+            if ( doc.containsKey("cfg1") ) {
+                set_cfg1( doc["cfg1"] );
+                known_key = true;
+            }
+            if ( doc.containsKey("cfg2") ) {
+                set_cfg2( doc["cfg2"] );
+                known_key = true;
+            }
+            if ( doc.containsKey("cfg3") ) {
+                set_cfg3( doc["cfg3"] );
+                known_key = true;
+            }
+            if ( doc.containsKey("cfg4") ) {
+                set_cfg4( doc["cfg4"] );
+                known_key = true;
+            }
+            if ( doc.containsKey("cfg5") ) {
+                set_cfg5( doc["cfg5"] );
+                known_key = true;
+            }
+            if ( doc.containsKey("cfg6") ) {
+                set_cfg6( doc["cfg6"] );
+                known_key = true;
+            }
+            if ( doc.containsKey("cfg7") ) {
+                set_cfg7( doc["cfg7"] );
+                known_key = true;
+            }
+            if ( doc.containsKey("cfg8") ) {
+                set_cfg8( doc["cfg8"] );
+                known_key = true;
+            }
+            if ( doc.containsKey("cfg9") ) {
+                set_cfg9( doc["cfg9"] );
                 known_key = true;
             }
 
-            if ( doc.containsKey("uint16_3") ) {
-                set_uint16_3( doc["uint16_3"] );
-                known_key = true;
-            }
-
-            if ( doc.containsKey("uint16_4") ) {
-                set_uint16_4( doc["uint16_4"] );
-                known_key = true;
-            }
-
-            if ( doc.containsKey("uint16_5") ) {
-                set_uint16_5( doc["uint16_5"] );
-                known_key = true;
-            }
-
-            if ( doc.containsKey("uint16_6") ) {
-                set_uint16_6( doc["uint16_6"] );
-                known_key = true;
-            }
-
-            if ( doc.containsKey("uint16_7") ) {
-                set_uint16_7( doc["uint16_7"] );
-                known_key = true;
-            }
-
-            if ( doc.containsKey("uint16_8") ) {
-                set_uint16_8( doc["uint16_8"] );
-                known_key = true;
-            }
-
-            if ( doc.containsKey("uint16_9") ) {
-                set_uint16_9( doc["uint16_9"] );
-                known_key = true;
-            }
-
-             if ( doc.containsKey("int32_0") ) {
-                set_int32_0( doc["int32_0"] );
-                known_key = true;
-            }
-
-            if ( doc.containsKey("int32_1") ) {
-                set_int32_1( doc["int32_1"] );
-                known_key = true;
-            }
-
-            if ( doc.containsKey("int32_2") ) {
-                set_int32_2( doc["int32_2"] );
-                known_key = true;
-            }
-
-            if ( doc.containsKey("int32_3") ) {
-                set_int32_3( doc["int32_3"] );
-                known_key = true;
-            }
-
-            if ( doc.containsKey("int32_4") ) {
-                set_int32_4( doc["int32_4"] );
-                known_key = true;
-            }
-
-            if ( doc.containsKey("int32_5") ) {
-                set_int32_5( doc["int32_5"] );
-                known_key = true;
-            }
-
-            if ( doc.containsKey("int32_6") ) {
-                set_int32_6( doc["int32_6"] );
-                known_key = true;
-            }
-
-            if ( doc.containsKey("int32_7") ) {
-                set_int32_7( doc["int32_7"] );
-                known_key = true;
-            }
-
-            if ( doc.containsKey("int32_8") ) {
-                set_int32_0( doc["int32_8"] );
-                known_key = true;
-            }
-
-            if ( doc.containsKey("int32_9") ) {
-                set_int32_9( doc["int32_9"] );
-                known_key = true;
-            }
+            
 
             if ( doc.containsKey("float_0") ) {
                 set_float_0( doc["float_0"] );
@@ -1351,23 +1017,20 @@ bool known_key = false;
                 if( key == "all-params" ) {
                     send_all_parameters( doc );
                 }
-                else if( key == "all-cfg" ) {
+                else if( key == "all-input" ) {
+                    send_all_input( doc );
+                }
+                else if( key == "all-ouput" ) {
+                    send_all_output( doc );
+                } else if( key == "all-cfg" ) {
                     send_all_cfg( doc );
                 }
-                else if( key == "all-uint8" ) {
-                    send_all_uint8( doc );
-                } else if( key == "all-uint16" ) {
-                    send_all_uint16( doc );
-                }
-                else if( key == "all-int32" ) {
-                    send_all_int32( doc );
+                else if( key == "all-lib" ) {
+                    send_all_lib( doc );
                 }
                  else if( key == "all-float" ) {
                     send_all_float( doc );
-                }      
-                
-
-                
+                }           
                 
                 else if( key == "version" ) {
                     send_version( doc );
@@ -1377,68 +1040,64 @@ bool known_key = false;
                     send_st_mode( doc );
                 }else if( key == "serial_level" ) {
                     send_serial_level( doc );
-                }else if( key == "uint8_0" ) {
-                    send_uint8_0( doc );
-                }else if( key == "uint8_1" ) {
-                    send_uint8_1( doc );
-                }else if( key == "uint8_2" ) {
-                    send_uint8_2( doc );
-                }else if( key == "uint8_3" ) {
-                    send_uint8_3( doc );
-                }else if( key == "uint8_4" ) {
-                    send_uint8_4( doc );
-                }else if( key == "uint8_5" ) {
-                    send_uint8_5( doc );
-                }else if( key == "uint8_6" ) {
-                    send_uint8_6( doc );
-                }else if( key == "uint8_7" ) {
-                    send_uint8_7( doc );
-                }else if( key == "uint8_8" ) {
-                    send_uint8_8( doc );
-                }else if( key == "uint8_9" ) {
-                    send_uint8_9( doc );
-                }else if( key == "uint16_0" ) {
-                    send_uint16_0( doc );
-                }else if( key == "uint16_1" ) {
-                    send_uint16_1( doc );
-                }else if( key == "uint16_2" ) {
-                    send_uint16_2( doc );
-                }else if( key == "uint16_3" ) {
-                    send_uint16_3( doc );
-                }else if( key == "uint16_4" ) {
-                    send_uint16_4( doc );
-                }else if( key == "uint16_5" ) {
-                    send_uint16_5( doc );
-                }else if( key == "uint16_6" ) {
-                    send_uint16_6( doc );
-                }else if( key == "uint16_7" ) {
-                    send_uint16_7( doc );
-                }else if( key == "uint16_8" ) {
-                    send_uint16_8( doc );
-                }else if( key == "uint16_9" ) {
-                    send_uint16_9( doc );
-                }else if( key == "int32_0" ) {
-                    send_int32_0( doc );
-                }else if( key == "int32_1" ) {
-                    send_int32_1( doc );
-                }else if( key == "int32_2" ) {
-                    send_int32_2( doc );
-                }else if( key == "int32_3" ) {
-                    send_int32_3( doc );
-                }else if( key == "int32_4" ) {
-                    send_int32_4( doc );
-                }else if( key == "int32_5" ) {
-                    send_int32_5( doc );
-                }else if( key == "int32_6" ) {
-                    send_int32_6( doc );
-                }else if( key == "int32_7" ) {
-                    send_int32_7( doc );
-                }else if( key == "int32_8" ) {
-                    send_int32_8( doc );
-                }else if( key == "int32_9" ) {
-                    send_int32_9( doc );
+                }
+                
+                else if( key == "input0" ) {
+                    send_input0( doc );
+                }else if( key == "input1" ) {
+                    send_input1( doc );
+                }else if( key == "input2" ) {
+                    send_input2( doc );
+                }else if( key == "input3" ) {
+                    send_input3( doc );
+                }else if( key == "input4" ) {
+                    send_input4( doc );
                 }
 
+
+                else if( key == "output0" ) {
+                    send_output0( doc );
+                }else if( key == "output1" ) {
+                    send_output1( doc );
+                }else if( key == "output2" ) {
+                    send_output2( doc );
+                }else if( key == "output3" ) {
+                    send_output3( doc );
+                }else if( key == "output4" ) {
+                    send_output4( doc );
+                }
+
+                else if( key == "cfg0" ) {
+                    send_cfg0( doc );
+                }
+                else if( key == "cfg1" ) {
+                    send_cfg1( doc );
+                } 
+                else if( key == "cfg2" ) {
+                    send_cfg2( doc );
+                }
+                else if( key == "cfg3" ) {
+                    send_cfg3( doc );
+                }
+                else if( key == "cfg4" ) {
+                    send_cfg4( doc );
+                }
+                else if( key == "cfg5" ) {
+                    send_cfg5( doc );
+                }
+                else if( key == "cfg6" ) {
+                    send_cfg6( doc );
+                }
+                else if( key == "cfg7" ) {
+                    send_cfg7( doc );
+                }
+                else if( key == "cfg8" ) {
+                    send_cfg8( doc );
+                }
+                else if( key == "cfg9" ) {
+                    send_cfg9( doc );
+                }
+                
 
                  else if( key == "float_0" ) {
                     send_float_0( doc );
@@ -1564,11 +1223,11 @@ bool known_key = false;
             if ( doc.containsKey("cdd") ) { //Verifica "cdd".
                 String key = doc["cdd"];
                  if( key == "start" ) {    //Verifica "start".
-                     const char* key1 =doc["data"]["uint8_0"];
-                     const char* key2 =doc["data"]["uint8_1"];
+                     const char* key1 =doc["data"]["input0"];
+                     const char* key2 =doc["data"]["input1"];
                     if (key1 && key2) {   //Verifica "distance". "force".
-                       set_uint8_0( doc["data"]["uint8_0"]);
-                       set_uint8_1( doc["data"]["uint8_1"] );  
+                       set_input0( doc["data"]["input0"]);
+                       set_input1( doc["data"]["input1"] );  
                        set_st_test( 1 );  // Comienza el ensayo.                      
                        send_ack( doc );
                      }
@@ -1598,40 +1257,29 @@ bool known_key = false;
 
 void Cmemory::send_all_parameters( JsonDocument& doc )
 {
-    doc["uint8_0"] = get_uint8_0();
-    doc["uint8_1"] = get_uint8_1();
-    doc["uint8_2"] = get_uint8_2();
-    doc["uint8_3"] = get_uint8_3();
-    doc["uint8_4"] = get_uint8_4();
-    doc["uint8_5"] = get_uint8_5();
-    doc["uint8_6"] = get_uint8_6();
-    doc["uint8_7"] = get_uint8_7();
-    doc["uint8_8"] = get_uint8_8();
-    doc["uint8_9"] = get_uint8_9(); 
-     
-    doc["uint16_0"] = get_uint16_0();
-    doc["uint16_1"] = get_uint16_1();
-    doc["uint16_2"] = get_uint16_2();
-    doc["uint16_3"] = get_uint16_3();
-    doc["uint16_4"] = get_uint16_4();
-    doc["uint16_5"] = get_uint16_5();
-    doc["uint16_6"] = get_uint16_6();
-    doc["uint16_7"] = get_uint16_7();
-    doc["uint16_8"] = get_uint16_8();
-    doc["uint16_9"] = get_uint16_9();  
+    doc["input0"] = get_input0();
+    doc["input1"] = get_input1();
+    doc["input2"] = get_input2();
+    doc["input3"] = get_input3();
+    doc["input4"] = get_input4();
 
+    doc["output0"] = get_output0();
+    doc["output1"] = get_output1();
+    doc["output2"] = get_output2();
+    doc["output3"] = get_output3();
+    doc["output4"] = get_output4();
 
-    doc["int32_0"] = get_int32_0();
-    doc["int32_1"] = get_int32_1();
-    doc["int32_2"] = get_int32_2();
-    doc["int32_3"] = get_int32_3();
-    doc["int32_4"] = get_int32_4();
-    doc["int32_5"] = get_int32_5();
-    doc["int32_6"] = get_int32_6();
-    doc["int32_7"] = get_int32_7();
-    doc["int32_8"] = get_int32_8();
-    doc["int32_9"] = get_int32_9();
-
+    doc["cfg0"] = get_cfg0();  
+    doc["cfg1"] = get_cfg1();  
+    doc["cfg2"] = get_cfg2();  
+    doc["cfg3"] = get_cfg3();  
+    doc["cfg4"] = get_cfg4();  
+    doc["cfg5"] = get_cfg5();  
+    doc["cfg6"] = get_cfg6();  
+    doc["cfg7"] = get_cfg7();  
+    doc["cfg8"] = get_cfg8();  
+    doc["cfg9"] = get_cfg9();  
+      
     doc["float_0"] = get_float_0();
     doc["float_1"] = get_float_1();
     doc["float_2"] = get_float_2();
@@ -1696,49 +1344,39 @@ void Cmemory::send_all_parameters( JsonDocument& doc )
  *  Envia todos los parametros de calibracion de la flexion y el nivel de serialgeo.
  */
 
-void Cmemory::send_all_uint8( JsonDocument& doc )
+void Cmemory::send_all_input( JsonDocument& doc )
 {
-    doc["uint8_0"] = get_uint8_0();
-    doc["uint8_1"] = get_uint8_1();
-    doc["uint8_2"] = get_uint8_2();
-    doc["uint8_3"] = get_uint8_3();
-    doc["uint8_4"] = get_uint8_4();
-    doc["uint8_5"] = get_uint8_5();
-    doc["uint8_6"] = get_uint8_6();
-    doc["uint8_7"] = get_uint8_7();
-    doc["uint8_8"] = get_uint8_8();
-    doc["uint8_9"] = get_uint8_9();
+    doc["input0"] = get_input0();
+    doc["input1"] = get_input1();
+    doc["input2"] = get_input2();
+    doc["input3"] = get_input3();
+    doc["input4"] = get_input4();   
     serializeJsonPretty( doc, Serial );
 }
 
-void Cmemory::send_all_uint16( JsonDocument& doc )
+void Cmemory::send_all_output( JsonDocument& doc )
 {
-    doc["uint16_0"] = get_uint16_0();
-    doc["uint16_1"] = get_uint16_1();
-    doc["uint16_2"] = get_uint16_2();
-    doc["uint16_3"] = get_uint16_3();
-    doc["uint16_4"] = get_uint16_4();
-    doc["uint16_5"] = get_uint16_5();
-    doc["uint16_6"] = get_uint16_6();
-    doc["uint16_7"] = get_uint16_7();
-    doc["uint16_8"] = get_uint16_8();
-    doc["uint16_9"] = get_uint16_9();
+    doc["output0"] = get_output0();
+    doc["output1"] = get_output1();
+    doc["output2"] = get_output2();
+    doc["output3"] = get_output3();
+    doc["output4"] = get_output4();
     serializeJsonPretty( doc, Serial );
 }
 
 
-void Cmemory::send_all_int32( JsonDocument& doc )
+void Cmemory::send_all_cfg( JsonDocument& doc )
 {
-    doc["int32_0"] = get_int32_0();
-    doc["int32_1"] = get_int32_1();
-    doc["int32_2"] = get_int32_2();
-    doc["int32_3"] = get_int32_3();
-    doc["int32_4"] = get_int32_4();
-    doc["int32_5"] = get_int32_5();
-    doc["int32_6"] = get_int32_6();
-    doc["int32_7"] = get_int32_7();
-    doc["int32_8"] = get_int32_8();
-    doc["int32_9"] = get_int32_9();
+    doc["cfg0"] = get_cfg0();  
+    doc["cfg1"] = get_cfg1();  
+    doc["cfg2"] = get_cfg2();  
+    doc["cfg3"] = get_cfg3();  
+    doc["cfg4"] = get_cfg4();  
+    doc["cfg5"] = get_cfg5();  
+    doc["cfg6"] = get_cfg6();  
+    doc["cfg7"] = get_cfg7();  
+    doc["cfg8"] = get_cfg8();  
+    doc["cfg9"] = get_cfg9();
     serializeJsonPretty( doc, Serial );
 }
 void Cmemory::send_all_float( JsonDocument& doc )
@@ -1804,85 +1442,13 @@ void Cmemory::send_all_float( JsonDocument& doc )
 }
 
 
-void Cmemory::send_all_cfg( JsonDocument& doc )
+void Cmemory::send_all_lib( JsonDocument& doc )
 {
     doc["version"] = FIRMWARE_VERSION;
     doc["st_mode"] =  get_st_mode();
     doc["serial_level"] =  get_serial_level();
     doc["status"] = get_st_test();
     
-    serializeJsonPretty( doc, Serial );
-}
-
-void Cmemory::send_uint8_0( JsonDocument& doc )
-{
-    doc["uint8_0"] =  get_uint8_0();
-
-    serializeJsonPretty( doc, Serial );
-}
-
-void Cmemory::send_uint8_1( JsonDocument& doc )
-{
-    doc["uint8_1"] =  get_uint8_1();
-
-    serializeJsonPretty( doc, Serial );
-}
-
-void Cmemory::send_uint8_2( JsonDocument& doc )
-{
-    doc["uint8_2"] =  get_uint8_2();
-
-    serializeJsonPretty( doc, Serial );
-}
-
-void Cmemory::send_uint8_3( JsonDocument& doc )
-{
-    doc["uint8_3"] =  get_uint8_3();
-
-    serializeJsonPretty( doc, Serial );
-}
-
-
-void Cmemory::send_uint8_4( JsonDocument& doc )
-{
-    doc["uint8_4"] =  get_uint8_4();
-
-    serializeJsonPretty( doc, Serial );
-}
-
-void Cmemory::send_uint8_5( JsonDocument& doc )
-{
-    doc["uint8_5"] =  get_uint8_5();
-
-    serializeJsonPretty( doc, Serial );
-}
-
-void Cmemory::send_uint8_6( JsonDocument& doc )
-{
-    doc["uint8_6"] =  get_uint8_6();
-
-    serializeJsonPretty( doc, Serial );
-}
-
-void Cmemory::send_uint8_7( JsonDocument& doc )
-{
-    doc["uint8_7"] =  get_uint8_7();
-
-    serializeJsonPretty( doc, Serial );
-}
-
-void Cmemory::send_uint8_8( JsonDocument& doc )
-{
-    doc["uint8_8"] =  get_uint8_8();
-
-    serializeJsonPretty( doc, Serial );
-}
-
-
-void Cmemory::send_uint8_9( JsonDocument& doc )
-{
-    doc["uint8_9"] =  get_uint8_9();
-
     serializeJsonPretty( doc, Serial );
 }
 
@@ -1894,8 +1460,6 @@ void Cmemory::send_test_finish( void )
     serializeJsonPretty( doc, Serial );
 }
 
-
-
 // Envia la version del firmware.
 void Cmemory::send_version( JsonDocument& doc )
 {
@@ -1903,7 +1467,6 @@ void Cmemory::send_version( JsonDocument& doc )
 
     serializeJsonPretty( doc, Serial );
 }
-
 
 // Envia el nivel de serialeo
 void Cmemory::send_serial_level( JsonDocument& doc )
@@ -1929,130 +1492,110 @@ void Cmemory::send_st_mode( JsonDocument& doc )
     serializeJsonPretty( doc, Serial );
 }
 
-void Cmemory::send_uint16_0( JsonDocument& doc )
+void Cmemory::send_input0( JsonDocument& doc )
 {
-    doc["uint16_0"] =  get_uint16_0();
+    doc["input0"] =  get_input0();
     serializeJsonPretty( doc, Serial );
 }
-
-void Cmemory::send_uint16_1( JsonDocument& doc )
+void Cmemory::send_input1( JsonDocument& doc )
 {
-    doc["uint16_1"] =  get_uint16_1();
+    doc["input1"] =  get_input1();
     serializeJsonPretty( doc, Serial );
 }
-
-void Cmemory::send_uint16_2( JsonDocument& doc )
+void Cmemory::send_input2( JsonDocument& doc )
 {
-    doc["uint16_2"] =  get_uint16_2();
+    doc["input2"] =  get_input2();
     serializeJsonPretty( doc, Serial );
 }
-
-void Cmemory::send_uint16_3( JsonDocument& doc )
+void Cmemory::send_input3( JsonDocument& doc )
 {
-    doc["uint16_3"] =  get_uint16_3();
+    doc["input3"] =  get_input3();
     serializeJsonPretty( doc, Serial );
 }
-
-void Cmemory::send_uint16_4( JsonDocument& doc )
+void Cmemory::send_input4( JsonDocument& doc )
 {
-    doc["uint16_4"] =  get_uint16_4();
-    serializeJsonPretty( doc, Serial );
-}
-
-void Cmemory::send_uint16_5( JsonDocument& doc )
-{
-    doc["uint16_5"] =  get_uint16_5();
-    serializeJsonPretty( doc, Serial );
-}
-void Cmemory::send_uint16_6( JsonDocument& doc )
-{
-    doc["uint16_6"] =  get_uint16_6();
-    serializeJsonPretty( doc, Serial );
-}
-
-void Cmemory::send_uint16_7( JsonDocument& doc )
-{
-    doc["uint16_7"] =  get_uint16_7();
+    doc["input4"] =  get_input4();
     serializeJsonPretty( doc, Serial );
 }
 
 
-void Cmemory::send_uint16_8( JsonDocument& doc )
+void Cmemory::send_output0( JsonDocument& doc )
 {
-    doc["uint16_8"] =  get_uint16_8();
+    doc["output0"] =  get_output0();
+    serializeJsonPretty( doc, Serial );
+}
+void Cmemory::send_output1( JsonDocument& doc )
+{
+    doc["output1"] =  get_output1();
+    serializeJsonPretty( doc, Serial );
+}
+void Cmemory::send_output2( JsonDocument& doc )
+{
+    doc["output2"] =  get_output2();
+    serializeJsonPretty( doc, Serial );
+}
+void Cmemory::send_output3( JsonDocument& doc )
+{
+    doc["output3"] =  get_output3();
+    serializeJsonPretty( doc, Serial );
+}
+void Cmemory::send_output4( JsonDocument& doc )
+{
+    doc["output4"] =  get_output4();
     serializeJsonPretty( doc, Serial );
 }
 
 
-void Cmemory::send_uint16_9( JsonDocument& doc )
+void Cmemory::send_cfg0( JsonDocument& doc )
 {
-    doc["uint16_9"] =  get_uint16_9();
+    doc["cfg0"] =  get_cfg0();
     serializeJsonPretty( doc, Serial );
 }
-
-void Cmemory::send_int32_0( JsonDocument& doc )
+void Cmemory::send_cfg1( JsonDocument& doc )
 {
-    doc["int32_0"] =  get_int32_0();
+    doc["cfg1"] =  get_cfg1();
     serializeJsonPretty( doc, Serial );
 }
-
-void Cmemory::send_int32_1( JsonDocument& doc )
+void Cmemory::send_cfg2( JsonDocument& doc )
 {
-    doc["int32_1"] =  get_int32_1();
+    doc["cfg2"] =  get_cfg2();
     serializeJsonPretty( doc, Serial );
 }
-
-void Cmemory::send_int32_2( JsonDocument& doc )
+void Cmemory::send_cfg3( JsonDocument& doc )
 {
-    doc["int32_2"] =  get_int32_2();
+    doc["cfg3"] =  get_cfg3();
     serializeJsonPretty( doc, Serial );
 }
-
-void Cmemory::send_int32_3( JsonDocument& doc )
+void Cmemory::send_cfg4( JsonDocument& doc )
 {
-    doc["int32_3"] =  get_int32_3();
+    doc["cfg4"] =  get_cfg4();
     serializeJsonPretty( doc, Serial );
 }
-
-void Cmemory::send_int32_4( JsonDocument& doc )
+void Cmemory::send_cfg5( JsonDocument& doc )
 {
-    doc["int32_4"] =  get_int32_4();
+    doc["cfg5"] =  get_cfg5();
     serializeJsonPretty( doc, Serial );
 }
-
-void Cmemory::send_int32_5( JsonDocument& doc )
+void Cmemory::send_cfg6( JsonDocument& doc )
 {
-    doc["int32_5"] =  get_int32_5();
+    doc["cfg6"] =  get_cfg6();
     serializeJsonPretty( doc, Serial );
 }
-
-
-void Cmemory::send_int32_6( JsonDocument& doc )
+void Cmemory::send_cfg7( JsonDocument& doc )
 {
-    doc["int32_6"] =  get_int32_6();
+    doc["cfg7"] =  get_cfg7();
     serializeJsonPretty( doc, Serial );
 }
-
-void Cmemory::send_int32_7( JsonDocument& doc )
+void Cmemory::send_cfg8( JsonDocument& doc )
 {
-    doc["int32_7"] =  get_int32_7();
+    doc["cfg8"] =  get_cfg8();
     serializeJsonPretty( doc, Serial );
 }
-
-
-void Cmemory::send_int32_8( JsonDocument& doc )
+void Cmemory::send_cfg9( JsonDocument& doc )
 {
-    doc["int32_8"] =  get_int32_8();
+    doc["cfg9"] =  get_cfg9();
     serializeJsonPretty( doc, Serial );
 }
-
-void Cmemory::send_int32_9( JsonDocument& doc )
-{
-    doc["int32_9"] =  get_int32_9();
-    serializeJsonPretty( doc, Serial );
-}
-
-
 
 void Cmemory::send_float_0( JsonDocument& doc )
 {

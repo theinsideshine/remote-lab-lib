@@ -85,6 +85,8 @@
 #define ST_LOOP_MODE_HOME_M2            10    // Se mueve al home 2.
 #define ST_LOOP_MODE_CELL               11    // Lee las celdas de carga.
 
+
+
 /*
  * Clases del sistema
  */
@@ -171,7 +173,8 @@ void loop()
     case ST_LOOP_HOME_M2:    
 
       serial.msg( F("Comienzo del experimento") );         
-      Led.n_blink(5, 1000); 
+      Led.n_blink(5, 1000);
+     
       
       st_loop = ST_LOOP_OFF_TEST;
       
@@ -192,5 +195,7 @@ void loop()
 #ifdef ST_DEBUG
   serial.msg( F("ST_LOOP= %d"), st_loop );
 #endif //ST_DEBUG
+
+
 
 }

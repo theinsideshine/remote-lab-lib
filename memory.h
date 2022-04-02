@@ -22,45 +22,35 @@
                                                
                                                   
 //#define EEPROM_ADDRESS_memory         4       // Direccion en la epprom donde se almacena la memoryuracion.
-#define MAGIC_NUMBER                    45    // Numero magico para detectar memoria sin inicializar.
-
-
-#define UINT8_0_DEFAULT               0 
-#define UINT8_1_DEFAULT               1             
-#define UINT8_2_DEFAULT               2  
-#define UINT8_3_DEFAULT               3  
-#define UINT8_4_DEFAULT               4  
-#define UINT8_5_DEFAULT               5 
-#define UINT8_6_DEFAULT               6             
-#define UINT8_7_DEFAULT               7  
-#define UINT8_8_DEFAULT               8  
-#define UINT8_9_DEFAULT               9                                                                                       
+#define MAGIC_NUMBER                    21    // Numero magico para detectar memoria sin inicializar.
 
 #define ST_TEST_DEFAULT                 0              //  Estado del test pòr defecto.
 #define ST_MODE_DEFAULT                 ST_MODE_TEST   //  Modo de operacion del sistema. 
 
-#define UINT16_0_DEFAULT               65500 
-#define UINT16_1_DEFAULT               65501             
-#define UINT16_2_DEFAULT               65502  
-#define UINT16_3_DEFAULT               65503  
-#define UINT16_4_DEFAULT               65504  
-#define UINT16_5_DEFAULT               65505 
-#define UINT16_6_DEFAULT               65506          
-#define UINT16_7_DEFAULT               65507
-#define UINT16_8_DEFAULT               65508
-#define UINT16_9_DEFAULT               65509
+#define INPUT_0_DEFAULT               0.1 
+#define INPUT_1_DEFAULT               1.1             
+#define INPUT_2_DEFAULT               2.2  
+#define INPUT_3_DEFAULT               3.2  
+#define INPUT_4_DEFAULT               4.4  
 
+#define OUTPUT_0_DEFAULT               11.9 
+#define OUTPUT_1_DEFAULT               10.9 
+#define OUTPUT_2_DEFAULT               20.9 
+#define OUTPUT_3_DEFAULT               30.9
+#define OUTPUT_4_DEFAULT               40.9 
+ 
 
-#define INT32_0_DEFAULT               70000
-#define INT32_1_DEFAULT               70001
-#define INT32_2_DEFAULT               70002 
-#define INT32_3_DEFAULT               70003   
-#define INT32_4_DEFAULT               70004
-#define INT32_5_DEFAULT               70005  
-#define INT32_6_DEFAULT               70006
-#define INT32_7_DEFAULT               70007  
-#define INT32_8_DEFAULT               70008 
-#define INT32_9_DEFAULT               70009 
+#define CFG_0_DEFAULT                  7000.123
+#define CFG_1_DEFAULT                  7000.124
+#define CFG_2_DEFAULT                  7000.125
+#define CFG_3_DEFAULT                  7000.126
+#define CFG_4_DEFAULT                  7000.127
+#define CFG_5_DEFAULT                  7000.128
+#define CFG_6_DEFAULT                  7000.129
+#define CFG_7_DEFAULT                  7000.131
+#define CFG_8_DEFAULT                  7000.132
+#define CFG_9_DEFAULT                  7000.133
+
 
 #define FLOAT_0_DEFAULT             70.123
 #define FLOAT_1_DEFAULT             70.124
@@ -128,47 +118,40 @@
 #define EEPROM_ADDRESS_MAGIC_NUMBER     0
 
 // Unsigned 8 bits
-
-#define EEPROM_ADDRESS_UINT8_0      (EEPROM_ADDRESS_MAGIC_NUMBER + sizeof(uint8_t))
-#define EEPROM_ADDRESS_UINT8_1      (EEPROM_ADDRESS_UINT8_0  + sizeof(uint8_t))
-#define EEPROM_ADDRESS_UINT8_2      (EEPROM_ADDRESS_UINT8_1  + sizeof(uint8_t))
-#define EEPROM_ADDRESS_UINT8_3      (EEPROM_ADDRESS_UINT8_2  + sizeof(uint8_t))
-#define EEPROM_ADDRESS_UINT8_4      (EEPROM_ADDRESS_UINT8_3  + sizeof(uint8_t))
-#define EEPROM_ADDRESS_UINT8_5      (EEPROM_ADDRESS_UINT8_4  + sizeof(uint8_t))
-#define EEPROM_ADDRESS_UINT8_6      (EEPROM_ADDRESS_UINT8_5  + sizeof(uint8_t))
-#define EEPROM_ADDRESS_UINT8_7      (EEPROM_ADDRESS_UINT8_6  + sizeof(uint8_t))
-#define EEPROM_ADDRESS_UINT8_8      (EEPROM_ADDRESS_UINT8_7  + sizeof(uint8_t))
-#define EEPROM_ADDRESS_UINT8_9      (EEPROM_ADDRESS_UINT8_8  + sizeof(uint8_t))
 // Para remote-lab-lib
-#define EEPROM_ADDRESS_ST_TEST          (EEPROM_ADDRESS_UINT8_9 + sizeof(uint8_t))  
-#define EEPROM_ADDRESS_ST_MODE          (EEPROM_ADDRESS_ST_TEST     + sizeof(uint8_t))  
-#define EEPROM_ADDRESS_SERIAL_LEVEL     (EEPROM_ADDRESS_ST_MODE     + sizeof(uint8_t))
+#define EEPROM_ADDRESS_ST_TEST          (EEPROM_ADDRESS_MAGIC_NUMBER + sizeof(uint8_t))  
+#define EEPROM_ADDRESS_ST_MODE          (EEPROM_ADDRESS_ST_TEST      + sizeof(uint8_t))  
+#define EEPROM_ADDRESS_SERIAL_LEVEL     (EEPROM_ADDRESS_ST_MODE      + sizeof(uint8_t))
 
 
-#define EEPROM_ADDRESS_UINT16_0      (EEPROM_ADDRESS_SERIAL_LEVEL + sizeof(uint8_t))
-#define EEPROM_ADDRESS_UINT16_1      (EEPROM_ADDRESS_UINT16_0  + sizeof(uint16_t))
-#define EEPROM_ADDRESS_UINT16_2      (EEPROM_ADDRESS_UINT16_1  + sizeof(uint16_t))
-#define EEPROM_ADDRESS_UINT16_3      (EEPROM_ADDRESS_UINT16_2  + sizeof(uint16_t))
-#define EEPROM_ADDRESS_UINT16_4      (EEPROM_ADDRESS_UINT16_3  + sizeof(uint16_t))
-#define EEPROM_ADDRESS_UINT16_5      (EEPROM_ADDRESS_UINT16_4  + sizeof(uint16_t))
-#define EEPROM_ADDRESS_UINT16_6      (EEPROM_ADDRESS_UINT16_5  + sizeof(uint16_t))
-#define EEPROM_ADDRESS_UINT16_7      (EEPROM_ADDRESS_UINT16_6  + sizeof(uint16_t))
-#define EEPROM_ADDRESS_UINT16_8      (EEPROM_ADDRESS_UINT16_7  + sizeof(uint16_t))
-#define EEPROM_ADDRESS_UINT16_9      (EEPROM_ADDRESS_UINT16_8  + sizeof(uint16_t))
+// float
 
-#define EEPROM_ADDRESS_INT32_0      (EEPROM_ADDRESS_UINT16_9  + sizeof(uint16_t))
-#define EEPROM_ADDRESS_INT32_1      (EEPROM_ADDRESS_INT32_0  + sizeof(int32_t))
-#define EEPROM_ADDRESS_INT32_2      (EEPROM_ADDRESS_INT32_1  + sizeof(int32_t))
-#define EEPROM_ADDRESS_INT32_3      (EEPROM_ADDRESS_INT32_2  + sizeof(int32_t))
-#define EEPROM_ADDRESS_INT32_4      (EEPROM_ADDRESS_INT32_3  + sizeof(int32_t))
-#define EEPROM_ADDRESS_INT32_5      (EEPROM_ADDRESS_INT32_4  + sizeof(int32_t))
-#define EEPROM_ADDRESS_INT32_6      (EEPROM_ADDRESS_INT32_5  + sizeof(int32_t))
-#define EEPROM_ADDRESS_INT32_7      (EEPROM_ADDRESS_INT32_6  + sizeof(int32_t))
-#define EEPROM_ADDRESS_INT32_8      (EEPROM_ADDRESS_INT32_7  + sizeof(int32_t))
-#define EEPROM_ADDRESS_INT32_9      (EEPROM_ADDRESS_INT32_8  + sizeof(int32_t))
+#define EEPROM_ADDRESS_INPUT_0      (EEPROM_ADDRESS_SERIAL_LEVEL + sizeof(uint8_t))
+#define EEPROM_ADDRESS_INPUT_1      (EEPROM_ADDRESS_INPUT_0  + sizeof(float))
+#define EEPROM_ADDRESS_INPUT_2      (EEPROM_ADDRESS_INPUT_1  + sizeof(float))
+#define EEPROM_ADDRESS_INPUT_3      (EEPROM_ADDRESS_INPUT_2  + sizeof(float))
+#define EEPROM_ADDRESS_INPUT_4      (EEPROM_ADDRESS_INPUT_3  + sizeof(float))
 
 
-#define EEPROM_ADDRESS_FLOAT_0      (EEPROM_ADDRESS_INT32_9  + sizeof(int32_t))
+#define EEPROM_ADDRESS_OUTPUT_0      (EEPROM_ADDRESS_INPUT_4 + sizeof(float))
+#define EEPROM_ADDRESS_OUTPUT_1      (EEPROM_ADDRESS_OUTPUT_0  + sizeof(float))
+#define EEPROM_ADDRESS_OUTPUT_2      (EEPROM_ADDRESS_OUTPUT_1  + sizeof(float))
+#define EEPROM_ADDRESS_OUTPUT_3      (EEPROM_ADDRESS_OUTPUT_2  + sizeof(float))
+#define EEPROM_ADDRESS_OUTPUT_4      (EEPROM_ADDRESS_OUTPUT_3  + sizeof(float))
+
+#define EEPROM_ADDRESS_CFG_0      (EEPROM_ADDRESS_OUTPUT_4 + sizeof(float))
+#define EEPROM_ADDRESS_CFG_1      (EEPROM_ADDRESS_CFG_0  + sizeof(float))
+#define EEPROM_ADDRESS_CFG_2      (EEPROM_ADDRESS_CFG_1  + sizeof(float))
+#define EEPROM_ADDRESS_CFG_3      (EEPROM_ADDRESS_CFG_2  + sizeof(float))
+#define EEPROM_ADDRESS_CFG_4      (EEPROM_ADDRESS_CFG_3  + sizeof(float))
+#define EEPROM_ADDRESS_CFG_5      (EEPROM_ADDRESS_CFG_4  + sizeof(float))
+#define EEPROM_ADDRESS_CFG_6      (EEPROM_ADDRESS_CFG_5  + sizeof(float))
+#define EEPROM_ADDRESS_CFG_7      (EEPROM_ADDRESS_CFG_6  + sizeof(float))
+#define EEPROM_ADDRESS_CFG_8      (EEPROM_ADDRESS_CFG_7  + sizeof(float))
+#define EEPROM_ADDRESS_CFG_9      (EEPROM_ADDRESS_CFG_8  + sizeof(float))
+
+
+#define EEPROM_ADDRESS_FLOAT_0      (EEPROM_ADDRESS_CFG_9    + sizeof(float))
 #define EEPROM_ADDRESS_FLOAT_1      (EEPROM_ADDRESS_FLOAT_0  + sizeof(float))
 #define EEPROM_ADDRESS_FLOAT_2      (EEPROM_ADDRESS_FLOAT_1  + sizeof(float))
 #define EEPROM_ADDRESS_FLOAT_3      (EEPROM_ADDRESS_FLOAT_2  + sizeof(float))
@@ -240,37 +223,6 @@ class Cmemory
   public:
     Cmemory();
 
-    uint8_t get_uint8_0( void );
-    void    set_uint8_0( uint8_t parameter );
-
-    uint8_t get_uint8_1( void );
-    void   set_uint8_1( uint8_t parameter );
-
-    uint8_t get_uint8_2( void );
-    void   set_uint8_2( uint8_t parameter );
-
-    uint8_t get_uint8_3( void );
-    void   set_uint8_3( uint8_t parameter );
-
-    uint8_t get_uint8_4( void );
-    void   set_uint8_4( uint8_t parameter );
-
-    uint8_t get_uint8_5( void );
-    void   set_uint8_5( uint8_t parameter );
-
-    uint8_t get_uint8_6( void );
-    void   set_uint8_6( uint8_t parameter );
-
-    uint8_t get_uint8_7( void );
-    void   set_uint8_7( uint8_t parameter );
-
-    uint8_t get_uint8_8( void );
-    void set_uint8_8( uint8_t parameter );
-
-    uint8_t get_uint8_9( void );
-    void set_uint8_9( uint8_t parameter );
-    
-
     uint8_t get_serial_level( void );
     void set_serial_level( uint8_t enable );
 
@@ -280,73 +232,51 @@ class Cmemory
     uint8_t get_st_mode( void );
     void set_st_mode( uint8_t mode ); 
 
-    
 
-    uint16_t get_uint16_0( void );
-    void    set_uint16_0( uint16_t parameter );
+    float get_input0( void );
+    void  set_input0( float parameter );
+    float get_input1( void );
+    void  set_input1( float parameter );
+    float get_input2( void );
+    void  set_input2( float parameter );
+    float get_input3( void );
+    void  set_input3( float parameter );    
+    float get_input4( void );
+    void  set_input4( float parameter );
+     
 
-    uint16_t get_uint16_1( void );
-    void   set_uint16_1( uint16_t parameter );
-
-    uint16_t get_uint16_2( void );
-    void   set_uint16_2( uint16_t parameter );
-
-    uint16_t get_uint16_3( void );
-    void   set_uint16_3( uint16_t parameter );
-
-    uint16_t get_uint16_4( void );
-    void   set_uint16_4( uint16_t parameter );
-
-    uint16_t get_uint16_5( void );
-    void   set_uint16_5( uint16_t parameter );
-
-    uint16_t get_uint16_6( void );
-    void   set_uint16_6( uint16_t parameter );
-
-    uint16_t get_uint16_7( void );
-    void   set_uint16_7( uint16_t parameter );
-
-    uint16_t get_uint16_8( void );
-    void set_uint16_8( uint16_t parameter );
-
-    uint16_t get_uint16_9( void );
-    void set_uint16_9( uint16_t parameter );
+    float get_output0( void );
+    void  set_output0( float parameter );
+    float get_output1( void );
+    void  set_output1( float parameter );
+    float get_output2( void );
+    void  set_output2( float parameter );
+    float get_output3( void );
+    void  set_output3( float parameter );
+    float get_output4( void );
+    void  set_output4( float parameter ); 
 
 
-    
-
-    int32_t get_int32_0( void );
-    void    set_int32_0( int32_t parameter );
-
-    int32_t get_int32_1( void );
-    void    set_int32_1( int32_t parameter );
-
-    int32_t get_int32_2( void );
-    void    set_int32_2( int32_t parameter );
-
-    int32_t get_int32_3( void );
-    void    set_int32_3( int32_t parameter );
-
-    int32_t get_int32_4( void );
-    void    set_int32_4( int32_t parameter );
-    
-    int32_t get_int32_5( void );
-    void    set_int32_5( int32_t parameter );
-
-    int32_t get_int32_6( void );
-    void    set_int32_6( int32_t parameter );
-
-    int32_t get_int32_7( void );
-    void    set_int32_7( int32_t parameter );
-
-    int32_t get_int32_8( void );
-    void    set_int32_8( int32_t parameter );
-
-    int32_t get_int32_9( void );
-    void    set_int32_9( int32_t parameter );  
-
-
-
+    float get_cfg0( void );
+    void  set_cfg0( float parameter );
+    float get_cfg1( void );
+    void  set_cfg1( float parameter );
+    float get_cfg2( void );
+    void  set_cfg2( float parameter );
+    float get_cfg3( void );
+    void  set_cfg3( float parameter );
+    float get_cfg4( void );
+    void  set_cfg4( float parameter ); 
+    float get_cfg5( void );
+    void  set_cfg5( float parameter );
+    float get_cfg6( void );
+    void  set_cfg6( float parameter );
+    float get_cfg7( void );
+    void  set_cfg7( float parameter );
+    float get_cfg8( void );
+    void  set_cfg8( float parameter );
+    float get_cfg9( void );
+    void  set_cfg9( float parameter ); 
 
     float get_float_0( void );
     void  set_float_0( float parameter );
@@ -463,40 +393,28 @@ class Cmemory
     uint8_t st_mode;            // Modo del ensayo
 
 
-    uint8_t uint8_0; 
-    uint8_t uint8_1; 
-    uint8_t uint8_2; 
-    uint8_t uint8_3; 
-    uint8_t uint8_4; 
-    uint8_t uint8_5; 
-    uint8_t uint8_6; 
-    uint8_t uint8_7; 
-    uint8_t uint8_8; 
-    uint8_t uint8_9; 
+    float input0; 
+    float input1; 
+    float input2; 
+    float input3; 
+    float input4;
 
-    uint16_t uint16_0; 
-    uint16_t uint16_1; 
-    uint16_t uint16_2; 
-    uint16_t uint16_3; 
-    uint16_t uint16_4; 
-    uint16_t uint16_5; 
-    uint16_t uint16_6; 
-    uint16_t uint16_7; 
-    uint16_t uint16_8;
-    uint16_t uint16_9;
+    float output0; 
+    float output1;
+    float output2;
+    float output3;
+    float output4;
 
-
-    int32_t int32_0;
-    int32_t int32_1;
-    int32_t int32_2;
-    int32_t int32_3;
-    int32_t int32_4;
-    int32_t int32_5;
-    int32_t int32_6;
-    int32_t int32_7;
-    int32_t int32_8;
-    int32_t int32_9;
-
+    float cfg0;
+    float cfg1;
+    float cfg2;
+    float cfg3;
+    float cfg4;
+    float cfg5;
+    float cfg6;
+    float cfg7;
+    float cfg8;
+    float cfg9;
 
     float float_0;
     float float_1;
@@ -555,11 +473,11 @@ class Cmemory
  
     
     void send_all_parameters( JsonDocument& );
-    void send_all_uint8( JsonDocument& doc );
-    void send_all_uint16( JsonDocument& doc );
-    void send_all_int32( JsonDocument& doc );
-    void send_all_float( JsonDocument& doc );
+    void send_all_input( JsonDocument& doc );
+    void send_all_output( JsonDocument& doc );
     void send_all_cfg( JsonDocument& doc );
+    void send_all_float( JsonDocument& doc );
+    void send_all_lib( JsonDocument& doc );
     void send_version( JsonDocument& );
     void send_ok( JsonDocument& );
     void send_ack( JsonDocument& );
@@ -567,40 +485,29 @@ class Cmemory
     void send_serial_level( JsonDocument& doc );
     void send_st_mode( JsonDocument& doc );
 
-    void send_uint8_0(JsonDocument& doc);
-    void send_uint8_1(JsonDocument& doc);
-    void send_uint8_2(JsonDocument& doc);
-    void send_uint8_3(JsonDocument& doc);
-    void send_uint8_4(JsonDocument& doc);
-    void send_uint8_5(JsonDocument& doc);
-    void send_uint8_6(JsonDocument& doc);
-    void send_uint8_7(JsonDocument& doc);
-    void send_uint8_8(JsonDocument& doc);
-    void send_uint8_9(JsonDocument& doc);  
+    void send_input0(JsonDocument& doc);
+    void send_input1(JsonDocument& doc);
+    void send_input2(JsonDocument& doc);
+    void send_input3(JsonDocument& doc);
+    void send_input4(JsonDocument& doc);
 
-    void send_uint16_0(JsonDocument& doc);
-    void send_uint16_1(JsonDocument& doc);
-    void send_uint16_2(JsonDocument& doc);
-    void send_uint16_3(JsonDocument& doc);
-    void send_uint16_4(JsonDocument& doc);
-    void send_uint16_5(JsonDocument& doc);
-    void send_uint16_6(JsonDocument& doc);
-    void send_uint16_7(JsonDocument& doc);
-    void send_uint16_8(JsonDocument& doc);
-    void send_uint16_9(JsonDocument& doc);
-
-    void send_int32_0(JsonDocument& doc);
-    void send_int32_1(JsonDocument& doc);
-    void send_int32_2(JsonDocument& doc);
-    void send_int32_3(JsonDocument& doc);
-    void send_int32_4(JsonDocument& doc);
-    void send_int32_5(JsonDocument& doc);
-    void send_int32_6(JsonDocument& doc);
-    void send_int32_7(JsonDocument& doc);
-    void send_int32_8(JsonDocument& doc);
-    void send_int32_9(JsonDocument& doc);
-
-
+    void send_output0(JsonDocument& doc);
+    void send_output1(JsonDocument& doc);
+    void send_output2(JsonDocument& doc);
+    void send_output3(JsonDocument& doc);
+    void send_output4(JsonDocument& doc);
+    
+    void send_cfg0(JsonDocument& doc); 
+    void send_cfg1(JsonDocument& doc); 
+    void send_cfg2(JsonDocument& doc); 
+    void send_cfg3(JsonDocument& doc); 
+    void send_cfg4(JsonDocument& doc); 
+    void send_cfg5(JsonDocument& doc); 
+    void send_cfg6(JsonDocument& doc); 
+    void send_cfg7(JsonDocument& doc); 
+    void send_cfg8(JsonDocument& doc); 
+    void send_cfg9(JsonDocument& doc);   
+   
    void send_float_0(JsonDocument& doc);    
    void send_float_1(JsonDocument& doc);    
    void send_float_2(JsonDocument& doc);    
