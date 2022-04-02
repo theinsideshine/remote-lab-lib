@@ -18,7 +18,7 @@
 #include "Arduino.h"
 #include <ArduinoJson.h>
 
-#define FIRMWARE_VERSION                "1.0.00"
+#define FIRMWARE_VERSION                "1.0.01" //Se agrego estructura de datos 
                                                
                                                   
 //#define EEPROM_ADDRESS_memory         4       // Direccion en la epprom donde se almacena la memoryuracion.

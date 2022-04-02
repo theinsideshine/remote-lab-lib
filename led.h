@@ -18,7 +18,7 @@
 #include "Arduino.h"
 
 
-#define PIN_LED_DEBUG                 13
+#define PIN_LED_DEBUG                 6
 
 class CLed
 {
@@ -27,7 +27,7 @@ class CLed
     void init( void );
     void on(void);
     void off(void);
-    void n_blink(uint8_t n_blink,uint8_t t_blink);
+    void n_blink(uint8_t n_blink,uint16_t t_blink);
         
   private:
       

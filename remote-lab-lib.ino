@@ -16,11 +16,11 @@
 
 // Lee por el puerto serie parametros de memoryuracion en formato json.
 // {read:'all-params'}        Envia todos los parametros en formato json.
-// {read:'all-cfg'}           Envia todos los parametros de remoteLabLib
-// {read:'all-uint8'}         Envia todos los parametros unsigned 8 bits
-// {read:'all-uint16'}        Envia todos los parametros unsigned 16 bits
-// {read:'all-int32'}         Envia todos los parametros signed 32 bits
-// {read:'all-float'}         Envia todos los parametros float
+// {read:'all-input'}         Envia todos los parametros de entrada.
+// {read:'all-output'}        Envia todos los parametros de salida.
+// {read:'all-cfg'}           Envia todos los parametros de configuracion
+// {read:'all-lib'}           Envia todos los parametros de configuracion de remoteLabLib
+// {read:'all-float'}         Envia todos los parametros de resultados
  
 // {read:'version'}           Envia  la version del firmware.
 // {read:'status'}            Devuelve el estatus del ensayo.
@@ -39,15 +39,17 @@
 
  //   {cdd:'start',data:{distance:'20',force:'306'}} 
 
+// {input0:'250.2',input1:'250.3',input2:'250.4',input3:'250.5',input4:'250.6'}
+// {input0:'250'}       input0       parametro de entrada tipo float 
+// {inputx:'250'}       inputx       
 
-// {uint8_0:'250'}       uint8_0       parametro de 8 bits sin signo 
-// {uint8_x:'250'}       uint8_x       parametro de 8 bits sin signo 
+// {output0:'250'}      output0       parametro de salida tipo float 
+// {outputx:'250'}      outputx  
 
-// {uint16_0:'250'}       uint16_0     parametro de 16 bits sin signo
-// {uint16_x:'250'}       uint16_x     parametro de 16 bits sin signo 
+// {cfg0:'250'}      cfg0       parametro de configuracion tipo float 
+// {cfgx:'250'}      cfgx 
 
-// {int32_0:'70000'}      int32_0       parametro de 32 bits con signo
-// {int32_x:'70000'}      int32_x       parametro de 32 bits con signo
+
 
 // {float_0:'70.123'}      float_0      parametro float
 // {float_x:'70.123'}      float_x      parametro float
@@ -104,7 +106,7 @@ CLed     Led;
 
 void end_experiment( void ) {
  
-  Led.n_blink(3, 2000);                       // 2 blinks cada 2000 ms;
+  Led.n_blink(3, 1000);                       // 2 blinks cada 2000 ms;
   serial.msg( F("Experimento terminado"));
   
   memory.set_st_test( false );
@@ -126,11 +128,11 @@ void setup()
   serial.msg( F("Remote Lab library - %s"), FIRMWARE_VERSION );
   serial.msg( F("UDEMM - 2022") );
 
-#ifdef LED_PRESENT
+
   Led.init();
   serial.msg( F("Led init") );
-  Led.n_blink(1, 2000); // 1 blinks cada 2000 ms
-#endif // LED_PRESENT   
+  Led.n_blink(2, 500); // 1 blinks cada 2000 ms
+ 
 
 
 
@@ -162,7 +164,9 @@ void loop()
 
     // Espera "eventos" de ejecucion
     case ST_LOOP_IDLE:
-    
+
+      
+       
       if (memory.get_st_test() == true ) {                   // Espera que se comienzo al ensayo.        
         st_loop = ST_LOOP_HOME_M2; 
       }
@@ -172,8 +176,9 @@ void loop()
     
     case ST_LOOP_HOME_M2:    
 
+       
       serial.msg( F("Comienzo del experimento") );         
-      Led.n_blink(5, 1000);
+      Led.n_blink(5, 500);
      
       
       st_loop = ST_LOOP_OFF_TEST;
