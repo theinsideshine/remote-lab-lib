@@ -18,7 +18,7 @@
 #include "Arduino.h"
 #include <ArduinoJson.h>
 
-#define FIRMWARE_VERSION                "1.0.02" //Se cambio nombre de resultados a result
+#define FIRMWARE_VERSION                "1.0.03" // Error de tipeo en all-output
                                                
                                                   
 //#define EEPROM_ADDRESS_memory         4       // Direccion en la epprom donde se almacena la memoryuracion.

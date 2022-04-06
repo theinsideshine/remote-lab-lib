@@ -120,7 +120,7 @@ void end_experiment( void ) {
 void setup()
 {
   serial.init( memory.get_serial_level() );
-  Serial.println("Init Serial");
+  //Serial.println("Init Serial");
   /*
       Para activar la visualisacion  enviar por serie {serial_level:'1'}
   */

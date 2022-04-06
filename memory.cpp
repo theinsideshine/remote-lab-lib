@@ -1020,7 +1020,7 @@ bool known_key = false;
                 else if( key == "all-input" ) {
                     send_all_input( doc );
                 }
-                else if( key == "all-ouput" ) {
+                else if( key == "all-output" ) {
                     send_all_output( doc );
                 } else if( key == "all-cfg" ) {
                     send_all_cfg( doc );
