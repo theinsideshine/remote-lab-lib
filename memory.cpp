@@ -13,26 +13,29 @@
  */
  
 #include "memory.h"
-#include "serial.h"
+#include "log.h"
+#include "param.h"
+
 
 
 #include <EEPROM.h>
 
 
 
-Cmemory::Cmemory()
+CMemory::CMemory()
 {
 uint8_t magic_number;
 
     EEPROM.get( EEPROM_ADDRESS_MAGIC_NUMBER, magic_number );
 
+   
     if( magic_number != MAGIC_NUMBER ){
         magic_number = MAGIC_NUMBER;
         EEPROM.put( EEPROM_ADDRESS_MAGIC_NUMBER, magic_number );  
 
 
          //set_serial_level( serial_DISABLED );
-        set_serial_level( serial_MSG ); // cuando cambias el magic numbre setea los mensajes de serialeo (Arduino 1,primer inicio")        
+        set_log_level( LOG_MSG ); // cuando cambias el magic numbre setea los mensajes de serialeo (Arduino 1,primer inicio")        
         set_st_test(ST_TEST_DEFAULT);
         set_st_mode(ST_MODE_DEFAULT );
 
@@ -117,7 +120,7 @@ uint8_t magic_number;
     
     }else {
         
-        EEPROM.get( EEPROM_ADDRESS_SERIAL_LEVEL, serial_level );
+        EEPROM.get( EEPROM_ADDRESS_SERIAL_LEVEL, log_level );
         //EEPROM.get( EEPROM_ADDRESS_ST_MODE, st_mode );
         
        //EEPROM.get( EEPROM_ADDRESS_ST_TEST, st_test );
@@ -211,35 +214,35 @@ uint8_t magic_number;
 }
 
 
-uint8_t Cmemory::get_serial_level( void )
+uint8_t CMemory::get_log_level( void )
 {
-    return serial_level;
+    return log_level;
 }
 
-void Cmemory::set_serial_level( uint8_t enable )
+void CMemory::set_log_level( uint8_t enable )
 {
-    serial_level = enable;
-    EEPROM.put( EEPROM_ADDRESS_SERIAL_LEVEL, serial_level );
+    log_level = enable;
+    EEPROM.put( EEPROM_ADDRESS_SERIAL_LEVEL, log_level );
 }
 
  
-uint8_t Cmemory::get_st_test( void )
+uint8_t CMemory::get_st_test( void )
 {
     return st_test;
 }
 
-void Cmemory::set_st_test( uint8_t enable )
+void CMemory::set_st_test( uint8_t enable )
 {
     st_test = enable;
     EEPROM.put( EEPROM_ADDRESS_ST_TEST, st_test );
 }
 
-uint8_t Cmemory::get_st_mode( void )
+uint8_t CMemory::get_st_mode( void )
 {
     return st_mode;
 }
 
-void Cmemory::set_st_mode( uint8_t mode )
+void CMemory::set_st_mode( uint8_t mode )
 {
     st_mode = mode;
     EEPROM.put( EEPROM_ADDRESS_ST_MODE, st_mode );
@@ -247,66 +250,66 @@ void Cmemory::set_st_mode( uint8_t mode )
 
 
 
-float Cmemory::get_input0( void )
+float CMemory::get_input0( void )
 {return input0;}
-void Cmemory::set_input0( float val )
+void CMemory::set_input0( float val )
 { input0 = val;
   EEPROM.put( EEPROM_ADDRESS_INPUT_0, val );
 }
-float Cmemory::get_input1( void )
+float CMemory::get_input1( void )
 {return input1;}
-void Cmemory::set_input1( float val )
+void CMemory::set_input1( float val )
 { input1 = val;
   EEPROM.put( EEPROM_ADDRESS_INPUT_1, val );
 }
-float Cmemory::get_input2( void )
+float CMemory::get_input2( void )
 {return input2;}
-void Cmemory::set_input2( float val )
+void CMemory::set_input2( float val )
 { input2 = val;
   EEPROM.put( EEPROM_ADDRESS_INPUT_2, val );
 }
-float Cmemory::get_input3( void )
+float CMemory::get_input3( void )
 {return input3;}
-void Cmemory::set_input3( float val )
+void CMemory::set_input3( float val )
 { input3 = val;
   EEPROM.put( EEPROM_ADDRESS_INPUT_3, val );
 }
-float Cmemory::get_input4( void )
+float CMemory::get_input4( void )
 {return input4;}
-void Cmemory::set_input4( float val )
+void CMemory::set_input4( float val )
 { input4 = val;
   EEPROM.put( EEPROM_ADDRESS_INPUT_4, val );
 }
 
 
 
-float Cmemory::get_output0( void )
+float CMemory::get_output0( void )
 {return output0;}
-void Cmemory::set_output0( float val )
+void CMemory::set_output0( float val )
 { output0 = val;
   EEPROM.put( EEPROM_ADDRESS_OUTPUT_0, val );
 }
-float Cmemory::get_output1( void )
+float CMemory::get_output1( void )
 {return output1;}
-void Cmemory::set_output1( float val )
+void CMemory::set_output1( float val )
 { output1 = val;
   EEPROM.put( EEPROM_ADDRESS_OUTPUT_1, val );
 }
-float Cmemory::get_output2( void )
+float CMemory::get_output2( void )
 {return output2;}
-void Cmemory::set_output2( float val )
+void CMemory::set_output2( float val )
 { output2 = val;
   EEPROM.put( EEPROM_ADDRESS_OUTPUT_2, val );
 }
-float Cmemory::get_output3( void )
+float CMemory::get_output3( void )
 {return output3;}
-void Cmemory::set_output3( float val )
+void CMemory::set_output3( float val )
 { output3 = val;
   EEPROM.put( EEPROM_ADDRESS_OUTPUT_3, val );
 }
-float Cmemory::get_output4( void )
+float CMemory::get_output4( void )
 {return output4;}
-void Cmemory::set_output4( float val )
+void CMemory::set_output4( float val )
 { output4 = val;
   EEPROM.put( EEPROM_ADDRESS_OUTPUT_4, val );
 }
@@ -315,381 +318,381 @@ void Cmemory::set_output4( float val )
 
 
 
-float Cmemory::get_cfg0( void )
+float CMemory::get_cfg0( void )
 {return cfg0;}
-void Cmemory::set_cfg0( float val )
+void CMemory::set_cfg0( float val )
 { cfg0 = val;
   EEPROM.put( EEPROM_ADDRESS_CFG_0, val );
 }
-float Cmemory::get_cfg1( void )
+float CMemory::get_cfg1( void )
 {return cfg1;}
-void Cmemory::set_cfg1( float val )
+void CMemory::set_cfg1( float val )
 { cfg1 = val;
  EEPROM.put( EEPROM_ADDRESS_CFG_1, val );
 }
-float Cmemory::get_cfg2( void )
+float CMemory::get_cfg2( void )
 {return cfg2;}
-void Cmemory::set_cfg2( float val )
+void CMemory::set_cfg2( float val )
 { cfg2 = val;
  EEPROM.put( EEPROM_ADDRESS_CFG_2, val );
 }
-float Cmemory::get_cfg3( void )
+float CMemory::get_cfg3( void )
 {return cfg3;}
-void Cmemory::set_cfg3( float val )
+void CMemory::set_cfg3( float val )
 { cfg3 = val;
  EEPROM.put( EEPROM_ADDRESS_CFG_3, val );
 }
-float Cmemory::get_cfg4( void )
+float CMemory::get_cfg4( void )
 {return cfg4;}
-void Cmemory::set_cfg4( float val )
+void CMemory::set_cfg4( float val )
 { cfg4 = val;
   EEPROM.put( EEPROM_ADDRESS_CFG_4, val );
 }
-float Cmemory::get_cfg5( void )
+float CMemory::get_cfg5( void )
 {return cfg5;}
-void Cmemory::set_cfg5( float val )
+void CMemory::set_cfg5( float val )
 { cfg5 = val;
   EEPROM.put( EEPROM_ADDRESS_CFG_5, val );
 }
-float Cmemory::get_cfg6( void )
+float CMemory::get_cfg6( void )
 {return cfg6;}
-void Cmemory::set_cfg6( float val )
+void CMemory::set_cfg6( float val )
 { cfg6 = val;
   EEPROM.put( EEPROM_ADDRESS_CFG_6, val );
 }
-float Cmemory::get_cfg7( void )
+float CMemory::get_cfg7( void )
 {return cfg7;}
-void Cmemory::set_cfg7( float val )
+void CMemory::set_cfg7( float val )
 { cfg7 = val;
   EEPROM.put( EEPROM_ADDRESS_CFG_7, val );
 }
-float Cmemory::get_cfg8( void )
+float CMemory::get_cfg8( void )
 {return cfg8;}
-void Cmemory::set_cfg8( float val )
+void CMemory::set_cfg8( float val )
 { cfg8 = val;
   EEPROM.put( EEPROM_ADDRESS_CFG_8, val );
 }
-float Cmemory::get_cfg9( void )
+float CMemory::get_cfg9( void )
 {return cfg9;}
-void Cmemory::set_cfg9( float val )
+void CMemory::set_cfg9( float val )
 { cfg9 = val;
    EEPROM.put( EEPROM_ADDRESS_CFG_9, val );
 }
 
 
 
-float Cmemory::get_result_0( void )
+float CMemory::get_result_0( void )
 {return result_0;}
-void Cmemory::set_result_0( float val )
+void CMemory::set_result_0( float val )
 { result_0 = val;
   EEPROM.put( EEPROM_ADDRESS_RESULT_0, val );
 }
-float Cmemory::get_result_1( void )
+float CMemory::get_result_1( void )
 {return result_1;}
-void Cmemory::set_result_1( float val )
+void CMemory::set_result_1( float val )
 { result_1 = val;
   EEPROM.put( EEPROM_ADDRESS_RESULT_1, val );
 }
-float Cmemory::get_result_2( void )
+float CMemory::get_result_2( void )
 {return result_2;}
-void Cmemory::set_result_2( float val )
+void CMemory::set_result_2( float val )
 { result_2 = val;
   EEPROM.put( EEPROM_ADDRESS_RESULT_2, val );
 }
-float Cmemory::get_result_3( void )
+float CMemory::get_result_3( void )
 {return result_3;}
-void Cmemory::set_result_3( float val )
+void CMemory::set_result_3( float val )
 { result_3 = val;
   EEPROM.put( EEPROM_ADDRESS_RESULT_3, val );
 }
-float Cmemory::get_result_4( void )
+float CMemory::get_result_4( void )
 {return result_4;}
-void Cmemory::set_result_4( float val )
+void CMemory::set_result_4( float val )
 { result_4 = val;
   EEPROM.put( EEPROM_ADDRESS_RESULT_4, val );
 }
-float Cmemory::get_result_5( void )
+float CMemory::get_result_5( void )
 {return result_5;}
-void Cmemory::set_result_5( float val )
+void CMemory::set_result_5( float val )
 { result_5 = val;
   EEPROM.put( EEPROM_ADDRESS_RESULT_5, val );
 }
-float Cmemory::get_result_6( void )
+float CMemory::get_result_6( void )
 {return result_6;}
-void Cmemory::set_result_6( float val )
+void CMemory::set_result_6( float val )
 { result_6 = val;
   EEPROM.put( EEPROM_ADDRESS_RESULT_6, val );
 }
-float Cmemory::get_result_7( void )
+float CMemory::get_result_7( void )
 {return result_7;}
-void Cmemory::set_result_7( float val )
+void CMemory::set_result_7( float val )
 { result_7 = val;
   EEPROM.put( EEPROM_ADDRESS_RESULT_7, val );
 }
-float Cmemory::get_result_8( void )
+float CMemory::get_result_8( void )
 {return result_8;}
-void Cmemory::set_result_8( float val )
+void CMemory::set_result_8( float val )
 { result_8 = val;
   EEPROM.put( EEPROM_ADDRESS_RESULT_8, val );
 }
-float Cmemory::get_result_9( void )
+float CMemory::get_result_9( void )
 {return result_9;}
-void Cmemory::set_result_9( float val )
+void CMemory::set_result_9( float val )
 { result_9 = val;
   EEPROM.put( EEPROM_ADDRESS_RESULT_9, val );
 }
 
 
 
-float Cmemory::get_result_10( void )
+float CMemory::get_result_10( void )
 {return result_10;}
-void Cmemory::set_result_10( float val )
+void CMemory::set_result_10( float val )
 { result_10 = val;
   EEPROM.put( EEPROM_ADDRESS_RESULT_10, val );
 }
-float Cmemory::get_result_11( void )
+float CMemory::get_result_11( void )
 {return result_11;}
-void Cmemory::set_result_11( float val )
+void CMemory::set_result_11( float val )
 { result_11 = val;
   EEPROM.put( EEPROM_ADDRESS_RESULT_11, val );
 }
-float Cmemory::get_result_12( void )
+float CMemory::get_result_12( void )
 {return result_12;}
-void Cmemory::set_result_12( float val )
+void CMemory::set_result_12( float val )
 { result_12 = val;
   EEPROM.put( EEPROM_ADDRESS_RESULT_12, val );
 }
-float Cmemory::get_result_13( void )
+float CMemory::get_result_13( void )
 {return result_13;}
-void Cmemory::set_result_13( float val )
+void CMemory::set_result_13( float val )
 { result_13 = val;
   EEPROM.put( EEPROM_ADDRESS_RESULT_13, val );
 }
-float Cmemory::get_result_14( void )
+float CMemory::get_result_14( void )
 {return result_14;}
-void Cmemory::set_result_14( float val )
+void CMemory::set_result_14( float val )
 { result_14 = val;
   EEPROM.put( EEPROM_ADDRESS_RESULT_14, val );
 }
-float Cmemory::get_result_15( void )
+float CMemory::get_result_15( void )
 {return result_15;}
-void Cmemory::set_result_15( float val )
+void CMemory::set_result_15( float val )
 { result_15 = val;
   EEPROM.put( EEPROM_ADDRESS_RESULT_15, val );
 }
-float Cmemory::get_result_16( void )
+float CMemory::get_result_16( void )
 {return result_16;}
-void Cmemory::set_result_16( float val )
+void CMemory::set_result_16( float val )
 { result_16 = val;
   EEPROM.put( EEPROM_ADDRESS_RESULT_16, val );
 }
-float Cmemory::get_result_17( void )
+float CMemory::get_result_17( void )
 {return result_17;}
-void Cmemory::set_result_17( float val )
+void CMemory::set_result_17( float val )
 { result_17 = val;
   EEPROM.put( EEPROM_ADDRESS_RESULT_17, val );
 }
-float Cmemory::get_result_18( void )
+float CMemory::get_result_18( void )
 {return result_18;}
-void Cmemory::set_result_18( float val )
+void CMemory::set_result_18( float val )
 { result_18 = val;
   EEPROM.put( EEPROM_ADDRESS_RESULT_18, val );
 }
-float Cmemory::get_result_19( void )
+float CMemory::get_result_19( void )
 {return result_19;}
-void Cmemory::set_result_19( float val )
+void CMemory::set_result_19( float val )
 { result_19 = val;
   EEPROM.put( EEPROM_ADDRESS_RESULT_19, val );
 }
 
-float Cmemory::get_result_20( void )
+float CMemory::get_result_20( void )
 {return result_20;}
-void Cmemory::set_result_20( float val )
+void CMemory::set_result_20( float val )
 { result_20 = val;
   EEPROM.put( EEPROM_ADDRESS_RESULT_20, val );
 }
-float Cmemory::get_result_21( void )
+float CMemory::get_result_21( void )
 {return result_21;}
-void Cmemory::set_result_21( float val )
+void CMemory::set_result_21( float val )
 { result_21 = val;
   EEPROM.put( EEPROM_ADDRESS_RESULT_21, val );
 }
-float Cmemory::get_result_22( void )
+float CMemory::get_result_22( void )
 {return result_22;}
-void Cmemory::set_result_22( float val )
+void CMemory::set_result_22( float val )
 { result_22 = val;
   EEPROM.put( EEPROM_ADDRESS_RESULT_22, val );
 }
-float Cmemory::get_result_23( void )
+float CMemory::get_result_23( void )
 {return result_23;}
-void Cmemory::set_result_23( float val )
+void CMemory::set_result_23( float val )
 { result_23 = val;
   EEPROM.put( EEPROM_ADDRESS_RESULT_23, val );
 }
-float Cmemory::get_result_24( void )
+float CMemory::get_result_24( void )
 {return result_24;}
-void Cmemory::set_result_24( float val )
+void CMemory::set_result_24( float val )
 { result_24 = val;
   EEPROM.put( EEPROM_ADDRESS_RESULT_24, val );
 }
-float Cmemory::get_result_25( void )
+float CMemory::get_result_25( void )
 {return result_25;}
-void Cmemory::set_result_25( float val )
+void CMemory::set_result_25( float val )
 { result_25 = val;
   EEPROM.put( EEPROM_ADDRESS_RESULT_25, val );
 }
-float Cmemory::get_result_26( void )
+float CMemory::get_result_26( void )
 {return result_26;}
-void Cmemory::set_result_26( float val )
+void CMemory::set_result_26( float val )
 { result_26 = val;
   EEPROM.put( EEPROM_ADDRESS_RESULT_26, val );
 }
-float Cmemory::get_result_27( void )
+float CMemory::get_result_27( void )
 {return result_27;}
-void Cmemory::set_result_27( float val )
+void CMemory::set_result_27( float val )
 { result_27 = val;
   EEPROM.put( EEPROM_ADDRESS_RESULT_27, val );
 }
-float Cmemory::get_result_28( void )
+float CMemory::get_result_28( void )
 {return result_28;}
-void Cmemory::set_result_28( float val )
+void CMemory::set_result_28( float val )
 { result_28 = val;
   EEPROM.put( EEPROM_ADDRESS_RESULT_28, val );
 }
-float Cmemory::get_result_29( void )
+float CMemory::get_result_29( void )
 {return result_29;}
-void Cmemory::set_result_29( float val )
+void CMemory::set_result_29( float val )
 { result_29 = val;
   EEPROM.put( EEPROM_ADDRESS_RESULT_29, val );
 }
 
 
-float Cmemory::get_result_30( void )
+float CMemory::get_result_30( void )
 {return result_30;}
-void Cmemory::set_result_30( float val )
+void CMemory::set_result_30( float val )
 { result_30 = val;
   EEPROM.put( EEPROM_ADDRESS_RESULT_30, val );
 }
-float Cmemory::get_result_31( void )
+float CMemory::get_result_31( void )
 {return result_31;}
-void Cmemory::set_result_31( float val )
+void CMemory::set_result_31( float val )
 { result_31 = val;
   EEPROM.put( EEPROM_ADDRESS_RESULT_31, val );
 }
-float Cmemory::get_result_32( void )
+float CMemory::get_result_32( void )
 {return result_32;}
-void Cmemory::set_result_32( float val )
+void CMemory::set_result_32( float val )
 { result_32 = val;
   EEPROM.put( EEPROM_ADDRESS_RESULT_32, val );
 }
-float Cmemory::get_result_33( void )
+float CMemory::get_result_33( void )
 {return result_33;}
-void Cmemory::set_result_33( float val )
+void CMemory::set_result_33( float val )
 { result_33 = val;
   EEPROM.put( EEPROM_ADDRESS_RESULT_33, val );
 }
-float Cmemory::get_result_34( void )
+float CMemory::get_result_34( void )
 {return result_34;}
-void Cmemory::set_result_34( float val )
+void CMemory::set_result_34( float val )
 { result_34 = val;
   EEPROM.put( EEPROM_ADDRESS_RESULT_34, val );
 }
-float Cmemory::get_result_35( void )
+float CMemory::get_result_35( void )
 {return result_35;}
-void Cmemory::set_result_35( float val )
+void CMemory::set_result_35( float val )
 { result_35 = val;
   EEPROM.put( EEPROM_ADDRESS_RESULT_35, val );
 }
-float Cmemory::get_result_36( void )
+float CMemory::get_result_36( void )
 {return result_36;}
-void Cmemory::set_result_36( float val )
+void CMemory::set_result_36( float val )
 { result_36 = val;
   EEPROM.put( EEPROM_ADDRESS_RESULT_36, val );
 }
-float Cmemory::get_result_37( void )
+float CMemory::get_result_37( void )
 {return result_37;}
-void Cmemory::set_result_37( float val )
+void CMemory::set_result_37( float val )
 { result_37 = val;
   EEPROM.put( EEPROM_ADDRESS_RESULT_37, val );
 }
-float Cmemory::get_result_38( void )
+float CMemory::get_result_38( void )
 {return result_38;}
-void Cmemory::set_result_38( float val )
+void CMemory::set_result_38( float val )
 { result_38 = val;
   EEPROM.put( EEPROM_ADDRESS_RESULT_38, val );
 }
-float Cmemory::get_result_39( void )
+float CMemory::get_result_39( void )
 {return result_39;}
-void Cmemory::set_result_39( float val )
+void CMemory::set_result_39( float val )
 { result_39 = val;
   EEPROM.put( EEPROM_ADDRESS_RESULT_39, val );
 }
 
 
-float Cmemory::get_result_40( void )
+float CMemory::get_result_40( void )
 {return result_40;}
-void Cmemory::set_result_40( float val )
+void CMemory::set_result_40( float val )
 { result_40 = val;
   EEPROM.put( EEPROM_ADDRESS_RESULT_40, val );
 }
-float Cmemory::get_result_41( void )
+float CMemory::get_result_41( void )
 {return result_41;}
-void Cmemory::set_result_41( float val )
+void CMemory::set_result_41( float val )
 { result_41 = val;
   EEPROM.put( EEPROM_ADDRESS_RESULT_41, val );
 }
-float Cmemory::get_result_42( void )
+float CMemory::get_result_42( void )
 {return result_42;}
-void Cmemory::set_result_42( float val )
+void CMemory::set_result_42( float val )
 { result_42 = val;
   EEPROM.put( EEPROM_ADDRESS_RESULT_42, val );
 }
-float Cmemory::get_result_43( void )
+float CMemory::get_result_43( void )
 {return result_43;}
-void Cmemory::set_result_43( float val )
+void CMemory::set_result_43( float val )
 { result_43 = val;
   EEPROM.put( EEPROM_ADDRESS_RESULT_43, val );
 }
-float Cmemory::get_result_44( void )
+float CMemory::get_result_44( void )
 {return result_44;}
-void Cmemory::set_result_44( float val )
+void CMemory::set_result_44( float val )
 { result_44 = val;
   EEPROM.put( EEPROM_ADDRESS_RESULT_44, val );
 }
-float Cmemory::get_result_45( void )
+float CMemory::get_result_45( void )
 {return result_45;}
-void Cmemory::set_result_45( float val )
+void CMemory::set_result_45( float val )
 { result_45 = val;
   EEPROM.put( EEPROM_ADDRESS_RESULT_45, val );
 }
-float Cmemory::get_result_46( void )
+float CMemory::get_result_46( void )
 {return result_46;}
-void Cmemory::set_result_46( float val )
+void CMemory::set_result_46( float val )
 { result_46 = val;
   EEPROM.put( EEPROM_ADDRESS_RESULT_46, val );
 }
-float Cmemory::get_result_47( void )
+float CMemory::get_result_47( void )
 {return result_47;}
-void Cmemory::set_result_47( float val )
+void CMemory::set_result_47( float val )
 { result_47 = val;
   EEPROM.put( EEPROM_ADDRESS_RESULT_47, val );
 }
-float Cmemory::get_result_48( void )
+float CMemory::get_result_48( void )
 {return result_48;}
-void Cmemory::set_result_48( float val )
+void CMemory::set_result_48( float val )
 { result_48 = val;
   EEPROM.put( EEPROM_ADDRESS_RESULT_48, val );
 }
-float Cmemory::get_result_49( void )
+float CMemory::get_result_49( void )
 {return result_49;}
-void Cmemory::set_result_49( float val )
+void CMemory::set_result_49( float val )
 { result_49 = val;
   EEPROM.put( EEPROM_ADDRESS_RESULT_49, val );
 }
 
                                    
 
-void Cmemory::host_cmd( void )
+void CMemory::host_cmd( void )
 {
 bool known_key = false;
 
@@ -699,7 +702,7 @@ bool known_key = false;
         if ( !error ) {     
                       
             if ( doc.containsKey("serial_level") ) {
-                set_serial_level( doc["serial_level"] );
+                set_log_level( doc["serial_level"] );
                 known_key = true;
             }  
 
@@ -1039,7 +1042,7 @@ bool known_key = false;
                 }else if( key == "st_mode" ) {
                     send_st_mode( doc );
                 }else if( key == "serial_level" ) {
-                    send_serial_level( doc );
+                    send_log_level( doc );
                 }
                 
                 else if( key == "input0" ) {
@@ -1255,7 +1258,7 @@ bool known_key = false;
  *  Envia todos los parametros del experimento en formato json.
  */
 
-void Cmemory::send_all_parameters( JsonDocument& doc )
+void CMemory::send_all_parameters( JsonDocument& doc )
 {
     doc["input0"] = get_input0();
     doc["input1"] = get_input1();
@@ -1344,7 +1347,7 @@ void Cmemory::send_all_parameters( JsonDocument& doc )
  *  Envia todos los parametros de calibracion de la flexion y el nivel de serialgeo.
  */
 
-void Cmemory::send_all_input( JsonDocument& doc )
+void CMemory::send_all_input( JsonDocument& doc )
 {
     doc["input0"] = get_input0();
     doc["input1"] = get_input1();
@@ -1354,7 +1357,7 @@ void Cmemory::send_all_input( JsonDocument& doc )
     serializeJsonPretty( doc, Serial );
 }
 
-void Cmemory::send_all_output( JsonDocument& doc )
+void CMemory::send_all_output( JsonDocument& doc )
 {
     doc["output0"] = get_output0();
     doc["output1"] = get_output1();
@@ -1365,7 +1368,7 @@ void Cmemory::send_all_output( JsonDocument& doc )
 }
 
 
-void Cmemory::send_all_cfg( JsonDocument& doc )
+void CMemory::send_all_cfg( JsonDocument& doc )
 {
     doc["cfg0"] = get_cfg0();  
     doc["cfg1"] = get_cfg1();  
@@ -1379,7 +1382,7 @@ void Cmemory::send_all_cfg( JsonDocument& doc )
     doc["cfg9"] = get_cfg9();
     serializeJsonPretty( doc, Serial );
 }
-void Cmemory::send_all_result( JsonDocument& doc )
+void CMemory::send_all_result( JsonDocument& doc )
 {
     doc["result_0"] = get_result_0();
     doc["result_1"] = get_result_1();
@@ -1442,18 +1445,18 @@ void Cmemory::send_all_result( JsonDocument& doc )
 }
 
 
-void Cmemory::send_all_lib( JsonDocument& doc )
+void CMemory::send_all_lib( JsonDocument& doc )
 {
     doc["version"] = FIRMWARE_VERSION;
     doc["st_mode"] =  get_st_mode();
-    doc["serial_level"] =  get_serial_level();
+    doc["serial_level"] =  get_log_level();
     doc["status"] = get_st_test();
     
     serializeJsonPretty( doc, Serial );
 }
 
 //Envia el status del test
-void Cmemory::send_test_finish( void )
+void CMemory::send_test_finish( void )
 {
     StaticJsonDocument<512> doc;   
     doc["st_test"] = get_st_test();  
@@ -1461,7 +1464,7 @@ void Cmemory::send_test_finish( void )
 }
 
 // Envia la version del firmware.
-void Cmemory::send_version( JsonDocument& doc )
+void CMemory::send_version( JsonDocument& doc )
 {
     doc["version"] = FIRMWARE_VERSION;
 
@@ -1469,15 +1472,15 @@ void Cmemory::send_version( JsonDocument& doc )
 }
 
 // Envia el nivel de serialeo
-void Cmemory::send_serial_level( JsonDocument& doc )
+void CMemory::send_log_level( JsonDocument& doc )
 {
-    doc["serial_level"] =  get_serial_level();
+    doc["serial_level"] =  get_log_level();
 
     serializeJsonPretty( doc, Serial );
 }
 
 // Envia el estatus del ensayo.
-void Cmemory::send_status( JsonDocument& doc )
+void CMemory::send_status( JsonDocument& doc )
 {
     doc["status"] = get_st_test();
 
@@ -1485,268 +1488,268 @@ void Cmemory::send_status( JsonDocument& doc )
 }
 
 // Envia el modo del ensayo.
-void Cmemory::send_st_mode( JsonDocument& doc )
+void CMemory::send_st_mode( JsonDocument& doc )
 {
     doc["st_mode"] = get_st_mode();
 
     serializeJsonPretty( doc, Serial );
 }
 
-void Cmemory::send_input0( JsonDocument& doc )
+void CMemory::send_input0( JsonDocument& doc )
 {
     doc["input0"] =  get_input0();
     serializeJsonPretty( doc, Serial );
 }
-void Cmemory::send_input1( JsonDocument& doc )
+void CMemory::send_input1( JsonDocument& doc )
 {
     doc["input1"] =  get_input1();
     serializeJsonPretty( doc, Serial );
 }
-void Cmemory::send_input2( JsonDocument& doc )
+void CMemory::send_input2( JsonDocument& doc )
 {
     doc["input2"] =  get_input2();
     serializeJsonPretty( doc, Serial );
 }
-void Cmemory::send_input3( JsonDocument& doc )
+void CMemory::send_input3( JsonDocument& doc )
 {
     doc["input3"] =  get_input3();
     serializeJsonPretty( doc, Serial );
 }
-void Cmemory::send_input4( JsonDocument& doc )
+void CMemory::send_input4( JsonDocument& doc )
 {
     doc["input4"] =  get_input4();
     serializeJsonPretty( doc, Serial );
 }
 
 
-void Cmemory::send_output0( JsonDocument& doc )
+void CMemory::send_output0( JsonDocument& doc )
 {
     doc["output0"] =  get_output0();
     serializeJsonPretty( doc, Serial );
 }
-void Cmemory::send_output1( JsonDocument& doc )
+void CMemory::send_output1( JsonDocument& doc )
 {
     doc["output1"] =  get_output1();
     serializeJsonPretty( doc, Serial );
 }
-void Cmemory::send_output2( JsonDocument& doc )
+void CMemory::send_output2( JsonDocument& doc )
 {
     doc["output2"] =  get_output2();
     serializeJsonPretty( doc, Serial );
 }
-void Cmemory::send_output3( JsonDocument& doc )
+void CMemory::send_output3( JsonDocument& doc )
 {
     doc["output3"] =  get_output3();
     serializeJsonPretty( doc, Serial );
 }
-void Cmemory::send_output4( JsonDocument& doc )
+void CMemory::send_output4( JsonDocument& doc )
 {
     doc["output4"] =  get_output4();
     serializeJsonPretty( doc, Serial );
 }
 
 
-void Cmemory::send_cfg0( JsonDocument& doc )
+void CMemory::send_cfg0( JsonDocument& doc )
 {
     doc["cfg0"] =  get_cfg0();
     serializeJsonPretty( doc, Serial );
 }
-void Cmemory::send_cfg1( JsonDocument& doc )
+void CMemory::send_cfg1( JsonDocument& doc )
 {
     doc["cfg1"] =  get_cfg1();
     serializeJsonPretty( doc, Serial );
 }
-void Cmemory::send_cfg2( JsonDocument& doc )
+void CMemory::send_cfg2( JsonDocument& doc )
 {
     doc["cfg2"] =  get_cfg2();
     serializeJsonPretty( doc, Serial );
 }
-void Cmemory::send_cfg3( JsonDocument& doc )
+void CMemory::send_cfg3( JsonDocument& doc )
 {
     doc["cfg3"] =  get_cfg3();
     serializeJsonPretty( doc, Serial );
 }
-void Cmemory::send_cfg4( JsonDocument& doc )
+void CMemory::send_cfg4( JsonDocument& doc )
 {
     doc["cfg4"] =  get_cfg4();
     serializeJsonPretty( doc, Serial );
 }
-void Cmemory::send_cfg5( JsonDocument& doc )
+void CMemory::send_cfg5( JsonDocument& doc )
 {
     doc["cfg5"] =  get_cfg5();
     serializeJsonPretty( doc, Serial );
 }
-void Cmemory::send_cfg6( JsonDocument& doc )
+void CMemory::send_cfg6( JsonDocument& doc )
 {
     doc["cfg6"] =  get_cfg6();
     serializeJsonPretty( doc, Serial );
 }
-void Cmemory::send_cfg7( JsonDocument& doc )
+void CMemory::send_cfg7( JsonDocument& doc )
 {
     doc["cfg7"] =  get_cfg7();
     serializeJsonPretty( doc, Serial );
 }
-void Cmemory::send_cfg8( JsonDocument& doc )
+void CMemory::send_cfg8( JsonDocument& doc )
 {
     doc["cfg8"] =  get_cfg8();
     serializeJsonPretty( doc, Serial );
 }
-void Cmemory::send_cfg9( JsonDocument& doc )
+void CMemory::send_cfg9( JsonDocument& doc )
 {
     doc["cfg9"] =  get_cfg9();
     serializeJsonPretty( doc, Serial );
 }
 
-void Cmemory::send_result_0( JsonDocument& doc )
+void CMemory::send_result_0( JsonDocument& doc )
 {
   doc["result_0"] =  get_result_0();
   serializeJsonPretty( doc, Serial );
 }
-void Cmemory::send_result_1( JsonDocument& doc )
+void CMemory::send_result_1( JsonDocument& doc )
 {
   doc["result_1"] =  get_result_1();
   serializeJsonPretty( doc, Serial );
 }
-void Cmemory::send_result_2( JsonDocument& doc )
+void CMemory::send_result_2( JsonDocument& doc )
 {
   doc["result_2"] =  get_result_2();
   serializeJsonPretty( doc, Serial );
 }
-void Cmemory::send_result_3( JsonDocument& doc )
+void CMemory::send_result_3( JsonDocument& doc )
 {
   doc["result_3"] =  get_result_3();
   serializeJsonPretty( doc, Serial );
 }
-void Cmemory::send_result_4( JsonDocument& doc )
+void CMemory::send_result_4( JsonDocument& doc )
 {
   doc["result_4"] =  get_result_4();
   serializeJsonPretty( doc, Serial );
 }
-void Cmemory::send_result_5( JsonDocument& doc )
+void CMemory::send_result_5( JsonDocument& doc )
 {
   doc["result_5"] =  get_result_5();
   serializeJsonPretty( doc, Serial );
 }
-void Cmemory::send_result_6( JsonDocument& doc )
+void CMemory::send_result_6( JsonDocument& doc )
 {
   doc["result_6"] =  get_result_6();
   serializeJsonPretty( doc, Serial );
 }
-void Cmemory::send_result_7( JsonDocument& doc )
+void CMemory::send_result_7( JsonDocument& doc )
 {
   doc["result_7"] =  get_result_7();
   serializeJsonPretty( doc, Serial );
 }
-void Cmemory::send_result_8( JsonDocument& doc )
+void CMemory::send_result_8( JsonDocument& doc )
 {
   doc["result_8"] =  get_result_8();
   serializeJsonPretty( doc, Serial );
 }
-void Cmemory::send_result_9( JsonDocument& doc )
+void CMemory::send_result_9( JsonDocument& doc )
 {
   doc["result_9"] =  get_result_9();
   serializeJsonPretty( doc, Serial );
 }
 
 
-void Cmemory::send_result_10( JsonDocument& doc )
+void CMemory::send_result_10( JsonDocument& doc )
 {
   doc["result_10"] =  get_result_10();
   serializeJsonPretty( doc, Serial );
 }
-void Cmemory::send_result_11( JsonDocument& doc )
+void CMemory::send_result_11( JsonDocument& doc )
 {
   doc["result_11"] =  get_result_11();
   serializeJsonPretty( doc, Serial );
 }
-void Cmemory::send_result_12( JsonDocument& doc )
+void CMemory::send_result_12( JsonDocument& doc )
 {
   doc["result_12"] =  get_result_12();
   serializeJsonPretty( doc, Serial );
 }
-void Cmemory::send_result_13( JsonDocument& doc )
+void CMemory::send_result_13( JsonDocument& doc )
 {
   doc["result_13"] =  get_result_13();
   serializeJsonPretty( doc, Serial );
 }
-void Cmemory::send_result_14( JsonDocument& doc )
+void CMemory::send_result_14( JsonDocument& doc )
 {
   doc["result_14"] =  get_result_14();
   serializeJsonPretty( doc, Serial );
 }
-void Cmemory::send_result_15( JsonDocument& doc )
+void CMemory::send_result_15( JsonDocument& doc )
 {
   doc["result_15"] =  get_result_15();
   serializeJsonPretty( doc, Serial );
 }
-void Cmemory::send_result_16( JsonDocument& doc )
+void CMemory::send_result_16( JsonDocument& doc )
 {
   doc["result_16"] =  get_result_16();
   serializeJsonPretty( doc, Serial );
 }
-void Cmemory::send_result_17( JsonDocument& doc )
+void CMemory::send_result_17( JsonDocument& doc )
 {
   doc["result_17"] =  get_result_17();
   serializeJsonPretty( doc, Serial );
 }
-void Cmemory::send_result_18( JsonDocument& doc )
+void CMemory::send_result_18( JsonDocument& doc )
 {
   doc["result_18"] =  get_result_18();
   serializeJsonPretty( doc, Serial );
 }
-void Cmemory::send_result_19( JsonDocument& doc )
+void CMemory::send_result_19( JsonDocument& doc )
 {
   doc["result_19"] =  get_result_19();
   serializeJsonPretty( doc, Serial );
 }
 
 
-void Cmemory::send_result_20( JsonDocument& doc )
+void CMemory::send_result_20( JsonDocument& doc )
 {
   doc["result_20"] =  get_result_20();
   serializeJsonPretty( doc, Serial );
 }
-void Cmemory::send_result_21( JsonDocument& doc )
+void CMemory::send_result_21( JsonDocument& doc )
 {
   doc["result_21"] =  get_result_21();
   serializeJsonPretty( doc, Serial );
 }
-void Cmemory::send_result_22( JsonDocument& doc )
+void CMemory::send_result_22( JsonDocument& doc )
 {
   doc["result_22"] =  get_result_22();
   serializeJsonPretty( doc, Serial );
 }
-void Cmemory::send_result_23( JsonDocument& doc )
+void CMemory::send_result_23( JsonDocument& doc )
 {
   doc["result_23"] =  get_result_23();
   serializeJsonPretty( doc, Serial );
 }
-void Cmemory::send_result_24( JsonDocument& doc )
+void CMemory::send_result_24( JsonDocument& doc )
 {
   doc["result_24"] =  get_result_24();
   serializeJsonPretty( doc, Serial );
 }
-void Cmemory::send_result_25( JsonDocument& doc )
+void CMemory::send_result_25( JsonDocument& doc )
 {
   doc["result_25"] =  get_result_25();
   serializeJsonPretty( doc, Serial );
 }
-void Cmemory::send_result_26( JsonDocument& doc )
+void CMemory::send_result_26( JsonDocument& doc )
 {
   doc["result_26"] =  get_result_26();
   serializeJsonPretty( doc, Serial );
 }
-void Cmemory::send_result_27( JsonDocument& doc )
+void CMemory::send_result_27( JsonDocument& doc )
 {
   doc["result_27"] =  get_result_27();
   serializeJsonPretty( doc, Serial );
 }
-void Cmemory::send_result_28( JsonDocument& doc )
+void CMemory::send_result_28( JsonDocument& doc )
 {
   doc["result_28"] =  get_result_28();
   serializeJsonPretty( doc, Serial );
 }
-void Cmemory::send_result_29( JsonDocument& doc )
+void CMemory::send_result_29( JsonDocument& doc )
 {
   doc["result_29"] =  get_result_29();
   serializeJsonPretty( doc, Serial );
@@ -1754,52 +1757,52 @@ void Cmemory::send_result_29( JsonDocument& doc )
 
 
 
-void Cmemory::send_result_30( JsonDocument& doc )
+void CMemory::send_result_30( JsonDocument& doc )
 {
   doc["result_30"] =  get_result_30();
   serializeJsonPretty( doc, Serial );
 }
-void Cmemory::send_result_31( JsonDocument& doc )
+void CMemory::send_result_31( JsonDocument& doc )
 {
   doc["result_31"] =  get_result_31();
   serializeJsonPretty( doc, Serial );
 }
-void Cmemory::send_result_32( JsonDocument& doc )
+void CMemory::send_result_32( JsonDocument& doc )
 {
   doc["result_32"] =  get_result_32();
   serializeJsonPretty( doc, Serial );
 }
-void Cmemory::send_result_33( JsonDocument& doc )
+void CMemory::send_result_33( JsonDocument& doc )
 {
   doc["result_33"] =  get_result_33();
   serializeJsonPretty( doc, Serial );
 }
-void Cmemory::send_result_34( JsonDocument& doc )
+void CMemory::send_result_34( JsonDocument& doc )
 {
   doc["result_34"] =  get_result_34();
   serializeJsonPretty( doc, Serial );
 }
-void Cmemory::send_result_35( JsonDocument& doc )
+void CMemory::send_result_35( JsonDocument& doc )
 {
   doc["result_35"] =  get_result_35();
   serializeJsonPretty( doc, Serial );
 }
-void Cmemory::send_result_36( JsonDocument& doc )
+void CMemory::send_result_36( JsonDocument& doc )
 {
   doc["result_36"] =  get_result_36();
   serializeJsonPretty( doc, Serial );
 }
-void Cmemory::send_result_37( JsonDocument& doc )
+void CMemory::send_result_37( JsonDocument& doc )
 {
   doc["result_37"] =  get_result_37();
   serializeJsonPretty( doc, Serial );
 }
-void Cmemory::send_result_38( JsonDocument& doc )
+void CMemory::send_result_38( JsonDocument& doc )
 {
   doc["result_38"] =  get_result_38();
   serializeJsonPretty( doc, Serial );
 }
-void Cmemory::send_result_39( JsonDocument& doc )
+void CMemory::send_result_39( JsonDocument& doc )
 {
   doc["result_39"] =  get_result_39();
   serializeJsonPretty( doc, Serial );
@@ -1807,52 +1810,52 @@ void Cmemory::send_result_39( JsonDocument& doc )
 
 
 
-void Cmemory::send_result_40( JsonDocument& doc )
+void CMemory::send_result_40( JsonDocument& doc )
 {
   doc["result_40"] =  get_result_40();
   serializeJsonPretty( doc, Serial );
 }
-void Cmemory::send_result_41( JsonDocument& doc )
+void CMemory::send_result_41( JsonDocument& doc )
 {
   doc["result_41"] =  get_result_41();
   serializeJsonPretty( doc, Serial );
 }
-void Cmemory::send_result_42( JsonDocument& doc )
+void CMemory::send_result_42( JsonDocument& doc )
 {
   doc["result_42"] =  get_result_42();
   serializeJsonPretty( doc, Serial );
 }
-void Cmemory::send_result_43( JsonDocument& doc )
+void CMemory::send_result_43( JsonDocument& doc )
 {
   doc["result_43"] =  get_result_43();
   serializeJsonPretty( doc, Serial );
 }
-void Cmemory::send_result_44( JsonDocument& doc )
+void CMemory::send_result_44( JsonDocument& doc )
 {
   doc["result_44"] =  get_result_44();
   serializeJsonPretty( doc, Serial );
 }
-void Cmemory::send_result_45( JsonDocument& doc )
+void CMemory::send_result_45( JsonDocument& doc )
 {
   doc["result_45"] =  get_result_45();
   serializeJsonPretty( doc, Serial );
 }
-void Cmemory::send_result_46( JsonDocument& doc )
+void CMemory::send_result_46( JsonDocument& doc )
 {
   doc["result_46"] =  get_result_46();
   serializeJsonPretty( doc, Serial );
 }
-void Cmemory::send_result_47( JsonDocument& doc )
+void CMemory::send_result_47( JsonDocument& doc )
 {
   doc["result_47"] =  get_result_47();
   serializeJsonPretty( doc, Serial );
 }
-void Cmemory::send_result_48( JsonDocument& doc )
+void CMemory::send_result_48( JsonDocument& doc )
 {
   doc["result_48"] =  get_result_48();
   serializeJsonPretty( doc, Serial );
 }
-void Cmemory::send_result_49( JsonDocument& doc )
+void CMemory::send_result_49( JsonDocument& doc )
 {
   doc["result_49"] =  get_result_49();
   serializeJsonPretty( doc, Serial );
@@ -1861,7 +1864,7 @@ void Cmemory::send_result_49( JsonDocument& doc )
 
 
 // Envia el resultado en formato json
-void Cmemory::send_ok( JsonDocument& doc )
+void CMemory::send_ok( JsonDocument& doc )
 {
     doc[ "result" ] = "ok";
 
@@ -1869,9 +1872,159 @@ void Cmemory::send_ok( JsonDocument& doc )
 }
 
 // Envia el resultado en formato json
-void Cmemory::send_ack( JsonDocument& doc )
+void CMemory::send_ack( JsonDocument& doc )
 {
     doc[ "result" ] = "ack";
 
     serializeJsonPretty( doc, Serial );
+}
+
+float CMemory::get_input(uint8_t param){
+
+   switch (param) {
+
+    case 1:
+
+      return get_input0();
+
+    break;
+
+    case 2:
+
+      return get_input1();
+
+    break;
+
+    case 3:
+
+      return get_input2();
+
+    break;
+
+    case 4:
+
+      return get_input3();
+
+    break;
+
+    case 5:
+
+      return get_input4();
+
+    break;
+    
+    default:
+      return 55555;
+   }
+}
+
+
+void  CMemory::set_output(uint8_t param, float value)
+
+{
+
+   switch (param) {
+
+    case 10:
+    
+      set_output0(value);
+
+    break;
+
+    case 20:
+
+     set_output1(value);
+
+    break;
+
+    case 30:
+
+      set_output2(value);
+
+    break;
+
+    case 40:
+
+      set_output3(value);
+
+    break;
+
+    case 50:
+
+      set_output4(value);
+
+    break;
+    
+    default:
+      66666;
+   }
+}
+
+float CMemory::get_cfg(uint8_t param){
+
+   switch (param) {
+
+    case 11:
+
+      return get_cfg0();
+
+    break;
+
+    case 22:
+
+      return get_cfg1();
+
+    break;
+
+    case 33:
+
+      return get_cfg2();
+
+    break;
+
+    case 44:
+
+      return get_cfg3();
+
+    break;
+
+    case 55:
+
+      return get_cfg4();
+
+    break;
+
+    case 66:
+
+      return get_cfg5();
+
+    break;
+
+    case 77:
+
+      return get_cfg6();
+
+    break;
+
+    case 88:
+
+      return get_cfg7();
+
+    break;
+
+    case 99:
+
+      return get_cfg8();
+
+    break;
+
+    case 100:
+
+      return get_cfg9();
+
+    break;
+    
+    default:
+      return 77777;
+   }
 }

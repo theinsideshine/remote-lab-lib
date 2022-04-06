@@ -11,20 +11,20 @@
  *
  *      Universidad de la Marina Mercante.
  */
-#include "serial.h"
+#include "log.h"
 
-Cserial::Cserial()
+CLog::CLog()
 {
-    level = serial_CTRL_JSON;
+    level = LOG_CTRL_JSON;
 }
 
-void Cserial::init( uint8_t level )
+void CLog::init( uint8_t level )
 {
-    Serial.begin( serial_SERIAL_SPEED );
+    Serial.begin( LOG_SERIAL_SPEED );
     set_level( level );    
 }
 
-void Cserial::set_level( uint8_t level )
+void CLog::set_level( uint8_t level )
 {
     this->level = level;
 }
@@ -36,9 +36,9 @@ void Cserial::set_level( uint8_t level )
 // NOTA: para ahorrar memoria RAM usa la version vsnprintf_P para que los
 //       string se almacenen en la flash. Hay que anteponer el modificador
 //       F(), ejemplo: serial_msg( F("valor = %d"), var );
-void Cserial::msg( const __FlashStringHelper *fmt, ... )
+void CLog::msg( const __FlashStringHelper *fmt, ... )
 {
-    if( level ==  serial_MSG  ){
+    if( level ==  LOG_MSG  ){
         char buf[ 128 ];
         va_list args;
 
@@ -59,7 +59,7 @@ void Cserial::msg( const __FlashStringHelper *fmt, ... )
 // NOTA: para ahorrar memoria RAM usa la version vsnprintf_P para que los
 //       string se almacenen en la flash. Hay que anteponer el modificador
 //       F(), ejemplo: serial_msg( F("valor = %d"), var );
-void Cserial::msg_ctrl( const __FlashStringHelper *fmt, ... )
+void CLog::msg_ctrl( const __FlashStringHelper *fmt, ... )
 {
 char buf[ 256 ];
 va_list args;
@@ -74,12 +74,12 @@ va_list args;
 // serialuea la informacion de control. Hay dos opciones, la primera es para serialeos
 // para pos-procesar con excel. Y la segunda es para procesarla en tiempo real con
 // la utilidad plotter de arduino.
-void Cserial::ctrl( uint16_t raw, uint16_t filtered, uint8_t state, uint16_t danger_point )
+void CLog::ctrl( uint16_t raw, uint16_t filtered, uint8_t state, uint16_t danger_point )
 {
-    if( level == serial_CTRL_JSON ){
+    if( level == LOG_CTRL_JSON ){
       msg_ctrl( F("{\"info\":\"serial\",\"time\":%lu,\"raw\":%d,\"filtered\":%d,\"state\":%d}"),
                  millis() , raw, filtered, state, danger_point );
-    }else if( level == serial_CTRL_ARDUINO_PLOTTER ) {
+    }else if( level == LOG_CTRL_ARDUINO_PLOTTER ) {
         // Escala el estado para mejorar la visualizacion.
         uint16_t scale = map( state, 0, 3, 0, 5000 );
 

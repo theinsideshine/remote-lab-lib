@@ -1,10 +1,10 @@
 /**
  * File:   Clase que da soporte a los leds de debug
  *
- * - Compiler:           Arduino 1.8.13
+ * - Compiler:           Arduino 1.8.15
  * - Supported devices:  Mega
  *
- * \author               MV: luis.villacorta@alumnos.udemm.edu.ar
+ * \author              
  *                       LC: leandro.cintioli@alumnos.udemm.edu.ar
  *                       PT: pablo.tavolaro@alumnos.udemm.edu.ar
  *

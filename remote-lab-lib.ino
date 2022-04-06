@@ -63,9 +63,10 @@
 
 
 
-#include "serial.h"
+#include "log.h"
 #include "memory.h"
 #include "led.h"
+#include "param.h"
 
 
 
@@ -93,11 +94,21 @@
  * Clases del sistema
  */
 
-Cserial    serial;
-Cmemory memory;
+CLog    Log;
+CMemory Memory;
 CLed     Led;
- 
 
+ 
+void experiment( void ){
+
+  
+   Log.msg( F("Experimento terminado2"));
+   Memory.set_output(ACELERACION, ( Memory.get_input(FUERZA)  + Memory.get_cfg(INPUT0_ADD) ) );
+   Memory.set_output(MILIMETROS,  ( Memory.get_input(PESO)    + Memory.get_cfg(INPUT1_ADD) ) );
+   Memory.set_output(AMPER,       ( Memory.get_input(ENERGIA) + Memory.get_cfg(INPUT2_ADD) ) );
+   Memory.set_output(NEWTON,      ( Memory.get_input(TENSION) + Memory.get_cfg(INPUT3_ADD) ) );
+   Memory.set_output(ANGULO,      ( Memory.get_input(POTENCIA)+ Memory.get_cfg(INPUT4_ADD) ) );
+}
 
 /*
  * memoryura el final de ensayo
@@ -107,10 +118,10 @@ CLed     Led;
 void end_experiment( void ) {
  
   //Led.n_blink(3, 1000);                       // 2 blinks cada 2000 ms;
-  serial.msg( F("Experimento terminado"));
+  Log.msg( F("Experimento terminado"));
   
-  memory.set_st_test( false );
-  memory.send_test_finish(); // Informa al servidor que termino el ensayo.
+  Memory.set_st_test( false );
+  Memory.send_test_finish(); // Informa al servidor que termino el ensayo.
 }
 
 /*
@@ -119,24 +130,24 @@ void end_experiment( void ) {
 
 void setup()
 {
-  serial.init( memory.get_serial_level() );
-  //Serial.println("Init Serial");
+  Log.init( Memory.get_log_level() );
+  Serial.println("Init Serial");
   /*
       Para activar la visualisacion  enviar por serie {serial_level:'1'}
   */
 
-  serial.msg( F("Remote Lab library - %s"), FIRMWARE_VERSION );
-  serial.msg( F("UDEMM - 2022") );
+  Log.msg( F("Remote Lab library - %s"), FIRMWARE_VERSION );
+  Log.msg( F("UDEMM - 2022") );
 
 
   Led.init();
-  serial.msg( F("Led init") );
+  Log.msg( F("Led init") );
   Led.n_blink(2, 500); // 1 blinks cada 2000 ms
  
 
 
 
-  serial.msg( F("Sistema inicializado") );
+  Log.msg( F("Sistema inicializado") );
 
 }
  
@@ -149,10 +160,10 @@ void loop()
   static uint8_t  st_loop = ST_LOOP_INIT;   
   
   // Verifica si el host envio un JSON con parametros a procesar.
-  memory.host_cmd();
+  Memory.host_cmd();
   
   // Actualiza el nivel de serial para detener en tiempo real el envio de parametros.
-  serial.set_level( memory.get_serial_level() );
+  Log.set_level( Memory.get_log_level() );
   
   switch ( st_loop ) {
 
@@ -167,19 +178,19 @@ void loop()
 
       
        
-      if (memory.get_st_test() == true ) {                   // Espera que se comienzo al ensayo.        
+      if (Memory.get_st_test() == true ) {                   // Espera que se comienzo al ensayo.        
         st_loop = ST_LOOP_HOME_M2; 
       }
       
     break;
 
-    
+
     case ST_LOOP_HOME_M2:    
 
        
-      serial.msg( F("Comienzo del experimento") );         
+      Log.msg( F("Comienzo del experimento") );         
       Led.n_blink(5, 500);
-     
+      experiment();
       
       st_loop = ST_LOOP_OFF_TEST;
       
@@ -198,7 +209,7 @@ void loop()
 
   }
 #ifdef ST_DEBUG
-  serial.msg( F("ST_LOOP= %d"), st_loop );
+  Log.msg( F("ST_LOOP= %d"), st_loop );
 #endif //ST_DEBUG
 
 

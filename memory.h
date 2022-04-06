@@ -18,11 +18,11 @@
 #include "Arduino.h"
 #include <ArduinoJson.h>
 
-#define FIRMWARE_VERSION                "1.0.03" // Error de tipeo en all-output
+#define FIRMWARE_VERSION                "2.0.00" // Soporte para getter y setter del usuario
                                                
                                                   
 //#define EEPROM_ADDRESS_memory         4       // Direccion en la epprom donde se almacena la memoryuracion.
-#define MAGIC_NUMBER                    22    // Numero magico para detectar memoria sin inicializar.
+#define MAGIC_NUMBER                    100    // Numero magico para detectar memoria sin inicializar.
 
 #define ST_TEST_DEFAULT                 0              //  Estado del test pòr defecto.
 #define ST_MODE_DEFAULT                 ST_MODE_TEST   //  Modo de operacion del sistema. 
@@ -33,11 +33,11 @@
 #define INPUT_3_DEFAULT               3.2  
 #define INPUT_4_DEFAULT               4.4  
 
-#define OUTPUT_0_DEFAULT               11.9 
-#define OUTPUT_1_DEFAULT               10.9 
-#define OUTPUT_2_DEFAULT               20.9 
-#define OUTPUT_3_DEFAULT               30.9
-#define OUTPUT_4_DEFAULT               40.9 
+#define OUTPUT_0_DEFAULT               110.9 
+#define OUTPUT_1_DEFAULT               100.9 
+#define OUTPUT_2_DEFAULT               200.9 
+#define OUTPUT_3_DEFAULT               300.9
+#define OUTPUT_4_DEFAULT               400.9 
  
 
 #define CFG_0_DEFAULT                  7000.123
@@ -218,13 +218,13 @@
 #define ST_MODE_CELL                    2               // Muestra el valor de las celdas.
 
 
-class Cmemory
+class CMemory
 {
   public:
-    Cmemory();
+    CMemory();
 
-    uint8_t get_serial_level( void );
-    void set_serial_level( uint8_t enable );
+    uint8_t get_log_level( void );
+    void set_log_level( uint8_t enable );
 
     uint8_t get_st_test( void );
     void set_st_test( uint8_t enable );
@@ -387,8 +387,15 @@ class Cmemory
     void host_cmd( void );
     void send_test_finish(void);
 
+
+     //getter and setter
+   float get_input(uint8_t param);    
+   void  set_output(uint8_t param, float value);
+   float get_cfg(uint8_t param); 
+   
+
   private:
-    uint8_t serial_level;         // 0 = serial de informacion de control desactivada.
+    uint8_t log_level;         // 0 = serial de informacion de control desactivada.
     uint8_t st_test;            // Estado del ensayo 
     uint8_t st_mode;            // Modo del ensayo
 
@@ -482,7 +489,7 @@ class Cmemory
     void send_ok( JsonDocument& );
     void send_ack( JsonDocument& );
     void send_status( JsonDocument& doc );    
-    void send_serial_level( JsonDocument& doc );
+    void send_log_level( JsonDocument& doc );
     void send_st_mode( JsonDocument& doc );
 
     void send_input0(JsonDocument& doc);
@@ -563,6 +570,7 @@ class Cmemory
    void send_result_48(JsonDocument& doc);    
    void send_result_49(JsonDocument& doc);
 
+  
    
 };
 
