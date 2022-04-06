@@ -20,7 +20,7 @@
 // {read:'all-output'}        Envia todos los parametros de salida.
 // {read:'all-cfg'}           Envia todos los parametros de configuracion
 // {read:'all-lib'}           Envia todos los parametros de configuracion de remoteLabLib
-// {read:'all-float'}         Envia todos los parametros de resultados
+// {read:'all-result'}         Envia todos los parametros de resultados
  
 // {read:'version'}           Envia  la version del firmware.
 // {read:'status'}            Devuelve el estatus del ensayo.
@@ -106,7 +106,7 @@ CLed     Led;
 
 void end_experiment( void ) {
  
-  Led.n_blink(3, 1000);                       // 2 blinks cada 2000 ms;
+  //Led.n_blink(3, 1000);                       // 2 blinks cada 2000 ms;
   serial.msg( F("Experimento terminado"));
   
   memory.set_st_test( false );
