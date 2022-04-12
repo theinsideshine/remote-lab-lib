@@ -51,14 +51,14 @@
 
 
 
-// {float_0:'70.123'}      float_0      parametro float
-// {float_x:'70.123'}      float_x      parametro float
+// {result0:'70.123'}      result0      parametro float
+// {resultx:'70.123'}      resultx      p
 
 // {st_test:'1'}         st_test       0 ensayo desactivado. 
 //                       st_test       1 ensayo activado. 
-// {st_mode:'0'}         st_mode       ST_MODE_TEST                    0  ensayo activado.
-//                                     ST_MODE_HOME_M2                 1 Va al home del motor 2.
-//                                     ST_MODE_CELL                    2 Lee las celdas de carga.
+// {st_mode:'0'}         st_mode       Modo de operacion normal, ensayo activado.
+// {st_mode:'100'}       st_mode       Experimento de prueba 1. 
+// {st_mode:'101'}       st_mode       Experimento de prueba 2.                                 
 
 
 
@@ -76,42 +76,25 @@
 
 #define ST_LOOP_INIT                    0     // Inicializa el programa (carga la memoryuracion).
 #define ST_LOOP_IDLE                    1     // Espera la recepcion por comando.
-#define ST_LOOP_HOME_M1                 2     // Busca la referencia del Motor 1.
-#define ST_LOOP_HOME_M2                 3     // Busca la referencia del Motor 1.
-#define ST_LOOP_POINT_M1                4     // Se mueve m1 cantidada de pasos requeridos en mm.
-
-#define ST_LOOP_FORCE_M2                5     // Se mueve m2 hasta que encuentra la fuerza requerida en kilos.
-#define ST_LOOP_GET_R1                  6     // Lee la celda de carga reaction1. 
-#define ST_LOOP_GET_R2                  7     // Lee la celda de carga reaction2. 
-#define ST_LOOP_GET_FLEXION             8     // Calcula la flexion y la guarda en la memoryuracion
-#define ST_LOOP_OFF_TEST                9    // Termino el ensayo.
-#define ST_LOOP_MODE_HOME_M2            10    // Se mueve al home 2.
-#define ST_LOOP_MODE_CELL               11    // Lee las celdas de carga.
-
-
+#define ST_LOOP_RUN_TEST                2     // Experimento en ejecucion. 
+#define ST_LOOP_END_TEST                3     // Termino el ensayo.
+#define ST_MODE_RUN_EXAMPLE1            4     // Experimento1 para ejecutar desde el frontEnd
+#define ST_MODE_RUN_EXAMPLE2            5     // Experimento2 para ejecutar desde el frontEnd
 
 /*
  * Clases del sistema
  */
 
-CLog    Log;
-CMemory Memory;
-CLed     Led;
+CLog    Log;                              // Manejo del puerto serie.
+CMemory Memory;                           // Manejo de la memoria EEPROM
+CLed     Led;                             // Manejo del led.
 
- 
-void experiment( void ){
+static void experiment( void );          // Experimento escrito por el usuario1
+static void run_example1( void );        // Experimento de prueba1
 
-  
-   Log.msg( F("Experimento terminado2"));
-   Memory.set_output(ACELERACION, ( Memory.get_input(FUERZA)  + Memory.get_cfg(INPUT0_ADD) ) );
-   Memory.set_output(MILIMETROS,  ( Memory.get_input(PESO)    + Memory.get_cfg(INPUT1_ADD) ) );
-   Memory.set_output(AMPER,       ( Memory.get_input(ENERGIA) + Memory.get_cfg(INPUT2_ADD) ) );
-   Memory.set_output(NEWTON,      ( Memory.get_input(TENSION) + Memory.get_cfg(INPUT3_ADD) ) );
-   Memory.set_output(ANGULO,      ( Memory.get_input(POTENCIA)+ Memory.get_cfg(INPUT4_ADD) ) );
-}
 
 /*
- * memoryura el final de ensayo
+ * realizz el final de ensayo
  * vuelve el st_test = 0 y envia el valor al servidor.
  */
 
@@ -125,12 +108,12 @@ void end_experiment( void ) {
 }
 
 /*
- *  Inicializa los dispositivos del ensayo segun opciones de precompilacion.
+ *  Inicializa los dispositivos del ensayo 
  */
 
 void setup()
 {
-  Log.init( Memory.get_log_level() );
+  Log.init( Memory.get_log_level() );// Carga el nivel de logeo en memoria
   Serial.println("Init Serial");
   /*
       Para activar la visualisacion  enviar por serie {serial_level:'1'}
@@ -139,20 +122,16 @@ void setup()
   Log.msg( F("Remote Lab library - %s"), FIRMWARE_VERSION );
   Log.msg( F("UDEMM - 2022") );
 
-
   Led.init();
   Log.msg( F("Led init") );
   Led.n_blink(2, 500); // 1 blinks cada 2000 ms
- 
-
-
 
   Log.msg( F("Sistema inicializado") );
 
 }
  
 /*
- *Loop de control del Ensayo viga simplemente apoyada 
+ *Loop de control 
  */
 
 void loop()
@@ -173,45 +152,61 @@ void loop()
 
     break;
 
-    // Espera "eventos" de ejecucion
-    case ST_LOOP_IDLE:
-
-      
+    // Espera comando de ejecucion
+    case ST_LOOP_IDLE:      
        
       if (Memory.get_st_test() == true ) {                   // Espera que se comienzo al ensayo.        
-        st_loop = ST_LOOP_HOME_M2; 
+        st_loop = ST_LOOP_RUN_TEST; 
+      }else if (Memory.get_st_mode() == ST_MODE_RUN1 ) { // Espera el modo runExample1
+        st_loop =  ST_MODE_RUN_EXAMPLE1 ;
       }
       
     break;
-
-
-    case ST_LOOP_HOME_M2:    
-
+      // Ejecuta el ensayo.
+    case ST_LOOP_RUN_TEST:    
        
       Log.msg( F("Comienzo del experimento") );         
-      Led.n_blink(5, 500);
-      experiment();
-      
-      st_loop = ST_LOOP_OFF_TEST;
+      Led.n_blink(10, 500);          
+      st_loop = ST_LOOP_END_TEST;
       
     break;    
       
      // Termina el ensayo.
-    case ST_LOOP_OFF_TEST:  
+    case ST_LOOP_END_TEST:  
     // Envia comando de final de experimento  
        end_experiment();   
       st_loop = ST_LOOP_IDLE;
       
-      break;      
+      break;   
+
+      case ST_MODE_RUN_EXAMPLE1:                    
+     
+      run_example1();      
+      st_loop = ST_LOOP_IDLE;
+      
+    break;
 
       default:
       st_loop = ST_LOOP_INIT;
 
   }
-#ifdef ST_DEBUG
+#ifdef ST_DEBUG // Definir esta macro si se desea ver el StateMachine
   Log.msg( F("ST_LOOP= %d"), st_loop );
 #endif //ST_DEBUG
+}
 
+/*
+ * Aca el usuario escribe su experimento.
+ */
 
-
+static void run_example1( void ){
+  
+   Log.msg( F("Ejemplo de prueba 1"));
+   Led.n_blink(5, 500);
+   Memory.set_output(ACELERACION, ( Memory.get_input(FUERZA)  + Memory.get_cfg(INPUT0_ADD) ) + ( 2 *  Memory.get_cfg(INPUT0_MUL)) );
+   Memory.set_output(MILIMETROS,  ( Memory.get_input(PESO)    + Memory.get_cfg(INPUT1_ADD) ) + ( 2 *  Memory.get_cfg(INPUT1_MUL)));
+   Memory.set_output(AMPER,       ( Memory.get_input(ENERGIA) + Memory.get_cfg(INPUT2_ADD) ) + ( 2 *  Memory.get_cfg(INPUT2_MUL)));
+   Memory.set_output(NEWTON,      ( Memory.get_input(TENSION) + Memory.get_cfg(INPUT3_ADD) ) + ( 2 *  Memory.get_cfg(INPUT3_MUL)));
+   Memory.set_output(ANGULO,      ( Memory.get_input(POTENCIA)+ Memory.get_cfg(INPUT4_ADD) ) + ( 2 *  Memory.get_cfg(INPUT4_MUL)));
+   Memory.set_st_mode( ST_MODE_TEST );
 }

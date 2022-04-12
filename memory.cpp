@@ -35,7 +35,7 @@ uint8_t magic_number;
 
 
          //set_serial_level( serial_DISABLED );
-        set_log_level( LOG_MSG ); // cuando cambias el magic numbre setea los mensajes de serialeo (Arduino 1,primer inicio")        
+        set_log_level( LOG_MSG );    // Cuando cambias el magic number setea los mensajes de logeo en 1 activo        
         set_st_test(ST_TEST_DEFAULT);
         set_st_mode(ST_MODE_DEFAULT );
 
@@ -124,7 +124,7 @@ uint8_t magic_number;
         //EEPROM.get( EEPROM_ADDRESS_ST_MODE, st_mode );
         
        //EEPROM.get( EEPROM_ADDRESS_ST_TEST, st_test );
-       //estos parametro inicializa en 0 independiente de como este en la eprrom ya que estos ejecutan el ST_LOOP
+       // Estos parametro inicializa en 0 independiente de como este en la eprrom ya que estos ejecutan el ST_LOOP
        set_st_test(ST_TEST_DEFAULT);
        set_st_mode(ST_MODE_DEFAULT );
 
@@ -1218,27 +1218,7 @@ bool known_key = false;
                 
             }
 
-            // Usamos cdd hasta definir que unifiquemos comandos, en realidad es cmd. 
-            // Segun el uso https://arduinojson.org/v6/api/jsondocument/containskey/ 
-            // para preguntar sobre la clave de un objeto  se usa  const char* key1 =doc["data"]["distance"];
-
-            
-            if ( doc.containsKey("cdd") ) { //Verifica "cdd".
-                String key = doc["cdd"];
-                 if( key == "start" ) {    //Verifica "start".
-                     const char* key1 =doc["data"]["input0"];
-                     const char* key2 =doc["data"]["input1"];
-                    if (key1 && key2) {   //Verifica "distance". "force".
-                       set_input0( doc["data"]["input0"]);
-                       set_input1( doc["data"]["input1"] );  
-                       set_st_test( 1 );  // Comienza el ensayo.                      
-                       send_ack( doc );
-                     }
-                  
-                 }
-             }           
-
-                    
+                              
                       
             if ( doc.containsKey("cmd") ) {
                 String key = doc["cmd"];                
@@ -1878,6 +1858,10 @@ void CMemory::send_ack( JsonDocument& doc )
 
     serializeJsonPretty( doc, Serial );
 }
+
+/* Para poder machear con los nombres en el front end, aca se fija los valores de los case en param.h 
+ *  
+ */
 
 float CMemory::get_input(uint8_t param){
 

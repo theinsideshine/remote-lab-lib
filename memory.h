@@ -18,7 +18,7 @@
 #include "Arduino.h"
 #include <ArduinoJson.h>
 
-#define FIRMWARE_VERSION                "2.0.00" // Soporte para getter y setter del usuario
+#define FIRMWARE_VERSION                "2.0.01" // Se agrego modo de experimento de prueba
                                                
                                                   
 //#define EEPROM_ADDRESS_memory         4       // Direccion en la epprom donde se almacena la memoryuracion.
@@ -214,8 +214,8 @@
 
 
 #define ST_MODE_TEST                    0               // Modo de operacion normal, ensayo activado.
-#define ST_MODE_HOME_M2                 1               // Va al home del motor 2.
-#define ST_MODE_CELL                    2               // Muestra el valor de las celdas.
+#define ST_MODE_RUN1                    100               // Experimento de prueba 1.
+#define ST_MODE_RUN2                    101               // Experimento de prueba 2.
 
 
 class CMemory

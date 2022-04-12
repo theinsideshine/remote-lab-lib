@@ -1,5 +1,5 @@
 /*
- * File:   Clase para serialuear mensajes formateados en arduino.
+ * File:   Clase para loaggear mensajes formateados en arduino.
  *
  * - Compiler:           Arduino 1.8.15
  * - Supported devices:  Mega

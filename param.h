@@ -21,6 +21,9 @@
  * DEBE CORRESPONDER CON LOS NOMBRES EN MemoryName.js, proyecto del frontEnd remote-lab-react
  */
 
+/* Para poder machear con los nombres en el front end, aca se fija los valores de los case usados en los getters y setters de memory.cpp
+ *  
+ */
 // Inputs.
 
 #define FUERZA   1

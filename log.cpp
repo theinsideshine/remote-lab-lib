@@ -29,7 +29,7 @@ void CLog::set_level( uint8_t level )
     this->level = level;
 }
 
-// Muestra informacion de serialueo por el puerto serie, precedidos
+// Muestra informacion de logge por el puerto serie, precedidos
 // por los milisegundos desde el reset.
 // Implementa un wrapper de la funcion print de C para usar string
 // formateados, ejemplo: ("distancia %d", var)
@@ -52,7 +52,7 @@ void CLog::msg( const __FlashStringHelper *fmt, ... )
     }
 }
 
-// Muestra informacion de serialueo por el puerto serie, precedidos
+// Muestra informacion de logeo por el puerto serie, precedidos
 // por los milisegundos desde el reset.
 // Implementa un wrapper de la funcion print de C para usar string
 // formateados, ejemplo: ("distancia %d", var)
@@ -71,7 +71,7 @@ va_list args;
     Serial.println( buf );
 }
 
-// serialuea la informacion de control. Hay dos opciones, la primera es para serialeos
+// Logea la informacion de control. Hay dos opciones, la primera es para loggear
 // para pos-procesar con excel. Y la segunda es para procesarla en tiempo real con
 // la utilidad plotter de arduino.
 void CLog::ctrl( uint16_t raw, uint16_t filtered, uint8_t state, uint16_t danger_point )

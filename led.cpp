@@ -11,6 +11,10 @@
  *
  *      Universidad de la Marina Mercante.
  */
+
+/*
+ * El led se conecta con el catodo a gnd y el anodo atraves de una resistencia al pin6
+ */
  
 #include "led.h"
 
