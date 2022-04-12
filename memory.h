@@ -18,7 +18,7 @@
 #include "Arduino.h"
 #include <ArduinoJson.h>
 
-#define FIRMWARE_VERSION                "2.0.01" // Se agrego modo de experimento de prueba
+#define FIRMWARE_VERSION                "2.0.02" // Se agrego modo de experimento de prueba2
                                                
                                                   
 //#define EEPROM_ADDRESS_memory         4       // Direccion en la epprom donde se almacena la memoryuracion.

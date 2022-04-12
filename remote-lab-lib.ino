@@ -89,9 +89,9 @@ CLog    Log;                              // Manejo del puerto serie.
 CMemory Memory;                           // Manejo de la memoria EEPROM
 CLed     Led;                             // Manejo del led.
 
-static void experiment( void );          // Experimento escrito por el usuario1
-static void run_example1( void );        // Experimento de prueba1
-
+static void experiment( void );          // Experimento escrito por el usuario. 
+static void run_example1( void );        // Experimento de prueba 1.
+static void run_example2( void );        // Experimento de prueba 2.
 
 /*
  * realizz el final de ensayo
@@ -159,7 +159,10 @@ void loop()
         st_loop = ST_LOOP_RUN_TEST; 
       }else if (Memory.get_st_mode() == ST_MODE_RUN1 ) { // Espera el modo runExample1
         st_loop =  ST_MODE_RUN_EXAMPLE1 ;
+      }else if (Memory.get_st_mode() == ST_MODE_RUN2 ) { // Espera el modo runExample1
+        st_loop =  ST_MODE_RUN_EXAMPLE2 ;
       }
+      
       
     break;
       // Ejecuta el ensayo.
@@ -184,7 +187,14 @@ void loop()
       run_example1();      
       st_loop = ST_LOOP_IDLE;
       
-    break;
+      break;
+
+      case ST_MODE_RUN_EXAMPLE2:                    
+     
+      run_example2();      
+      st_loop = ST_LOOP_IDLE;
+      
+      break;
 
       default:
       st_loop = ST_LOOP_INIT;
@@ -199,6 +209,14 @@ void loop()
  * Aca el usuario escribe su experimento.
  */
 
+ static void experiment( void ){
+  // ToDo
+ }
+
+ /*
+  *  Experimento de prueba 1
+  */
+
 static void run_example1( void ){
   
    Log.msg( F("Ejemplo de prueba 1"));
@@ -208,5 +226,40 @@ static void run_example1( void ){
    Memory.set_output(AMPER,       ( Memory.get_input(ENERGIA) + Memory.get_cfg(INPUT2_ADD) ) + ( 2 *  Memory.get_cfg(INPUT2_MUL)));
    Memory.set_output(NEWTON,      ( Memory.get_input(TENSION) + Memory.get_cfg(INPUT3_ADD) ) + ( 2 *  Memory.get_cfg(INPUT3_MUL)));
    Memory.set_output(ANGULO,      ( Memory.get_input(POTENCIA)+ Memory.get_cfg(INPUT4_ADD) ) + ( 2 *  Memory.get_cfg(INPUT4_MUL)));
+   Memory.set_st_mode( ST_MODE_TEST );
+}
+
+/*
+  *  Experimento de prueba 2
+  */
+
+static void run_example2( void ){
+
+  float t_blinkF; 
+  float n_blinkF;
+  
+  Log.msg( F("Ejemplo de prueba 2"));
+
+  n_blinkF=  Memory.get_cfg(INPUT0_MUL); // Carga el numero de blinks.
+  t_blinkF=  Memory.get_cfg(INPUT1_MUL); // Carga el tiempo de blinks.
+
+    /*
+   * Trampa para evitar errores en el ingreso de datos antes del cast 
+   * Si el numero es negativo que ponga el min. Si no luego del cast no puede identificare el signo.
+   * 
+   */
+
+  if ( n_blinkF < 0) {
+    n_blinkF = N_BLINK_MIN;
+  }
+
+  if ( t_blinkF < 0) {
+    t_blinkF = T_BLINK_MIN ;
+  }
+  
+   
+  
+  Led.n_blink((uint8_t) n_blinkF, (uint16_t) t_blinkF);  
+  
    Memory.set_st_mode( ST_MODE_TEST );
 }
