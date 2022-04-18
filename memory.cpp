@@ -63,60 +63,60 @@ uint8_t magic_number;
         set_cfg9( CFG_9_DEFAULT );       
 
 
-        set_result_0( RESULT_0_DEFAULT );
-        set_result_1( RESULT_1_DEFAULT );
-        set_result_2( RESULT_2_DEFAULT );
-        set_result_3( RESULT_3_DEFAULT );
-        set_result_4( RESULT_4_DEFAULT );
-        set_result_5( RESULT_5_DEFAULT );
-        set_result_6( RESULT_6_DEFAULT );
-        set_result_7( RESULT_7_DEFAULT );
-        set_result_8( RESULT_8_DEFAULT );
-        set_result_9( RESULT_9_DEFAULT );
+        set_result0( RESULT_0_DEFAULT );
+        set_result1( RESULT_1_DEFAULT );
+        set_result2( RESULT_2_DEFAULT );
+        set_result3( RESULT_3_DEFAULT );
+        set_result4( RESULT_4_DEFAULT );
+        set_result5( RESULT_5_DEFAULT );
+        set_result6( RESULT_6_DEFAULT );
+        set_result7( RESULT_7_DEFAULT );
+        set_result8( RESULT_8_DEFAULT );
+        set_result9( RESULT_9_DEFAULT );
 
-        set_result_10( RESULT_10_DEFAULT );
-        set_result_11( RESULT_11_DEFAULT );
-        set_result_12( RESULT_12_DEFAULT );
-        set_result_13( RESULT_13_DEFAULT );
-        set_result_14( RESULT_14_DEFAULT );
-        set_result_15( RESULT_15_DEFAULT );
-        set_result_16( RESULT_16_DEFAULT );
-        set_result_17( RESULT_17_DEFAULT );
-        set_result_18( RESULT_18_DEFAULT );
-        set_result_19( RESULT_19_DEFAULT );
+        set_result10( RESULT_10_DEFAULT );
+        set_result11( RESULT_11_DEFAULT );
+        set_result12( RESULT_12_DEFAULT );
+        set_result13( RESULT_13_DEFAULT );
+        set_result14( RESULT_14_DEFAULT );
+        set_result15( RESULT_15_DEFAULT );
+        set_result16( RESULT_16_DEFAULT );
+        set_result17( RESULT_17_DEFAULT );
+        set_result18( RESULT_18_DEFAULT );
+        set_result19( RESULT_19_DEFAULT );
 
-        set_result_20( RESULT_20_DEFAULT );
-        set_result_21( RESULT_21_DEFAULT );
-        set_result_22( RESULT_22_DEFAULT );
-        set_result_23( RESULT_23_DEFAULT );
-        set_result_24( RESULT_24_DEFAULT );
-        set_result_25( RESULT_25_DEFAULT );
-        set_result_26( RESULT_26_DEFAULT );
-        set_result_27( RESULT_27_DEFAULT );
-        set_result_28( RESULT_28_DEFAULT );
-        set_result_29( RESULT_29_DEFAULT );
+        set_result20( RESULT_20_DEFAULT );
+        set_result21( RESULT_21_DEFAULT );
+        set_result22( RESULT_22_DEFAULT );
+        set_result23( RESULT_23_DEFAULT );
+        set_result24( RESULT_24_DEFAULT );
+        set_result25( RESULT_25_DEFAULT );
+        set_result26( RESULT_26_DEFAULT );
+        set_result27( RESULT_27_DEFAULT );
+        set_result28( RESULT_28_DEFAULT );
+        set_result29( RESULT_29_DEFAULT );
 
-        set_result_30( RESULT_30_DEFAULT );
-        set_result_31( RESULT_31_DEFAULT );
-        set_result_32( RESULT_32_DEFAULT );
-        set_result_33( RESULT_33_DEFAULT );
-        set_result_34( RESULT_34_DEFAULT );
-        set_result_35( RESULT_35_DEFAULT );
-        set_result_36( RESULT_36_DEFAULT );
-        set_result_37( RESULT_37_DEFAULT );
-        set_result_38( RESULT_38_DEFAULT );
-        set_result_39( RESULT_39_DEFAULT );
+        set_result30( RESULT_30_DEFAULT );
+        set_result31( RESULT_31_DEFAULT );
+        set_result32( RESULT_32_DEFAULT );
+        set_result33( RESULT_33_DEFAULT );
+        set_result34( RESULT_34_DEFAULT );
+        set_result35( RESULT_35_DEFAULT );
+        set_result36( RESULT_36_DEFAULT );
+        set_result37( RESULT_37_DEFAULT );
+        set_result38( RESULT_38_DEFAULT );
+        set_result39( RESULT_39_DEFAULT );
         
-        set_result_40( RESULT_40_DEFAULT );
-        set_result_41( RESULT_41_DEFAULT );
-        set_result_42( RESULT_42_DEFAULT );
-        set_result_43( RESULT_43_DEFAULT );
-        set_result_44( RESULT_44_DEFAULT );
-        set_result_45( RESULT_45_DEFAULT );
-        set_result_46( RESULT_46_DEFAULT );
-        set_result_47( RESULT_47_DEFAULT );
-        set_result_48( RESULT_48_DEFAULT );
-        set_result_49( RESULT_49_DEFAULT );
+        set_result40( RESULT_40_DEFAULT );
+        set_result41( RESULT_41_DEFAULT );
+        set_result42( RESULT_42_DEFAULT );
+        set_result43( RESULT_43_DEFAULT );
+        set_result44( RESULT_44_DEFAULT );
+        set_result45( RESULT_45_DEFAULT );
+        set_result46( RESULT_46_DEFAULT );
+        set_result47( RESULT_47_DEFAULT );
+        set_result48( RESULT_48_DEFAULT );
+        set_result49( RESULT_49_DEFAULT );
     
     }else {
         
@@ -154,60 +154,60 @@ uint8_t magic_number;
        
 
       
-       EEPROM.get( EEPROM_ADDRESS_RESULT_0, result_0 );
-       EEPROM.get( EEPROM_ADDRESS_RESULT_1, result_1 );
-       EEPROM.get( EEPROM_ADDRESS_RESULT_2, result_2 );
-       EEPROM.get( EEPROM_ADDRESS_RESULT_3, result_3 );
-       EEPROM.get( EEPROM_ADDRESS_RESULT_4, result_4 );
-       EEPROM.get( EEPROM_ADDRESS_RESULT_5, result_5 );
-       EEPROM.get( EEPROM_ADDRESS_RESULT_6, result_6 );
-       EEPROM.get( EEPROM_ADDRESS_RESULT_7, result_7 );
-       EEPROM.get( EEPROM_ADDRESS_RESULT_8, result_8 );
-       EEPROM.get( EEPROM_ADDRESS_RESULT_9, result_9 );
+       EEPROM.get( EEPROM_ADDRESS_RESULT_0, result0 );
+       EEPROM.get( EEPROM_ADDRESS_RESULT_1, result1 );
+       EEPROM.get( EEPROM_ADDRESS_RESULT_2, result2 );
+       EEPROM.get( EEPROM_ADDRESS_RESULT_3, result3 );
+       EEPROM.get( EEPROM_ADDRESS_RESULT_4, result4 );
+       EEPROM.get( EEPROM_ADDRESS_RESULT_5, result5 );
+       EEPROM.get( EEPROM_ADDRESS_RESULT_6, result6 );
+       EEPROM.get( EEPROM_ADDRESS_RESULT_7, result7 );
+       EEPROM.get( EEPROM_ADDRESS_RESULT_8, result8 );
+       EEPROM.get( EEPROM_ADDRESS_RESULT_9, result9 );
 
-       EEPROM.get( EEPROM_ADDRESS_RESULT_10, result_10 );
-       EEPROM.get( EEPROM_ADDRESS_RESULT_11, result_11 );
-       EEPROM.get( EEPROM_ADDRESS_RESULT_12, result_12 );
-       EEPROM.get( EEPROM_ADDRESS_RESULT_13, result_13 );
-       EEPROM.get( EEPROM_ADDRESS_RESULT_14, result_14 );
-       EEPROM.get( EEPROM_ADDRESS_RESULT_15, result_15 );
-       EEPROM.get( EEPROM_ADDRESS_RESULT_16, result_16 );
-       EEPROM.get( EEPROM_ADDRESS_RESULT_17, result_17 );
-       EEPROM.get( EEPROM_ADDRESS_RESULT_18, result_18 );
-       EEPROM.get( EEPROM_ADDRESS_RESULT_19, result_19 );
+       EEPROM.get( EEPROM_ADDRESS_RESULT_10, result10 );
+       EEPROM.get( EEPROM_ADDRESS_RESULT_11, result11 );
+       EEPROM.get( EEPROM_ADDRESS_RESULT_12, result12 );
+       EEPROM.get( EEPROM_ADDRESS_RESULT_13, result13 );
+       EEPROM.get( EEPROM_ADDRESS_RESULT_14, result14 );
+       EEPROM.get( EEPROM_ADDRESS_RESULT_15, result15 );
+       EEPROM.get( EEPROM_ADDRESS_RESULT_16, result16 );
+       EEPROM.get( EEPROM_ADDRESS_RESULT_17, result17 );
+       EEPROM.get( EEPROM_ADDRESS_RESULT_18, result18 );
+       EEPROM.get( EEPROM_ADDRESS_RESULT_19, result19 );
 
-       EEPROM.get( EEPROM_ADDRESS_RESULT_20, result_20 );
-       EEPROM.get( EEPROM_ADDRESS_RESULT_21, result_21 );
-       EEPROM.get( EEPROM_ADDRESS_RESULT_22, result_22 );
-       EEPROM.get( EEPROM_ADDRESS_RESULT_23, result_23 );
-       EEPROM.get( EEPROM_ADDRESS_RESULT_24, result_24 );
-       EEPROM.get( EEPROM_ADDRESS_RESULT_25, result_25 );
-       EEPROM.get( EEPROM_ADDRESS_RESULT_26, result_26 );
-       EEPROM.get( EEPROM_ADDRESS_RESULT_27, result_27 );
-       EEPROM.get( EEPROM_ADDRESS_RESULT_28, result_28 );
-       EEPROM.get( EEPROM_ADDRESS_RESULT_29, result_29 );
+       EEPROM.get( EEPROM_ADDRESS_RESULT_20, result20 );
+       EEPROM.get( EEPROM_ADDRESS_RESULT_21, result21 );
+       EEPROM.get( EEPROM_ADDRESS_RESULT_22, result22 );
+       EEPROM.get( EEPROM_ADDRESS_RESULT_23, result23 );
+       EEPROM.get( EEPROM_ADDRESS_RESULT_24, result24 );
+       EEPROM.get( EEPROM_ADDRESS_RESULT_25, result25 );
+       EEPROM.get( EEPROM_ADDRESS_RESULT_26, result26 );
+       EEPROM.get( EEPROM_ADDRESS_RESULT_27, result27 );
+       EEPROM.get( EEPROM_ADDRESS_RESULT_28, result28 );
+       EEPROM.get( EEPROM_ADDRESS_RESULT_29, result29 );
 
-       EEPROM.get( EEPROM_ADDRESS_RESULT_30, result_30 );
-       EEPROM.get( EEPROM_ADDRESS_RESULT_31, result_31 );
-       EEPROM.get( EEPROM_ADDRESS_RESULT_32, result_32 );
-       EEPROM.get( EEPROM_ADDRESS_RESULT_33, result_33 );
-       EEPROM.get( EEPROM_ADDRESS_RESULT_34, result_34 );
-       EEPROM.get( EEPROM_ADDRESS_RESULT_35, result_35 );
-       EEPROM.get( EEPROM_ADDRESS_RESULT_36, result_36 );
-       EEPROM.get( EEPROM_ADDRESS_RESULT_37, result_37 );
-       EEPROM.get( EEPROM_ADDRESS_RESULT_38, result_38 );
-       EEPROM.get( EEPROM_ADDRESS_RESULT_39, result_39 );
-
-       EEPROM.get( EEPROM_ADDRESS_RESULT_40, result_40 );
-       EEPROM.get( EEPROM_ADDRESS_RESULT_41, result_41 );
-       EEPROM.get( EEPROM_ADDRESS_RESULT_42, result_42 );
-       EEPROM.get( EEPROM_ADDRESS_RESULT_43, result_43 );
-       EEPROM.get( EEPROM_ADDRESS_RESULT_44, result_44 );
-       EEPROM.get( EEPROM_ADDRESS_RESULT_45, result_45 );
-       EEPROM.get( EEPROM_ADDRESS_RESULT_46, result_46 );
-       EEPROM.get( EEPROM_ADDRESS_RESULT_47, result_47 );
-       EEPROM.get( EEPROM_ADDRESS_RESULT_48, result_48 );
-       EEPROM.get( EEPROM_ADDRESS_RESULT_49, result_49 );
+       EEPROM.get( EEPROM_ADDRESS_RESULT_30, result30 );
+       EEPROM.get( EEPROM_ADDRESS_RESULT_31, result31 );
+       EEPROM.get( EEPROM_ADDRESS_RESULT_32, result32 );
+       EEPROM.get( EEPROM_ADDRESS_RESULT_33, result33 );
+       EEPROM.get( EEPROM_ADDRESS_RESULT_34, result34 );
+       EEPROM.get( EEPROM_ADDRESS_RESULT_35, result35 );
+       EEPROM.get( EEPROM_ADDRESS_RESULT_36, result36 );
+       EEPROM.get( EEPROM_ADDRESS_RESULT_37, result37 );
+       EEPROM.get( EEPROM_ADDRESS_RESULT_38, result38 );
+       EEPROM.get( EEPROM_ADDRESS_RESULT_39, result39 );
+       
+       EEPROM.get( EEPROM_ADDRESS_RESULT_40, result40 );
+       EEPROM.get( EEPROM_ADDRESS_RESULT_41, result41 );
+       EEPROM.get( EEPROM_ADDRESS_RESULT_42, result42 );
+       EEPROM.get( EEPROM_ADDRESS_RESULT_43, result43 );
+       EEPROM.get( EEPROM_ADDRESS_RESULT_44, result44 );
+       EEPROM.get( EEPROM_ADDRESS_RESULT_45, result45 );
+       EEPROM.get( EEPROM_ADDRESS_RESULT_46, result46 );
+       EEPROM.get( EEPROM_ADDRESS_RESULT_47, result47 );
+       EEPROM.get( EEPROM_ADDRESS_RESULT_48, result48 );
+       EEPROM.get( EEPROM_ADDRESS_RESULT_49, result49 );
 
                    
     }
@@ -381,312 +381,311 @@ void CMemory::set_cfg9( float val )
 
 
 
-float CMemory::get_result_0( void )
-{return result_0;}
-void CMemory::set_result_0( float val )
-{ result_0 = val;
+float CMemory::get_result0( void )
+{return result0;}
+void CMemory::set_result0( float val )
+{ result0 = val;
   EEPROM.put( EEPROM_ADDRESS_RESULT_0, val );
 }
-float CMemory::get_result_1( void )
-{return result_1;}
-void CMemory::set_result_1( float val )
-{ result_1 = val;
+float CMemory::get_result1( void )
+{return result1;}
+void CMemory::set_result1( float val )
+{ result1 = val;
   EEPROM.put( EEPROM_ADDRESS_RESULT_1, val );
 }
-float CMemory::get_result_2( void )
-{return result_2;}
-void CMemory::set_result_2( float val )
-{ result_2 = val;
+float CMemory::get_result2( void )
+{return result2;}
+void CMemory::set_result2( float val )
+{ result2 = val;
   EEPROM.put( EEPROM_ADDRESS_RESULT_2, val );
 }
-float CMemory::get_result_3( void )
-{return result_3;}
-void CMemory::set_result_3( float val )
-{ result_3 = val;
+float CMemory::get_result3( void )
+{return result3;}
+void CMemory::set_result3( float val )
+{ result3 = val;
   EEPROM.put( EEPROM_ADDRESS_RESULT_3, val );
 }
-float CMemory::get_result_4( void )
-{return result_4;}
-void CMemory::set_result_4( float val )
-{ result_4 = val;
+float CMemory::get_result4( void )
+{return result4;}
+void CMemory::set_result4( float val )
+{ result4 = val;
   EEPROM.put( EEPROM_ADDRESS_RESULT_4, val );
 }
-float CMemory::get_result_5( void )
-{return result_5;}
-void CMemory::set_result_5( float val )
-{ result_5 = val;
+float CMemory::get_result5( void )
+{return result5;}
+void CMemory::set_result5( float val )
+{ result5 = val;
   EEPROM.put( EEPROM_ADDRESS_RESULT_5, val );
 }
-float CMemory::get_result_6( void )
-{return result_6;}
-void CMemory::set_result_6( float val )
-{ result_6 = val;
+float CMemory::get_result6( void )
+{return result6;}
+void CMemory::set_result6( float val )
+{ result6 = val;
   EEPROM.put( EEPROM_ADDRESS_RESULT_6, val );
 }
-float CMemory::get_result_7( void )
-{return result_7;}
-void CMemory::set_result_7( float val )
-{ result_7 = val;
+float CMemory::get_result7( void )
+{return result7;}
+void CMemory::set_result7( float val )
+{ result7 = val;
   EEPROM.put( EEPROM_ADDRESS_RESULT_7, val );
 }
-float CMemory::get_result_8( void )
-{return result_8;}
-void CMemory::set_result_8( float val )
-{ result_8 = val;
+float CMemory::get_result8( void )
+{return result8;}
+void CMemory::set_result8( float val )
+{ result8 = val;
   EEPROM.put( EEPROM_ADDRESS_RESULT_8, val );
 }
-float CMemory::get_result_9( void )
-{return result_9;}
-void CMemory::set_result_9( float val )
-{ result_9 = val;
+float CMemory::get_result9( void )
+{return result9;}
+void CMemory::set_result9( float val )
+{ result9 = val;
   EEPROM.put( EEPROM_ADDRESS_RESULT_9, val );
 }
 
 
 
-float CMemory::get_result_10( void )
-{return result_10;}
-void CMemory::set_result_10( float val )
-{ result_10 = val;
+float CMemory::get_result10( void )
+{return result10;}
+void CMemory::set_result10( float val )
+{ result10 = val;
   EEPROM.put( EEPROM_ADDRESS_RESULT_10, val );
 }
-float CMemory::get_result_11( void )
-{return result_11;}
-void CMemory::set_result_11( float val )
-{ result_11 = val;
+float CMemory::get_result11( void )
+{return result11;}
+void CMemory::set_result11( float val )
+{ result11 = val;
   EEPROM.put( EEPROM_ADDRESS_RESULT_11, val );
 }
-float CMemory::get_result_12( void )
-{return result_12;}
-void CMemory::set_result_12( float val )
-{ result_12 = val;
+float CMemory::get_result12( void )
+{return result12;}
+void CMemory::set_result12( float val )
+{ result12 = val;
   EEPROM.put( EEPROM_ADDRESS_RESULT_12, val );
 }
-float CMemory::get_result_13( void )
-{return result_13;}
-void CMemory::set_result_13( float val )
-{ result_13 = val;
+float CMemory::get_result13( void )
+{return result13;}
+void CMemory::set_result13( float val )
+{ result13 = val;
   EEPROM.put( EEPROM_ADDRESS_RESULT_13, val );
 }
-float CMemory::get_result_14( void )
-{return result_14;}
-void CMemory::set_result_14( float val )
-{ result_14 = val;
+float CMemory::get_result14( void )
+{return result14;}
+void CMemory::set_result14( float val )
+{ result14 = val;
   EEPROM.put( EEPROM_ADDRESS_RESULT_14, val );
 }
-float CMemory::get_result_15( void )
-{return result_15;}
-void CMemory::set_result_15( float val )
-{ result_15 = val;
+float CMemory::get_result15( void )
+{return result15;}
+void CMemory::set_result15( float val )
+{ result15 = val;
   EEPROM.put( EEPROM_ADDRESS_RESULT_15, val );
 }
-float CMemory::get_result_16( void )
-{return result_16;}
-void CMemory::set_result_16( float val )
-{ result_16 = val;
+float CMemory::get_result16( void )
+{return result16;}
+void CMemory::set_result16( float val )
+{ result16 = val;
   EEPROM.put( EEPROM_ADDRESS_RESULT_16, val );
 }
-float CMemory::get_result_17( void )
-{return result_17;}
-void CMemory::set_result_17( float val )
-{ result_17 = val;
+float CMemory::get_result17( void )
+{return result17;}
+void CMemory::set_result17( float val )
+{ result17 = val;
   EEPROM.put( EEPROM_ADDRESS_RESULT_17, val );
 }
-float CMemory::get_result_18( void )
-{return result_18;}
-void CMemory::set_result_18( float val )
-{ result_18 = val;
+float CMemory::get_result18( void )
+{return result18;}
+void CMemory::set_result18( float val )
+{ result18 = val;
   EEPROM.put( EEPROM_ADDRESS_RESULT_18, val );
 }
-float CMemory::get_result_19( void )
-{return result_19;}
-void CMemory::set_result_19( float val )
-{ result_19 = val;
+float CMemory::get_result19( void )
+{return result19;}
+void CMemory::set_result19( float val )
+{ result19 = val;
   EEPROM.put( EEPROM_ADDRESS_RESULT_19, val );
 }
 
-float CMemory::get_result_20( void )
-{return result_20;}
-void CMemory::set_result_20( float val )
-{ result_20 = val;
+float CMemory::get_result20( void )
+{return result20;}
+void CMemory::set_result20( float val )
+{ result20 = val;
   EEPROM.put( EEPROM_ADDRESS_RESULT_20, val );
 }
-float CMemory::get_result_21( void )
-{return result_21;}
-void CMemory::set_result_21( float val )
-{ result_21 = val;
+float CMemory::get_result21( void )
+{return result21;}
+void CMemory::set_result21( float val )
+{ result21 = val;
   EEPROM.put( EEPROM_ADDRESS_RESULT_21, val );
 }
-float CMemory::get_result_22( void )
-{return result_22;}
-void CMemory::set_result_22( float val )
-{ result_22 = val;
+float CMemory::get_result22( void )
+{return result22;}
+void CMemory::set_result22( float val )
+{ result22 = val;
   EEPROM.put( EEPROM_ADDRESS_RESULT_22, val );
 }
-float CMemory::get_result_23( void )
-{return result_23;}
-void CMemory::set_result_23( float val )
-{ result_23 = val;
+float CMemory::get_result23( void )
+{return result23;}
+void CMemory::set_result23( float val )
+{ result23 = val;
   EEPROM.put( EEPROM_ADDRESS_RESULT_23, val );
 }
-float CMemory::get_result_24( void )
-{return result_24;}
-void CMemory::set_result_24( float val )
-{ result_24 = val;
+float CMemory::get_result24( void )
+{return result24;}
+void CMemory::set_result24( float val )
+{ result24 = val;
   EEPROM.put( EEPROM_ADDRESS_RESULT_24, val );
 }
-float CMemory::get_result_25( void )
-{return result_25;}
-void CMemory::set_result_25( float val )
-{ result_25 = val;
+float CMemory::get_result25( void )
+{return result25;}
+void CMemory::set_result25( float val )
+{ result25 = val;
   EEPROM.put( EEPROM_ADDRESS_RESULT_25, val );
 }
-float CMemory::get_result_26( void )
-{return result_26;}
-void CMemory::set_result_26( float val )
-{ result_26 = val;
+float CMemory::get_result26( void )
+{return result26;}
+void CMemory::set_result26( float val )
+{ result26 = val;
   EEPROM.put( EEPROM_ADDRESS_RESULT_26, val );
 }
-float CMemory::get_result_27( void )
-{return result_27;}
-void CMemory::set_result_27( float val )
-{ result_27 = val;
+float CMemory::get_result27( void )
+{return result27;}
+void CMemory::set_result27( float val )
+{ result27 = val;
   EEPROM.put( EEPROM_ADDRESS_RESULT_27, val );
 }
-float CMemory::get_result_28( void )
-{return result_28;}
-void CMemory::set_result_28( float val )
-{ result_28 = val;
+float CMemory::get_result28( void )
+{return result28;}
+void CMemory::set_result28( float val )
+{ result28 = val;
   EEPROM.put( EEPROM_ADDRESS_RESULT_28, val );
 }
-float CMemory::get_result_29( void )
-{return result_29;}
-void CMemory::set_result_29( float val )
-{ result_29 = val;
+float CMemory::get_result29( void )
+{return result29;}
+void CMemory::set_result29( float val )
+{ result29 = val;
   EEPROM.put( EEPROM_ADDRESS_RESULT_29, val );
 }
 
-
-float CMemory::get_result_30( void )
-{return result_30;}
-void CMemory::set_result_30( float val )
-{ result_30 = val;
+float CMemory::get_result30( void )
+{return result30;}
+void CMemory::set_result30( float val )
+{ result30 = val;
   EEPROM.put( EEPROM_ADDRESS_RESULT_30, val );
 }
-float CMemory::get_result_31( void )
-{return result_31;}
-void CMemory::set_result_31( float val )
-{ result_31 = val;
+float CMemory::get_result31( void )
+{return result31;}
+void CMemory::set_result31( float val )
+{ result31 = val;
   EEPROM.put( EEPROM_ADDRESS_RESULT_31, val );
 }
-float CMemory::get_result_32( void )
-{return result_32;}
-void CMemory::set_result_32( float val )
-{ result_32 = val;
+float CMemory::get_result32( void )
+{return result32;}
+void CMemory::set_result32( float val )
+{ result32 = val;
   EEPROM.put( EEPROM_ADDRESS_RESULT_32, val );
 }
-float CMemory::get_result_33( void )
-{return result_33;}
-void CMemory::set_result_33( float val )
-{ result_33 = val;
+float CMemory::get_result33( void )
+{return result33;}
+void CMemory::set_result33( float val )
+{ result33 = val;
   EEPROM.put( EEPROM_ADDRESS_RESULT_33, val );
 }
-float CMemory::get_result_34( void )
-{return result_34;}
-void CMemory::set_result_34( float val )
-{ result_34 = val;
+float CMemory::get_result34( void )
+{return result34;}
+void CMemory::set_result34( float val )
+{ result34 = val;
   EEPROM.put( EEPROM_ADDRESS_RESULT_34, val );
 }
-float CMemory::get_result_35( void )
-{return result_35;}
-void CMemory::set_result_35( float val )
-{ result_35 = val;
+float CMemory::get_result35( void )
+{return result35;}
+void CMemory::set_result35( float val )
+{ result35 = val;
   EEPROM.put( EEPROM_ADDRESS_RESULT_35, val );
 }
-float CMemory::get_result_36( void )
-{return result_36;}
-void CMemory::set_result_36( float val )
-{ result_36 = val;
+float CMemory::get_result36( void )
+{return result36;}
+void CMemory::set_result36( float val )
+{ result36 = val;
   EEPROM.put( EEPROM_ADDRESS_RESULT_36, val );
 }
-float CMemory::get_result_37( void )
-{return result_37;}
-void CMemory::set_result_37( float val )
-{ result_37 = val;
+float CMemory::get_result37( void )
+{return result37;}
+void CMemory::set_result37( float val )
+{ result37 = val;
   EEPROM.put( EEPROM_ADDRESS_RESULT_37, val );
 }
-float CMemory::get_result_38( void )
-{return result_38;}
-void CMemory::set_result_38( float val )
-{ result_38 = val;
+float CMemory::get_result38( void )
+{return result38;}
+void CMemory::set_result38( float val )
+{ result38 = val;
   EEPROM.put( EEPROM_ADDRESS_RESULT_38, val );
 }
-float CMemory::get_result_39( void )
-{return result_39;}
-void CMemory::set_result_39( float val )
-{ result_39 = val;
+float CMemory::get_result39( void )
+{return result39;}
+void CMemory::set_result39( float val )
+{ result39 = val;
   EEPROM.put( EEPROM_ADDRESS_RESULT_39, val );
 }
 
 
-float CMemory::get_result_40( void )
-{return result_40;}
-void CMemory::set_result_40( float val )
-{ result_40 = val;
+float CMemory::get_result40( void )
+{return result40;}
+void CMemory::set_result40( float val )
+{ result40 = val;
   EEPROM.put( EEPROM_ADDRESS_RESULT_40, val );
 }
-float CMemory::get_result_41( void )
-{return result_41;}
-void CMemory::set_result_41( float val )
-{ result_41 = val;
+float CMemory::get_result41( void )
+{return result41;}
+void CMemory::set_result41( float val )
+{ result41 = val;
   EEPROM.put( EEPROM_ADDRESS_RESULT_41, val );
 }
-float CMemory::get_result_42( void )
-{return result_42;}
-void CMemory::set_result_42( float val )
-{ result_42 = val;
+float CMemory::get_result42( void )
+{return result42;}
+void CMemory::set_result42( float val )
+{ result42 = val;
   EEPROM.put( EEPROM_ADDRESS_RESULT_42, val );
 }
-float CMemory::get_result_43( void )
-{return result_43;}
-void CMemory::set_result_43( float val )
-{ result_43 = val;
+float CMemory::get_result43( void )
+{return result43;}
+void CMemory::set_result43( float val )
+{ result43 = val;
   EEPROM.put( EEPROM_ADDRESS_RESULT_43, val );
 }
-float CMemory::get_result_44( void )
-{return result_44;}
-void CMemory::set_result_44( float val )
-{ result_44 = val;
+float CMemory::get_result44( void )
+{return result44;}
+void CMemory::set_result44( float val )
+{ result44 = val;
   EEPROM.put( EEPROM_ADDRESS_RESULT_44, val );
 }
-float CMemory::get_result_45( void )
-{return result_45;}
-void CMemory::set_result_45( float val )
-{ result_45 = val;
+float CMemory::get_result45( void )
+{return result45;}
+void CMemory::set_result45( float val )
+{ result45 = val;
   EEPROM.put( EEPROM_ADDRESS_RESULT_45, val );
 }
-float CMemory::get_result_46( void )
-{return result_46;}
-void CMemory::set_result_46( float val )
-{ result_46 = val;
+float CMemory::get_result46( void )
+{return result46;}
+void CMemory::set_result46( float val )
+{ result46 = val;
   EEPROM.put( EEPROM_ADDRESS_RESULT_46, val );
 }
-float CMemory::get_result_47( void )
-{return result_47;}
-void CMemory::set_result_47( float val )
-{ result_47 = val;
+float CMemory::get_result47( void )
+{return result47;}
+void CMemory::set_result47( float val )
+{ result47 = val;
   EEPROM.put( EEPROM_ADDRESS_RESULT_47, val );
 }
-float CMemory::get_result_48( void )
-{return result_48;}
-void CMemory::set_result_48( float val )
-{ result_48 = val;
+float CMemory::get_result48( void )
+{return result48;}
+void CMemory::set_result48( float val )
+{ result48 = val;
   EEPROM.put( EEPROM_ADDRESS_RESULT_48, val );
 }
-float CMemory::get_result_49( void )
-{return result_49;}
-void CMemory::set_result_49( float val )
-{ result_49 = val;
+float CMemory::get_result49( void )
+{return result49;}
+void CMemory::set_result49( float val )
+{ result49 = val;
   EEPROM.put( EEPROM_ADDRESS_RESULT_49, val );
 }
 
@@ -801,216 +800,216 @@ bool known_key = false;
 
             
 
-            if ( doc.containsKey("result_0") ) {
-                set_result_0( doc["result_0"] );
+            if ( doc.containsKey("result0") ) {
+                set_result0( doc["result0"] );
                 known_key = true;
             }
-            if ( doc.containsKey("result_1") ) {
-                set_result_1( doc["result_1"] );
+            if ( doc.containsKey("result1") ) {
+                set_result1( doc["result1"] );
                 known_key = true;
             }
-            if ( doc.containsKey("result_2") ) {
-                set_result_2( doc["result_2"] );
+            if ( doc.containsKey("result2") ) {
+                set_result2( doc["result2"] );
                 known_key = true;
             }
-            if ( doc.containsKey("result_3") ) {
-                set_result_3( doc["result_3"] );
+            if ( doc.containsKey("result3") ) {
+                set_result3( doc["result3"] );
                 known_key = true;
             }
-            if ( doc.containsKey("result_4") ) {
-                set_result_4( doc["result_4"] );
+            if ( doc.containsKey("result4") ) {
+                set_result4( doc["result4"] );
                 known_key = true;
             }
-            if ( doc.containsKey("result_5") ) {
-                set_result_5( doc["result_5"] );
+            if ( doc.containsKey("result5") ) {
+                set_result5( doc["result5"] );
                 known_key = true;
             }
-            if ( doc.containsKey("result_6") ) {
-                set_result_6( doc["result_6"] );
+            if ( doc.containsKey("result6") ) {
+                set_result6( doc["result6"] );
                 known_key = true;
             }
-            if ( doc.containsKey("result_7") ) {
-                set_result_7( doc["result_7"] );
+            if ( doc.containsKey("result7") ) {
+                set_result7( doc["result7"] );
                 known_key = true;
             }
-            if ( doc.containsKey("result_8") ) {
-                set_result_8( doc["result_8"] );
+            if ( doc.containsKey("result8") ) {
+                set_result8( doc["result8"] );
                 known_key = true;
             }
-            if ( doc.containsKey("result_9") ) {
-                set_result_9( doc["result_9"] );
-                known_key = true;
-            }
-
-
-
-            if ( doc.containsKey("result_10") ) {
-                set_result_10( doc["result_10"] );
-                known_key = true;
-            }
-            if ( doc.containsKey("result_11") ) {
-                set_result_11( doc["result_11"] );
-                known_key = true;
-            }
-            if ( doc.containsKey("result_12") ) {
-                set_result_12( doc["result_12"] );
-                known_key = true;
-            }
-            if ( doc.containsKey("result_13") ) {
-                set_result_13( doc["result_13"] );
-                known_key = true;
-            }
-            if ( doc.containsKey("result_14") ) {
-                set_result_14( doc["result_14"] );
-                known_key = true;
-            }
-            if ( doc.containsKey("result_15") ) {
-                set_result_15( doc["result_15"] );
-                known_key = true;
-            }
-            if ( doc.containsKey("result_16") ) {
-                set_result_16( doc["result_16"] );
-                known_key = true;
-            }
-            if ( doc.containsKey("result_17") ) {
-                set_result_17( doc["result_17"] );
-                known_key = true;
-            }
-            if ( doc.containsKey("result_18") ) {
-                set_result_18( doc["result_18"] );
-                known_key = true;
-            }
-            if ( doc.containsKey("result_19") ) {
-                set_result_19( doc["result_19"] );
+            if ( doc.containsKey("result9") ) {
+                set_result9( doc["result9"] );
                 known_key = true;
             }
 
 
 
-            if ( doc.containsKey("result_20") ) {
-                set_result_20( doc["result_20"] );
+            if ( doc.containsKey("result10") ) {
+                set_result10( doc["result10"] );
                 known_key = true;
             }
-            if ( doc.containsKey("result_21") ) {
-                set_result_21( doc["result_21"] );
+            if ( doc.containsKey("result11") ) {
+                set_result11( doc["result11"] );
                 known_key = true;
             }
-            if ( doc.containsKey("result_22") ) {
-                set_result_22( doc["result_22"] );
+            if ( doc.containsKey("result12") ) {
+                set_result12( doc["result12"] );
                 known_key = true;
             }
-            if ( doc.containsKey("result_23") ) {
-                set_result_23( doc["result_23"] );
+            if ( doc.containsKey("result13") ) {
+                set_result13( doc["result13"] );
                 known_key = true;
             }
-            if ( doc.containsKey("result_24") ) {
-                set_result_24( doc["result_24"] );
+            if ( doc.containsKey("result14") ) {
+                set_result14( doc["result14"] );
                 known_key = true;
             }
-            if ( doc.containsKey("result_25") ) {
-                set_result_25( doc["result_25"] );
+            if ( doc.containsKey("result15") ) {
+                set_result15( doc["result15"] );
                 known_key = true;
             }
-            if ( doc.containsKey("result_26") ) {
-                set_result_26( doc["result_26"] );
+            if ( doc.containsKey("result16") ) {
+                set_result16( doc["result16"] );
                 known_key = true;
             }
-            if ( doc.containsKey("result_27") ) {
-                set_result_27( doc["result_27"] );
+            if ( doc.containsKey("result17") ) {
+                set_result17( doc["result17"] );
                 known_key = true;
             }
-            if ( doc.containsKey("result_28") ) {
-                set_result_28( doc["result_28"] );
+            if ( doc.containsKey("result18") ) {
+                set_result18( doc["result18"] );
                 known_key = true;
             }
-            if ( doc.containsKey("result_29") ) {
-                set_result_29( doc["result_29"] );
-                known_key = true;
-            }
-
-
-
-            if ( doc.containsKey("result_30") ) {
-                set_result_30( doc["result_30"] );
-                known_key = true;
-            }
-            if ( doc.containsKey("result_31") ) {
-                set_result_31( doc["result_31"] );
-                known_key = true;
-            }
-            if ( doc.containsKey("result_32") ) {
-                set_result_32( doc["result_32"] );
-                known_key = true;
-            }
-            if ( doc.containsKey("result_33") ) {
-                set_result_33( doc["result_33"] );
-                known_key = true;
-            }
-            if ( doc.containsKey("result_34") ) {
-                set_result_34( doc["result_34"] );
-                known_key = true;
-            }
-            if ( doc.containsKey("result_35") ) {
-                set_result_35( doc["result_35"] );
-                known_key = true;
-            }
-            if ( doc.containsKey("result_36") ) {
-                set_result_36( doc["result_36"] );
-                known_key = true;
-            }
-            if ( doc.containsKey("result_37") ) {
-                set_result_37( doc["result_37"] );
-                known_key = true;
-            }
-            if ( doc.containsKey("result_38") ) {
-                set_result_38( doc["result_38"] );
-                known_key = true;
-            }
-            if ( doc.containsKey("result_39") ) {
-                set_result_39( doc["result_39"] );
+            if ( doc.containsKey("result19") ) {
+                set_result19( doc["result19"] );
                 known_key = true;
             }
 
 
 
-            if ( doc.containsKey("result_40") ) {
-                set_result_40( doc["result_40"] );
+            if ( doc.containsKey("result20") ) {
+                set_result20( doc["result20"] );
                 known_key = true;
             }
-            if ( doc.containsKey("result_41") ) {
-                set_result_41( doc["result_41"] );
+            if ( doc.containsKey("result21") ) {
+                set_result21( doc["result21"] );
                 known_key = true;
             }
-            if ( doc.containsKey("result_42") ) {
-                set_result_42( doc["result_42"] );
+            if ( doc.containsKey("result22") ) {
+                set_result22( doc["result22"] );
                 known_key = true;
             }
-            if ( doc.containsKey("result_43") ) {
-                set_result_43( doc["result_43"] );
+            if ( doc.containsKey("result23") ) {
+                set_result23( doc["result23"] );
                 known_key = true;
             }
-            if ( doc.containsKey("result_44") ) {
-                set_result_44( doc["result_44"] );
+            if ( doc.containsKey("result24") ) {
+                set_result24( doc["result24"] );
                 known_key = true;
             }
-            if ( doc.containsKey("result_44") ) {
-                set_result_45( doc["result_45"] );
+            if ( doc.containsKey("result25") ) {
+                set_result25( doc["result25"] );
                 known_key = true;
             }
-            if ( doc.containsKey("result_46") ) {
-                set_result_46( doc["result_46"] );
+            if ( doc.containsKey("result26") ) {
+                set_result26( doc["result26"] );
                 known_key = true;
             }
-            if ( doc.containsKey("result_47") ) {
-                set_result_47( doc["result_47"] );
+            if ( doc.containsKey("result27") ) {
+                set_result27( doc["result27"] );
                 known_key = true;
             }
-            if ( doc.containsKey("result_48") ) {
-                set_result_48( doc["result_48"] );
+            if ( doc.containsKey("result28") ) {
+                set_result28( doc["result28"] );
                 known_key = true;
             }
-            if ( doc.containsKey("result_49") ) {
-                set_result_49( doc["result_49"] );
+            if ( doc.containsKey("result29") ) {
+                set_result29( doc["result29"] );
+                known_key = true;
+            }
+
+
+
+            if ( doc.containsKey("result30") ) {
+                set_result30( doc["result30"] );
+                known_key = true;
+            }
+            if ( doc.containsKey("result31") ) {
+                set_result31( doc["result31"] );
+                known_key = true;
+            }
+            if ( doc.containsKey("result32") ) {
+                set_result32( doc["result32"] );
+                known_key = true;
+            }
+            if ( doc.containsKey("result33") ) {
+                set_result33( doc["result33"] );
+                known_key = true;
+            }
+            if ( doc.containsKey("result34") ) {
+                set_result34( doc["result34"] );
+                known_key = true;
+            }
+            if ( doc.containsKey("result35") ) {
+                set_result35( doc["result35"] );
+                known_key = true;
+            }
+            if ( doc.containsKey("result36") ) {
+                set_result36( doc["result36"] );
+                known_key = true;
+            }
+            if ( doc.containsKey("result37") ) {
+                set_result37( doc["result37"] );
+                known_key = true;
+            }
+            if ( doc.containsKey("result38") ) {
+                set_result38( doc["result38"] );
+                known_key = true;
+            }
+            if ( doc.containsKey("result39") ) {
+                set_result39( doc["result39"] );
+                known_key = true;
+            }
+
+
+
+            if ( doc.containsKey("result40") ) {
+                set_result40( doc["result40"] );
+                known_key = true;
+            }
+            if ( doc.containsKey("result41") ) {
+                set_result41( doc["result41"] );
+                known_key = true;
+            }
+            if ( doc.containsKey("result42") ) {
+                set_result42( doc["result42"] );
+                known_key = true;
+            }
+            if ( doc.containsKey("result43") ) {
+                set_result43( doc["result43"] );
+                known_key = true;
+            }
+            if ( doc.containsKey("result44") ) {
+                set_result44( doc["result44"] );
+                known_key = true;
+            }
+            if ( doc.containsKey("result45") ) {
+                set_result45( doc["result45"] );
+                known_key = true;
+            }
+            if ( doc.containsKey("result46") ) {
+                set_result46( doc["result46"] );
+                known_key = true;
+            }
+            if ( doc.containsKey("result47") ) {
+                set_result47( doc["result47"] );
+                known_key = true;
+            }
+            if ( doc.containsKey("result48") ) {
+                set_result48( doc["result48"] );
+                known_key = true;
+            }
+            if ( doc.containsKey("result49") ) {
+                set_result49( doc["result49"] );
                 known_key = true;
             }       
 
@@ -1102,117 +1101,117 @@ bool known_key = false;
                 }
                 
 
-                 else if( key == "result_0" ) {
-                    send_result_0( doc );
-                 }else if( key == "result_1" ) {
-                    send_result_1( doc );
-                 }else if( key == "result_2" ) {
-                    send_result_2( doc );
-                 }else if( key == "result_3" ) {
-                    send_result_3( doc );
-                 }else if( key == "result_4" ) {
-                    send_result_4( doc );
-                 }else if( key == "result_5" ) {
-                    send_result_5( doc );
-                 }else if( key == "result_6" ) {
-                    send_result_6( doc );
-                 }else if( key == "result_7" ) {
-                    send_result_7( doc );
-                 }else if( key == "result_8" ) {
-                    send_result_8( doc );
-                 }else if( key == "result_9" ) {
-                    send_result_9( doc );
+                 else if( key == "result0" ) {
+                    send_result0( doc );
+                 }else if( key == "result1" ) {
+                    send_result1( doc );
+                 }else if( key == "result2" ) {
+                    send_result2( doc );
+                 }else if( key == "result3" ) {
+                    send_result3( doc );
+                 }else if( key == "result4" ) {
+                    send_result4( doc );
+                 }else if( key == "result5" ) {
+                    send_result5( doc );
+                 }else if( key == "result6" ) {
+                    send_result6( doc );
+                 }else if( key == "result7" ) {
+                    send_result7( doc );
+                 }else if( key == "result8" ) {
+                    send_result8( doc );
+                 }else if( key == "result9" ) {
+                    send_result9( doc );
                  }
 
 
-                 else if( key == "result_10" ) {
-                    send_result_10( doc );
-                 }else if( key == "result_11" ) {
-                    send_result_11( doc );
-                 }else if( key == "result_12" ) {
-                    send_result_12( doc );
-                 }else if( key == "result_13" ) {
-                    send_result_13( doc );
-                 }else if( key == "result_14" ) {
-                    send_result_14( doc );
-                 }else if( key == "result_15" ) {
-                    send_result_15( doc );
-                 }else if( key == "result_16" ) {
-                    send_result_16( doc );
-                 }else if( key == "result_17" ) {
-                    send_result_17( doc );
-                 }else if( key == "result_18" ) {
-                    send_result_18( doc );
-                 }else if( key == "result_19" ) {
-                    send_result_19( doc );
+                 else if( key == "result10" ) {
+                    send_result10( doc );
+                 }else if( key == "result11" ) {
+                    send_result11( doc );
+                 }else if( key == "result12" ) {
+                    send_result12( doc );
+                 }else if( key == "result13" ) {
+                    send_result13( doc );
+                 }else if( key == "result14" ) {
+                    send_result14( doc );
+                 }else if( key == "result15" ) {
+                    send_result15( doc );
+                 }else if( key == "result16" ) {
+                    send_result16( doc );
+                 }else if( key == "result17" ) {
+                    send_result17( doc );
+                 }else if( key == "result18" ) {
+                    send_result18( doc );
+                 }else if( key == "result19" ) {
+                    send_result19( doc );
                  }
                  
-                 else if( key == "result_20" ) {
-                    send_result_20( doc );
-                 }else if( key == "result_21" ) {
-                    send_result_21( doc );
-                 }else if( key == "result_22" ) {
-                    send_result_22( doc );
-                 }else if( key == "result_23" ) {
-                    send_result_23( doc );
-                 }else if( key == "result_24" ) {
-                    send_result_24( doc );
-                 }else if( key == "result_25" ) {
-                    send_result_25( doc );
-                 }else if( key == "result_26" ) {
-                    send_result_26( doc );
-                 }else if( key == "result_27" ) {
-                    send_result_27( doc );
-                 }else if( key == "result_28" ) {
-                    send_result_28( doc );
-                 }else if( key == "result_29" ) {
-                    send_result_29( doc );
+                 else if( key == "result20" ) {
+                    send_result20( doc );
+                 }else if( key == "result21" ) {
+                    send_result21( doc );
+                 }else if( key == "result22" ) {
+                    send_result22( doc );
+                 }else if( key == "result23" ) {
+                    send_result23( doc );
+                 }else if( key == "result24" ) {
+                    send_result24( doc );
+                 }else if( key == "result25" ) {
+                    send_result25( doc );
+                 }else if( key == "result26" ) {
+                    send_result26( doc );
+                 }else if( key == "result27" ) {
+                    send_result27( doc );
+                 }else if( key == "result28" ) {
+                    send_result28( doc );
+                 }else if( key == "result29" ) {
+                    send_result29( doc );
                  }
 
 
-                 else if( key == "result_30" ) {
-                    send_result_30( doc );
-                 }else if( key == "result_31" ) {
-                    send_result_31( doc );
-                 }else if( key == "result_32" ) {
-                    send_result_32( doc );
-                 }else if( key == "result_33" ) {
-                    send_result_33( doc );
-                 }else if( key == "result_34" ) {
-                    send_result_34( doc );
-                 }else if( key == "result_35" ) {
-                    send_result_35( doc );
-                 }else if( key == "result_36" ) {
-                    send_result_36( doc );
-                 }else if( key == "result_37" ) {
-                    send_result_37( doc );
-                 }else if( key == "result_38" ) {
-                    send_result_38( doc );
-                 }else if( key == "result_39" ) {
-                    send_result_39( doc );
+                 else if( key == "result30" ) {
+                    send_result30( doc );
+                 }else if( key == "result31" ) {
+                    send_result31( doc );
+                 }else if( key == "result32" ) {
+                    send_result32( doc );
+                 }else if( key == "result33" ) {
+                    send_result33( doc );
+                 }else if( key == "result34" ) {
+                    send_result34( doc );
+                 }else if( key == "result35" ) {
+                    send_result35( doc );
+                 }else if( key == "result36" ) {
+                    send_result36( doc );
+                 }else if( key == "result37" ) {
+                    send_result37( doc );
+                 }else if( key == "result38" ) {
+                    send_result38( doc );
+                 }else if( key == "result39" ) {
+                    send_result39( doc );
                  }
 
 
-                 else if( key == "result_40" ) {
-                    send_result_40( doc );
-                 }else if( key == "result_41" ) {
-                    send_result_41( doc );
-                 }else if( key == "result_42" ) {
-                    send_result_42( doc );
-                 }else if( key == "result_43" ) {
-                    send_result_43( doc );
-                 }else if( key == "result_44" ) {
-                    send_result_44( doc );
-                 }else if( key == "result_45" ) {
-                    send_result_45( doc );
-                 }else if( key == "result_46" ) {
-                    send_result_46( doc );
-                 }else if( key == "result_47" ) {
-                    send_result_47( doc );
-                 }else if( key == "result_48" ) {
-                    send_result_48( doc );
-                 }else if( key == "result_49" ) {
-                    send_result_49( doc );
+                 else if( key == "result40" ) {
+                    send_result40( doc );
+                 }else if( key == "result41" ) {
+                    send_result41( doc );
+                 }else if( key == "result42" ) {
+                    send_result42( doc );
+                 }else if( key == "result43" ) {
+                    send_result43( doc );
+                 }else if( key == "result44" ) {
+                    send_result44( doc );
+                 }else if( key == "result45" ) {
+                    send_result45( doc );
+                 }else if( key == "result46" ) {
+                    send_result46( doc );
+                 }else if( key == "result47" ) {
+                    send_result47( doc );
+                 }else if( key == "result48" ) {
+                    send_result48( doc );
+                 }else if( key == "result49" ) {
+                    send_result49( doc );
                  }
                       
                 
@@ -1263,62 +1262,62 @@ void CMemory::send_all_parameters( JsonDocument& doc )
     doc["cfg8"] = get_cfg8();  
     doc["cfg9"] = get_cfg9();  
       
-    doc["result_0"] = get_result_0();
-    doc["result_1"] = get_result_1();
-    doc["result_2"] = get_result_2();
-    doc["result_3"] = get_result_3();
-    doc["result_4"] = get_result_4();
-    doc["result_5"] = get_result_5();
-    doc["result_6"] = get_result_6();
-    doc["result_7"] = get_result_7();
-    doc["result_8"] = get_result_8();
-    doc["result_9"] = get_result_9();
+    doc["result0"] = get_result0();
+    doc["result1"] = get_result1();
+    doc["result2"] = get_result2();
+    doc["result3"] = get_result3();
+    doc["result4"] = get_result4();
+    doc["result5"] = get_result5();
+    doc["result6"] = get_result6();
+    doc["result7"] = get_result7();
+    doc["result8"] = get_result8();
+    doc["result9"] = get_result9();
 
-    doc["result_10"] = get_result_10();
-    doc["result_11"] = get_result_11();
-    doc["result_12"] = get_result_12();
-    doc["result_13"] = get_result_13();
-    doc["result_14"] = get_result_14();
-    doc["result_15"] = get_result_15();
-    doc["result_16"] = get_result_16();
-    doc["result_17"] = get_result_17();
-    doc["result_18"] = get_result_18();
-    doc["result_19"] = get_result_19();
-
-
-    doc["result_20"] = get_result_20();
-    doc["result_21"] = get_result_21();
-    doc["result_22"] = get_result_22();
-    doc["result_23"] = get_result_23();
-    doc["result_24"] = get_result_24();
-    doc["result_25"] = get_result_25();
-    doc["result_26"] = get_result_26();
-    doc["result_27"] = get_result_27();
-    doc["result_28"] = get_result_28();
-    doc["result_29"] = get_result_29();
+    doc["result10"] = get_result10();
+    doc["result11"] = get_result11();
+    doc["result12"] = get_result12();
+    doc["result13"] = get_result13();
+    doc["result14"] = get_result14();
+    doc["result15"] = get_result15();
+    doc["result16"] = get_result16();
+    doc["result17"] = get_result17();
+    doc["result18"] = get_result18();
+    doc["result19"] = get_result19();
 
 
-    doc["result_30"] = get_result_30();
-    doc["result_31"] = get_result_31();
-    doc["result_32"] = get_result_32();
-    doc["result_33"] = get_result_33();
-    doc["result_34"] = get_result_34();
-    doc["result_35"] = get_result_35();
-    doc["result_36"] = get_result_36();
-    doc["result_37"] = get_result_37();
-    doc["result_38"] = get_result_38();
-    doc["result_39"] = get_result_39();
+    doc["result20"] = get_result20();
+    doc["result21"] = get_result21();
+    doc["result22"] = get_result22();
+    doc["result23"] = get_result23();
+    doc["result24"] = get_result24();
+    doc["result25"] = get_result25();
+    doc["result26"] = get_result26();
+    doc["result27"] = get_result27();
+    doc["result28"] = get_result28();
+    doc["result29"] = get_result29();
 
-    doc["result_40"] = get_result_40();
-    doc["result_41"] = get_result_41();
-    doc["result_42"] = get_result_42();
-    doc["result_43"] = get_result_43();
-    doc["result_44"] = get_result_44();
-    doc["result_45"] = get_result_45();
-    doc["result_46"] = get_result_46();
-    doc["result_47"] = get_result_47();
-    doc["result_48"] = get_result_48();
-    doc["result_49"] = get_result_49();
+
+    doc["result30"] = get_result30();
+    doc["result31"] = get_result31();
+    doc["result32"] = get_result32();
+    doc["result33"] = get_result33();
+    doc["result34"] = get_result34();
+    doc["result35"] = get_result35();
+    doc["result36"] = get_result36();
+    doc["result37"] = get_result37();
+    doc["result38"] = get_result38();
+    doc["result39"] = get_result39();
+
+    doc["result40"] = get_result40();
+    doc["result41"] = get_result41();
+    doc["result42"] = get_result42();
+    doc["result43"] = get_result43();
+    doc["result44"] = get_result44();
+    doc["result45"] = get_result45();
+    doc["result46"] = get_result46();
+    doc["result47"] = get_result47();
+    doc["result48"] = get_result48();
+    doc["result49"] = get_result49();
        
     serializeJsonPretty( doc, Serial );
 }
@@ -1364,62 +1363,61 @@ void CMemory::send_all_cfg( JsonDocument& doc )
 }
 void CMemory::send_all_result( JsonDocument& doc )
 {
-    doc["result_0"] = get_result_0();
-    doc["result_1"] = get_result_1();
-    doc["result_2"] = get_result_2();
-    doc["result_3"] = get_result_3();
-    doc["result_4"] = get_result_4();
-    doc["result_5"] = get_result_5();
-    doc["result_6"] = get_result_6();
-    doc["result_7"] = get_result_7();
-    doc["result_8"] = get_result_8();
-    doc["result_9"] = get_result_9();
+    doc["result0"] = get_result0();
+    doc["result1"] = get_result1();
+    doc["result2"] = get_result2();
+    doc["result3"] = get_result3();
+    doc["result4"] = get_result4();
+    doc["result5"] = get_result5();
+    doc["result6"] = get_result6();
+    doc["result7"] = get_result7();
+    doc["result8"] = get_result8();
+    doc["result9"] = get_result9();
 
-    doc["result_10"] = get_result_10();
-    doc["result_11"] = get_result_11();
-    doc["result_12"] = get_result_12();
-    doc["result_13"] = get_result_13();
-    doc["result_14"] = get_result_14();
-    doc["result_15"] = get_result_15();
-    doc["result_16"] = get_result_16();
-    doc["result_17"] = get_result_17();
-    doc["result_18"] = get_result_18();
-    doc["result_19"] = get_result_19();
+    doc["result10"] = get_result10();
+    doc["result11"] = get_result11();
+    doc["result12"] = get_result12();
+    doc["result13"] = get_result13();
+    doc["result14"] = get_result14();
+    doc["result15"] = get_result15();
+    doc["result16"] = get_result16();
+    doc["result17"] = get_result17();
+    doc["result18"] = get_result18();
+    doc["result19"] = get_result19();
+
+    doc["result20"] = get_result20();
+    doc["result21"] = get_result21();
+    doc["result22"] = get_result22();
+    doc["result23"] = get_result23();
+    doc["result24"] = get_result24();
+    doc["result25"] = get_result25();
+    doc["result26"] = get_result26();
+    doc["result27"] = get_result27();
+    doc["result28"] = get_result28();
+    doc["result29"] = get_result29();
 
 
-    doc["result_20"] = get_result_20();
-    doc["result_21"] = get_result_21();
-    doc["result_22"] = get_result_22();
-    doc["result_23"] = get_result_23();
-    doc["result_24"] = get_result_24();
-    doc["result_25"] = get_result_25();
-    doc["result_26"] = get_result_26();
-    doc["result_27"] = get_result_27();
-    doc["result_28"] = get_result_28();
-    doc["result_29"] = get_result_29();
+    doc["result30"] = get_result30();
+    doc["result31"] = get_result31();
+    doc["result32"] = get_result32();
+    doc["result33"] = get_result33();
+    doc["result34"] = get_result34();
+    doc["result35"] = get_result35();
+    doc["result36"] = get_result36();
+    doc["result37"] = get_result37();
+    doc["result38"] = get_result38();
+    doc["result39"] = get_result39();
 
-
-    doc["result_30"] = get_result_30();
-    doc["result_31"] = get_result_31();
-    doc["result_32"] = get_result_32();
-    doc["result_33"] = get_result_33();
-    doc["result_34"] = get_result_34();
-    doc["result_35"] = get_result_35();
-    doc["result_36"] = get_result_36();
-    doc["result_37"] = get_result_37();
-    doc["result_38"] = get_result_38();
-    doc["result_39"] = get_result_39();
-
-    doc["result_40"] = get_result_40();
-    doc["result_41"] = get_result_41();
-    doc["result_42"] = get_result_42();
-    doc["result_43"] = get_result_43();
-    doc["result_44"] = get_result_44();
-    doc["result_45"] = get_result_45();
-    doc["result_46"] = get_result_46();
-    doc["result_47"] = get_result_47();
-    doc["result_48"] = get_result_48();
-    doc["result_49"] = get_result_49();
+    doc["result40"] = get_result40();
+    doc["result41"] = get_result41();
+    doc["result42"] = get_result42();
+    doc["result43"] = get_result43();
+    doc["result44"] = get_result44();
+    doc["result45"] = get_result45();
+    doc["result46"] = get_result46();
+    doc["result47"] = get_result47();
+    doc["result48"] = get_result48();
+    doc["result49"] = get_result49();
 
     serializeJsonPretty( doc, Serial );
 }
@@ -1580,264 +1578,264 @@ void CMemory::send_cfg9( JsonDocument& doc )
     serializeJsonPretty( doc, Serial );
 }
 
-void CMemory::send_result_0( JsonDocument& doc )
+void CMemory::send_result0( JsonDocument& doc )
 {
-  doc["result_0"] =  get_result_0();
+  doc["result0"] =  get_result0();
   serializeJsonPretty( doc, Serial );
 }
-void CMemory::send_result_1( JsonDocument& doc )
+void CMemory::send_result1( JsonDocument& doc )
 {
-  doc["result_1"] =  get_result_1();
+  doc["result1"] =  get_result1();
   serializeJsonPretty( doc, Serial );
 }
-void CMemory::send_result_2( JsonDocument& doc )
+void CMemory::send_result2( JsonDocument& doc )
 {
-  doc["result_2"] =  get_result_2();
+  doc["result2"] =  get_result2();
   serializeJsonPretty( doc, Serial );
 }
-void CMemory::send_result_3( JsonDocument& doc )
+void CMemory::send_result3( JsonDocument& doc )
 {
-  doc["result_3"] =  get_result_3();
+  doc["result3"] =  get_result3();
   serializeJsonPretty( doc, Serial );
 }
-void CMemory::send_result_4( JsonDocument& doc )
+void CMemory::send_result4( JsonDocument& doc )
 {
-  doc["result_4"] =  get_result_4();
+  doc["result4"] =  get_result4();
   serializeJsonPretty( doc, Serial );
 }
-void CMemory::send_result_5( JsonDocument& doc )
+void CMemory::send_result5( JsonDocument& doc )
 {
-  doc["result_5"] =  get_result_5();
+  doc["result5"] =  get_result5();
   serializeJsonPretty( doc, Serial );
 }
-void CMemory::send_result_6( JsonDocument& doc )
+void CMemory::send_result6( JsonDocument& doc )
 {
-  doc["result_6"] =  get_result_6();
+  doc["result6"] =  get_result6();
   serializeJsonPretty( doc, Serial );
 }
-void CMemory::send_result_7( JsonDocument& doc )
+void CMemory::send_result7( JsonDocument& doc )
 {
-  doc["result_7"] =  get_result_7();
+  doc["result7"] =  get_result7();
   serializeJsonPretty( doc, Serial );
 }
-void CMemory::send_result_8( JsonDocument& doc )
+void CMemory::send_result8( JsonDocument& doc )
 {
-  doc["result_8"] =  get_result_8();
+  doc["result8"] =  get_result8();
   serializeJsonPretty( doc, Serial );
 }
-void CMemory::send_result_9( JsonDocument& doc )
+void CMemory::send_result9( JsonDocument& doc )
 {
-  doc["result_9"] =  get_result_9();
-  serializeJsonPretty( doc, Serial );
-}
-
-
-void CMemory::send_result_10( JsonDocument& doc )
-{
-  doc["result_10"] =  get_result_10();
-  serializeJsonPretty( doc, Serial );
-}
-void CMemory::send_result_11( JsonDocument& doc )
-{
-  doc["result_11"] =  get_result_11();
-  serializeJsonPretty( doc, Serial );
-}
-void CMemory::send_result_12( JsonDocument& doc )
-{
-  doc["result_12"] =  get_result_12();
-  serializeJsonPretty( doc, Serial );
-}
-void CMemory::send_result_13( JsonDocument& doc )
-{
-  doc["result_13"] =  get_result_13();
-  serializeJsonPretty( doc, Serial );
-}
-void CMemory::send_result_14( JsonDocument& doc )
-{
-  doc["result_14"] =  get_result_14();
-  serializeJsonPretty( doc, Serial );
-}
-void CMemory::send_result_15( JsonDocument& doc )
-{
-  doc["result_15"] =  get_result_15();
-  serializeJsonPretty( doc, Serial );
-}
-void CMemory::send_result_16( JsonDocument& doc )
-{
-  doc["result_16"] =  get_result_16();
-  serializeJsonPretty( doc, Serial );
-}
-void CMemory::send_result_17( JsonDocument& doc )
-{
-  doc["result_17"] =  get_result_17();
-  serializeJsonPretty( doc, Serial );
-}
-void CMemory::send_result_18( JsonDocument& doc )
-{
-  doc["result_18"] =  get_result_18();
-  serializeJsonPretty( doc, Serial );
-}
-void CMemory::send_result_19( JsonDocument& doc )
-{
-  doc["result_19"] =  get_result_19();
+  doc["result9"] =  get_result9();
   serializeJsonPretty( doc, Serial );
 }
 
 
-void CMemory::send_result_20( JsonDocument& doc )
+void CMemory::send_result10( JsonDocument& doc )
 {
-  doc["result_20"] =  get_result_20();
+  doc["result10"] =  get_result10();
   serializeJsonPretty( doc, Serial );
 }
-void CMemory::send_result_21( JsonDocument& doc )
+void CMemory::send_result11( JsonDocument& doc )
 {
-  doc["result_21"] =  get_result_21();
+  doc["result11"] =  get_result11();
   serializeJsonPretty( doc, Serial );
 }
-void CMemory::send_result_22( JsonDocument& doc )
+void CMemory::send_result12( JsonDocument& doc )
 {
-  doc["result_22"] =  get_result_22();
+  doc["result12"] =  get_result12();
   serializeJsonPretty( doc, Serial );
 }
-void CMemory::send_result_23( JsonDocument& doc )
+void CMemory::send_result13( JsonDocument& doc )
 {
-  doc["result_23"] =  get_result_23();
+  doc["result13"] =  get_result13();
   serializeJsonPretty( doc, Serial );
 }
-void CMemory::send_result_24( JsonDocument& doc )
+void CMemory::send_result14( JsonDocument& doc )
 {
-  doc["result_24"] =  get_result_24();
+  doc["result14"] =  get_result14();
   serializeJsonPretty( doc, Serial );
 }
-void CMemory::send_result_25( JsonDocument& doc )
+void CMemory::send_result15( JsonDocument& doc )
 {
-  doc["result_25"] =  get_result_25();
+  doc["result15"] =  get_result15();
   serializeJsonPretty( doc, Serial );
 }
-void CMemory::send_result_26( JsonDocument& doc )
+void CMemory::send_result16( JsonDocument& doc )
 {
-  doc["result_26"] =  get_result_26();
+  doc["result16"] =  get_result16();
   serializeJsonPretty( doc, Serial );
 }
-void CMemory::send_result_27( JsonDocument& doc )
+void CMemory::send_result17( JsonDocument& doc )
 {
-  doc["result_27"] =  get_result_27();
+  doc["result17"] =  get_result17();
   serializeJsonPretty( doc, Serial );
 }
-void CMemory::send_result_28( JsonDocument& doc )
+void CMemory::send_result18( JsonDocument& doc )
 {
-  doc["result_28"] =  get_result_28();
+  doc["result18"] =  get_result18();
   serializeJsonPretty( doc, Serial );
 }
-void CMemory::send_result_29( JsonDocument& doc )
+void CMemory::send_result19( JsonDocument& doc )
 {
-  doc["result_29"] =  get_result_29();
+  doc["result19"] =  get_result19();
   serializeJsonPretty( doc, Serial );
 }
 
 
-
-void CMemory::send_result_30( JsonDocument& doc )
+void CMemory::send_result20( JsonDocument& doc )
 {
-  doc["result_30"] =  get_result_30();
+  doc["result20"] =  get_result20();
   serializeJsonPretty( doc, Serial );
 }
-void CMemory::send_result_31( JsonDocument& doc )
+void CMemory::send_result21( JsonDocument& doc )
 {
-  doc["result_31"] =  get_result_31();
+  doc["result21"] =  get_result21();
   serializeJsonPretty( doc, Serial );
 }
-void CMemory::send_result_32( JsonDocument& doc )
+void CMemory::send_result22( JsonDocument& doc )
 {
-  doc["result_32"] =  get_result_32();
+  doc["result22"] =  get_result22();
   serializeJsonPretty( doc, Serial );
 }
-void CMemory::send_result_33( JsonDocument& doc )
+void CMemory::send_result23( JsonDocument& doc )
 {
-  doc["result_33"] =  get_result_33();
+  doc["result23"] =  get_result23();
   serializeJsonPretty( doc, Serial );
 }
-void CMemory::send_result_34( JsonDocument& doc )
+void CMemory::send_result24( JsonDocument& doc )
 {
-  doc["result_34"] =  get_result_34();
+  doc["result24"] =  get_result24();
   serializeJsonPretty( doc, Serial );
 }
-void CMemory::send_result_35( JsonDocument& doc )
+void CMemory::send_result25( JsonDocument& doc )
 {
-  doc["result_35"] =  get_result_35();
+  doc["result25"] =  get_result25();
   serializeJsonPretty( doc, Serial );
 }
-void CMemory::send_result_36( JsonDocument& doc )
+void CMemory::send_result26( JsonDocument& doc )
 {
-  doc["result_36"] =  get_result_36();
+  doc["result26"] =  get_result26();
   serializeJsonPretty( doc, Serial );
 }
-void CMemory::send_result_37( JsonDocument& doc )
+void CMemory::send_result27( JsonDocument& doc )
 {
-  doc["result_37"] =  get_result_37();
+  doc["result27"] =  get_result27();
   serializeJsonPretty( doc, Serial );
 }
-void CMemory::send_result_38( JsonDocument& doc )
+void CMemory::send_result28( JsonDocument& doc )
 {
-  doc["result_38"] =  get_result_38();
+  doc["result28"] =  get_result28();
   serializeJsonPretty( doc, Serial );
 }
-void CMemory::send_result_39( JsonDocument& doc )
+void CMemory::send_result29( JsonDocument& doc )
 {
-  doc["result_39"] =  get_result_39();
+  doc["result29"] =  get_result29();
   serializeJsonPretty( doc, Serial );
 }
 
 
 
-void CMemory::send_result_40( JsonDocument& doc )
+void CMemory::send_result30( JsonDocument& doc )
 {
-  doc["result_40"] =  get_result_40();
+  doc["result30"] =  get_result30();
   serializeJsonPretty( doc, Serial );
 }
-void CMemory::send_result_41( JsonDocument& doc )
+void CMemory::send_result31( JsonDocument& doc )
 {
-  doc["result_41"] =  get_result_41();
+  doc["result31"] =  get_result31();
   serializeJsonPretty( doc, Serial );
 }
-void CMemory::send_result_42( JsonDocument& doc )
+void CMemory::send_result32( JsonDocument& doc )
 {
-  doc["result_42"] =  get_result_42();
+  doc["result32"] =  get_result32();
   serializeJsonPretty( doc, Serial );
 }
-void CMemory::send_result_43( JsonDocument& doc )
+void CMemory::send_result33( JsonDocument& doc )
 {
-  doc["result_43"] =  get_result_43();
+  doc["result33"] =  get_result33();
   serializeJsonPretty( doc, Serial );
 }
-void CMemory::send_result_44( JsonDocument& doc )
+void CMemory::send_result34( JsonDocument& doc )
 {
-  doc["result_44"] =  get_result_44();
+  doc["result34"] =  get_result34();
   serializeJsonPretty( doc, Serial );
 }
-void CMemory::send_result_45( JsonDocument& doc )
+void CMemory::send_result35( JsonDocument& doc )
 {
-  doc["result_45"] =  get_result_45();
+  doc["result35"] =  get_result35();
   serializeJsonPretty( doc, Serial );
 }
-void CMemory::send_result_46( JsonDocument& doc )
+void CMemory::send_result36( JsonDocument& doc )
 {
-  doc["result_46"] =  get_result_46();
+  doc["result36"] =  get_result36();
   serializeJsonPretty( doc, Serial );
 }
-void CMemory::send_result_47( JsonDocument& doc )
+void CMemory::send_result37( JsonDocument& doc )
 {
-  doc["result_47"] =  get_result_47();
+  doc["result37"] =  get_result37();
   serializeJsonPretty( doc, Serial );
 }
-void CMemory::send_result_48( JsonDocument& doc )
+void CMemory::send_result38( JsonDocument& doc )
 {
-  doc["result_48"] =  get_result_48();
+  doc["result38"] =  get_result38();
   serializeJsonPretty( doc, Serial );
 }
-void CMemory::send_result_49( JsonDocument& doc )
+void CMemory::send_result39( JsonDocument& doc )
 {
-  doc["result_49"] =  get_result_49();
+  doc["result39"] =  get_result39();
+  serializeJsonPretty( doc, Serial );
+}
+
+
+
+void CMemory::send_result40( JsonDocument& doc )
+{
+  doc["result40"] =  get_result40();
+  serializeJsonPretty( doc, Serial );
+}
+void CMemory::send_result41( JsonDocument& doc )
+{
+  doc["result41"] =  get_result41();
+  serializeJsonPretty( doc, Serial );
+}
+void CMemory::send_result42( JsonDocument& doc )
+{
+  doc["result42"] =  get_result42();
+  serializeJsonPretty( doc, Serial );
+}
+void CMemory::send_result43( JsonDocument& doc )
+{
+  doc["result43"] =  get_result43();
+  serializeJsonPretty( doc, Serial );
+}
+void CMemory::send_result44( JsonDocument& doc )
+{
+  doc["result44"] =  get_result44();
+  serializeJsonPretty( doc, Serial );
+}
+void CMemory::send_result45( JsonDocument& doc )
+{
+  doc["result45"] =  get_result45();
+  serializeJsonPretty( doc, Serial );
+}
+void CMemory::send_result46( JsonDocument& doc )
+{
+  doc["result46"] =  get_result46();
+  serializeJsonPretty( doc, Serial );
+}
+void CMemory::send_result47( JsonDocument& doc )
+{
+  doc["result47"] =  get_result47();
+  serializeJsonPretty( doc, Serial );
+}
+void CMemory::send_result48( JsonDocument& doc )
+{
+  doc["result48"] =  get_result48();
+  serializeJsonPretty( doc, Serial );
+}
+void CMemory::send_result49( JsonDocument& doc )
+{
+  doc["result49"] =  get_result49();
   serializeJsonPretty( doc, Serial );
 }
 
@@ -1902,6 +1900,86 @@ float CMemory::get_input(uint8_t param){
    }
 }
 
+void CMemory::set_input(uint8_t param, float value){
+
+   switch (param) {
+
+    case 1:
+
+      set_input0(value);
+
+    break;
+
+    case 2:
+
+      set_input1(value);
+
+    break;
+
+    case 3:
+
+      set_input2(value);
+
+    break;
+
+    case 4:
+
+      set_input3(value);
+
+    break;
+
+    case 5:
+
+      set_input4(value);
+
+    break;
+    
+    default:
+
+    break;
+      
+   }
+}
+
+float CMemory::get_output(uint8_t param)
+{
+
+   switch (param) {
+
+    case 10:
+    
+      return get_output0();
+
+    break;
+
+    case 20:
+
+     return get_output1();
+
+    break;
+
+    case 30:
+
+      return get_output2();
+
+    break;
+
+    case 40:
+
+      return get_output3();
+
+    break;
+
+    case 50:
+
+     return get_output4();
+
+    break;
+    
+    default:
+     return 66666;
+   }
+}
 
 void  CMemory::set_output(uint8_t param, float value)
 
@@ -1940,7 +2018,7 @@ void  CMemory::set_output(uint8_t param, float value)
     break;
     
     default:
-      66666;
+      break;
    }
 }
 
@@ -2010,5 +2088,694 @@ float CMemory::get_cfg(uint8_t param){
     
     default:
       return 77777;
+   }
+}
+
+void CMemory::set_cfg(uint8_t param, float value){
+
+   switch (param) {
+
+    case 11:
+
+      set_cfg0(value);
+
+    break;
+
+    case 22:
+
+      set_cfg1(value);
+
+    break;
+
+    case 33:
+
+       set_cfg2(value);
+
+    break;
+
+    case 44:
+
+      set_cfg3(value);
+
+    break;
+
+    case 55:
+
+       set_cfg4(value);
+
+    break;
+
+    case 66:
+
+      set_cfg5(value);
+
+    break;
+
+    case 77:
+
+      set_cfg6(value);
+
+    break;
+
+    case 88:
+
+       set_cfg7(value);
+
+    break;
+
+    case 99:
+
+       set_cfg8(value);
+
+    break;
+
+    case 100:
+
+       set_cfg9(value);
+
+    break;
+    
+    default:
+    break;  
+   }
+}
+
+float CMemory::get_result(uint8_t param)
+
+{
+
+   switch (param) {
+
+    case 0:
+
+      return get_result0();
+
+    break;
+
+    case 1:
+
+      return get_result1();
+
+    break;
+
+    case 2:
+
+      return get_result2();
+
+    break;
+
+    case 3:
+
+      return get_result3();
+
+    break;
+
+    case 4:
+
+      return get_result4();
+
+    break;
+
+    case 5:
+
+      return get_result5();
+
+    break;
+
+    case 6:
+
+      return get_result6();
+
+    break;
+
+    case 7:
+
+      return get_result7();
+
+    break;
+
+    case 8:
+
+      return get_result8();
+
+    break;
+
+    case 9:
+
+      return get_result9();
+
+    break;
+
+    case 10:
+
+      return get_result0();
+
+    break;
+
+    case 11:
+
+      return get_result11();
+
+    break;
+
+    case 12:
+
+      return get_result12();
+
+    break;
+
+    case 13:
+
+      return get_result13();
+
+    break;
+
+    case 14:
+
+      return get_result14();
+
+    break;
+
+    case 15:
+
+      return get_result15();
+
+    break;
+
+    case 16:
+
+      return get_result16();
+
+    break;
+
+    case 17:
+
+      return get_result17();
+
+    break;
+
+    case 18:
+
+      return get_result18();
+
+    break;
+
+    case 19:
+
+      return get_result19();
+
+    break;
+
+    case 20:
+
+      return get_result20();
+
+    break;
+
+    case 21:
+
+      return get_result21();
+
+    break;
+
+    case 22:
+
+      return get_result22();
+
+    break;
+
+    case 23:
+
+      return get_result23();
+
+    break;
+
+    case 24:
+
+      return get_result24();
+
+    break;
+
+    case 25:
+
+      return get_result25();
+
+    break;
+
+    case 26:
+
+      return get_result26();
+
+    break;
+
+    case 27:
+
+      return get_result27();
+
+    break;
+
+    case 28:
+
+      return get_result28();
+
+    break;
+
+    case 29:
+
+      return get_result29();
+
+    break;
+
+    case 30:
+
+      return get_result30();
+
+    break;
+
+    case 31:
+
+      return get_result31();
+
+    break;
+
+    case 32:
+
+      return get_result32();
+
+    break;
+
+    case 33:
+
+      return get_result33();
+
+    break;
+
+    case 34:
+
+      return get_result34();
+
+    break;
+
+    case 35:
+
+      return get_result35();
+
+    break;
+
+    case 36:
+
+      return get_result36();
+
+    break;
+
+    case 37:
+
+      return get_result37();
+
+    break;
+
+    case 38:
+
+      return get_result38();
+
+    break;
+
+    case 39:
+
+      return get_result39();
+
+    break;
+
+    case 40:
+
+      return get_result40();
+
+    break;
+
+    case 41:
+
+      return get_result41();
+
+    break;
+
+    case 42:
+
+      return get_result42();
+
+    break;
+
+    case 43:
+
+      return get_result43();
+
+    break;
+
+    case 44:
+
+      return get_result44();
+
+    break;
+
+    case 45:
+
+      return get_result45();
+
+    break;
+
+    case 46:
+
+      return get_result46();
+
+    break;
+
+    case 47:
+
+      return get_result47();
+
+    break;
+
+    case 48:
+
+      return get_result48();
+
+    break;
+
+    case 49:
+
+      return get_result49();
+
+    break;
+    
+    default:
+      return 88888;
+   }
+}
+
+void CMemory::set_result(uint8_t param, float value)
+
+{
+
+   switch (param) {
+
+    case 0:
+
+       set_result0(value);
+
+    break;
+
+    case 1:
+
+       set_result1(value);
+
+    break;
+
+    case 2:
+
+       set_result2(value);
+
+    break;
+
+    case 3:
+
+       set_result3(value);
+
+    break;
+
+    case 4:
+
+      set_result4(value);
+
+    break;
+
+    case 5:
+
+      set_result5(value);
+
+    break;
+
+    case 6:
+
+      set_result6(value);
+
+    break;
+
+    case 7:
+
+     set_result7(value);
+
+    break;
+
+    case 8:
+
+      set_result8(value);
+
+    break;
+
+    case 9:
+
+      set_result9(value);
+
+    break;
+
+    case 10:
+
+     set_result10(value);
+
+    break;
+
+    case 11:
+
+      set_result11(value);
+
+    break;
+
+    case 12:
+
+      set_result12(value);
+
+    break;
+
+    case 13:
+
+     set_result13(value);
+
+    break;
+
+    case 14:
+
+      set_result14(value);
+
+    break;
+
+    case 15:
+
+      set_result15(value);
+
+    break;
+
+    case 16:
+
+      set_result16(value);
+
+    break;
+
+    case 17:
+
+      set_result17(value);
+
+    break;
+
+    case 18:
+
+      set_result18(value);
+
+    break;
+
+    case 19:
+
+     set_result19(value);
+
+    break;
+
+    case 20:
+
+      set_result20(value);
+
+    break;
+
+    case 21:
+
+      set_result21(value);
+
+    break;
+
+    case 22:
+
+      set_result22(value);
+
+    break;
+
+    case 23:
+
+     set_result23(value);
+
+    break;
+
+    case 24:
+
+     set_result24(value);
+
+    break;
+
+    case 25:
+
+     set_result25(value);
+
+    break;
+
+    case 26:
+
+      set_result26(value);
+
+    break;
+
+    case 27:
+
+      set_result27(value);
+
+    break;
+
+    case 28:
+
+      set_result28(value);
+
+    break;
+
+    case 29:
+
+     set_result29(value);
+
+    break;
+
+    case 30:
+
+      set_result30(value);
+
+    break;
+
+    case 31:
+
+      set_result31(value);
+
+    break;
+
+    case 32:
+
+     set_result32(value);
+
+    break;
+
+    case 33:
+
+      set_result33(value);
+
+    break;
+
+    case 34:
+
+      set_result34(value);
+
+    break;
+
+    case 35:
+
+      set_result35(value);
+
+    break;
+
+    case 36:
+
+      set_result36(value);
+
+    break;
+
+    case 37:
+
+      set_result37(value);
+
+    break;
+
+    case 38:
+
+      set_result38(value);
+
+    break;
+
+    case 39:
+
+      set_result39(value);
+
+    break;
+
+    case 40:
+
+      set_result40(value);
+
+    break;
+
+    case 41:
+
+      set_result41(value);
+
+    break;
+
+    case 42:
+
+      set_result42(value);
+
+    break;
+
+    case 43:
+
+      set_result43(value);
+    break;
+
+    case 44:
+
+      set_result44(value);
+
+    break;
+
+    case 45:
+
+      set_result45(value);
+
+    break;
+
+    case 46:
+
+     set_result46(value);
+
+    break;
+
+    case 47:
+
+      set_result47(value);
+    break;
+
+    case 48:
+
+      set_result48(value);
+
+    break;
+
+    case 49:
+
+      set_result49(value);
+
+    break;
+    
+    default:
+    break;  
    }
 }

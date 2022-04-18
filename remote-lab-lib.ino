@@ -58,7 +58,9 @@
 //                       st_test       1 ensayo activado. 
 // {st_mode:'0'}         st_mode       Modo de operacion normal, ensayo activado.
 // {st_mode:'100'}       st_mode       Experimento de prueba 1. 
-// {st_mode:'101'}       st_mode       Experimento de prueba 2.                                 
+// {st_mode:'101'}       st_mode       Experimento de prueba 2.  
+// {st_mode:'102'}       st_mode       Experimento de prueba 3. 
+// {st_mode:'103'}       st_mode       Experimento de prueba 4.                               
 
 
 
@@ -80,6 +82,8 @@
 #define ST_LOOP_END_TEST                3     // Termino el ensayo.
 #define ST_MODE_RUN_EXAMPLE1            4     // Experimento1 para ejecutar desde el frontEnd
 #define ST_MODE_RUN_EXAMPLE2            5     // Experimento2 para ejecutar desde el frontEnd
+#define ST_MODE_RUN_EXAMPLE3            6     // Experimento1 para ejecutar desde el frontEnd
+#define ST_MODE_RUN_EXAMPLE4            7     // Experimento2 para ejecutar desde el frontEnd
 
 /*
  * Clases del sistema
@@ -92,6 +96,8 @@ CLed     Led;                             // Manejo del led.
 static void experiment( void );          // Experimento escrito por el usuario. 
 static void run_example1( void );        // Experimento de prueba 1.
 static void run_example2( void );        // Experimento de prueba 2.
+static void run_example3( void );        // Experimento de prueba 3.
+static void run_example4( void );        // Experimento de prueba 4.
 
 /*
  * realizz el final de ensayo
@@ -161,6 +167,10 @@ void loop()
         st_loop =  ST_MODE_RUN_EXAMPLE1 ;
       }else if (Memory.get_st_mode() == ST_MODE_RUN2 ) { // Espera el modo runExample1
         st_loop =  ST_MODE_RUN_EXAMPLE2 ;
+      }else if (Memory.get_st_mode() == ST_MODE_RUN3 ) { // Espera el modo runExample1
+        st_loop =  ST_MODE_RUN_EXAMPLE3 ;
+      }else if (Memory.get_st_mode() == ST_MODE_RUN4 ) { // Espera el modo runExample1
+        st_loop =  ST_MODE_RUN_EXAMPLE4 ;
       }
       
       
@@ -169,7 +179,7 @@ void loop()
     case ST_LOOP_RUN_TEST:    
        
       Log.msg( F("Comienzo del experimento") );         
-      Led.n_blink(10, 500);          
+      experiment();                      
       st_loop = ST_LOOP_END_TEST;
       
     break;    
@@ -195,6 +205,18 @@ void loop()
       st_loop = ST_LOOP_IDLE;
       
       break;
+      
+      case ST_MODE_RUN_EXAMPLE3:  
+      run_example3();      
+      st_loop = ST_LOOP_IDLE;
+      
+      break;
+
+      case ST_MODE_RUN_EXAMPLE4:  
+      run_example4();      
+      st_loop = ST_LOOP_IDLE;
+      
+      break;
 
       default:
       st_loop = ST_LOOP_INIT;
@@ -205,32 +227,27 @@ void loop()
 #endif //ST_DEBUG
 }
 
-/*
- * Aca el usuario escribe su experimento.
- */
 
- static void experiment( void ){
-  // ToDo
- }
 
  /*
-  *  Experimento de prueba 1
+  *  Experimento de prueba 1.
   */
 
 static void run_example1( void ){
   
    Log.msg( F("Ejemplo de prueba 1"));
-   Led.n_blink(5, 500);
+   Led.n_blink(2, 500);
    Memory.set_output(ACELERACION, ( Memory.get_input(FUERZA)  + Memory.get_cfg(INPUT0_ADD) ) + ( 2 *  Memory.get_cfg(INPUT0_MUL)) );
    Memory.set_output(MILIMETROS,  ( Memory.get_input(PESO)    + Memory.get_cfg(INPUT1_ADD) ) + ( 2 *  Memory.get_cfg(INPUT1_MUL)));
    Memory.set_output(AMPER,       ( Memory.get_input(ENERGIA) + Memory.get_cfg(INPUT2_ADD) ) + ( 2 *  Memory.get_cfg(INPUT2_MUL)));
    Memory.set_output(NEWTON,      ( Memory.get_input(TENSION) + Memory.get_cfg(INPUT3_ADD) ) + ( 2 *  Memory.get_cfg(INPUT3_MUL)));
    Memory.set_output(ANGULO,      ( Memory.get_input(POTENCIA)+ Memory.get_cfg(INPUT4_ADD) ) + ( 2 *  Memory.get_cfg(INPUT4_MUL)));
+   Log.msg( F("Fin de prueba 1"));
    Memory.set_st_mode( ST_MODE_TEST );
 }
 
 /*
-  *  Experimento de prueba 2
+  *  Experimento de prueba 2.
   */
 
 static void run_example2( void ){
@@ -260,6 +277,51 @@ static void run_example2( void ){
    
   
   Led.n_blink((uint8_t) n_blinkF, (uint16_t) t_blinkF);  
-  
+  Log.msg( F("Fin de prueba 2"));
    Memory.set_st_mode( ST_MODE_TEST );
 }
+
+
+
+ /*
+  *  Experimento de prueba 3.
+  */
+
+static void run_example3( void ){
+   uint8_t i;
+   Log.msg( F("Ejemplo de prueba 3"));
+   Led.n_blink(2, 500);
+
+   for (i=0; i<50 ; i++){
+    Memory.set_result(i,i);
+   }
+   Log.msg( F("Fin de prueba 3"));
+   Memory.set_st_mode( ST_MODE_TEST );
+}
+
+
+/*
+  *  Experimento de prueba 4.
+  */
+
+static void run_example4( void ){
+   uint8_t i;
+   Log.msg( F("Ejemplo de prueba 4"));
+   Led.n_blink(2, 500);
+
+   for (i=0; i<50 ; i++){
+    Memory.set_result(i,49-i);
+   }
+   Log.msg( F("Fin de prueba 4"));
+   Memory.set_st_mode( ST_MODE_TEST );
+}
+
+
+/*
+ * Aca el usuario escribe su experimento.
+ */
+
+ static void experiment( void ){
+  // Escribir experimento 
+  Led.n_blink(10, 500);
+ }
