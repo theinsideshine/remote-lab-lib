@@ -195,7 +195,7 @@ void loop()
       case ST_MODE_RUN_EXAMPLE1:                    
      
       run_example1();      
-      st_loop = ST_LOOP_IDLE;
+       st_loop = ST_LOOP_END_TEST;
       
       break;
 
@@ -323,5 +323,5 @@ static void run_example4( void ){
 
  static void experiment( void ){
   // Escribir experimento 
-  Led.n_blink(10, 500);
+  Led.n_blink(5, 500);
  }
