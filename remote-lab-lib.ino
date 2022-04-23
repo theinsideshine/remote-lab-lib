@@ -1,7 +1,7 @@
 
  /*           
 
-   - Compiler:           Arduino 1.8.15
+   - Compiler:           Arduino 1.8.19
    - Supported devices:  Mega
 
    \author              
@@ -30,10 +30,10 @@
 // {read:'serial_level'}         Nivel de serialeo por puerto serie.
 
 
-// {serial_level:'0'}       serial_level:0=desactivado,
-// {serial_level:'1'}                 1=mensajes.
-// {serial_level:'2'}                 2=info control estandar.
-// {serial_level:'3'}                 3=info control arduino plotter.
+// {serial_level:'0'}    serial_level:0= Desactivado.
+// {serial_level:'1'}                 1= Impresión de string activado.
+// {serial_level:'2'}                 2= Impresión de excel activada..
+// {serial_level:'3'}                 3= Impresión para arduino plotter activada.
 
 
 // *********************************************
@@ -369,12 +369,11 @@ static void run_demo1( void ){
  */
 
  static void experiment( void ){
-  // Escribir experimento  
-   
-  Led.n_blink(5, 500);
-   Memory.set_input(FUERZA, 15);
-   Memory.set_output(ACELERACION,  Memory.get_input(FUERZA)  + 4 );
-   
+  // Escribir experimento    
    
   
  }
+ 
+//Led.n_blink(5, 500); 
+ //Memory.set_input(FUERZA, 15);
+ //  Memory.set_output(ACELERACION,  Memory.get_input(FUERZA)  + 4 );
