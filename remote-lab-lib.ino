@@ -318,10 +318,33 @@ static void run_example4( void ){
 
 
 /*
- * Aca el usuario escribe su experimento.
+ * Experimento de usuario: Demo Arduino Plotter
+ * este codigo se usa en el video:  https://youtu.be/7ykRqe4GuWU 
+ */
+/*
+ static void experiment( void ){
+  // Escribir experimento 
+  uint16_t raw, filtered,danger_point=2500;
+   uint8_t state=0; 
+   
+  Led.n_blink(5, 500);
+  for (raw=0;raw<5000;raw++){
+      filtered = raw+1 ;
+      if (filtered >danger_point ){ 
+        state=1 ;
+      }
+      Log.ctrl (raw, filtered,state,danger_point);
+  }
+  */
+  
+  /*
+   * Aca el usuario escribe su experimento.
  */
 
  static void experiment( void ){
-  // Escribir experimento 
+  // Escribir experimento  
+   
   Led.n_blink(5, 500);
+  
+  
  }

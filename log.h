@@ -20,7 +20,7 @@
 #define LOG_SERIAL_SPEED                115200
 
 #define  LOG_DISABLED                    0           // serial desactivado.
-#define  LOG_MSG                         1           // serialea mensajes
+#define  LOG_MSG                         1           // serial mensajes
 #define  LOG_CTRL_JSON                   2           // serial habilitado en formato json.
 #define  LOG_CTRL_ARDUINO_PLOTTER        3           // serial habilitado en formato arduino serial plotter.
 

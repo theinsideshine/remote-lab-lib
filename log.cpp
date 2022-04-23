@@ -29,13 +29,14 @@ void CLog::set_level( uint8_t level )
     this->level = level;
 }
 
-// Muestra informacion de logge por el puerto serie, precedidos
+// Muestra informacion de loggeo por el puerto serie, precedidos
 // por los milisegundos desde el reset.
 // Implementa un wrapper de la funcion print de C para usar string
 // formateados, ejemplo: ("distancia %d", var)
 // NOTA: para ahorrar memoria RAM usa la version vsnprintf_P para que los
 //       string se almacenen en la flash. Hay que anteponer el modificador
 //       F(), ejemplo: serial_msg( F("valor = %d"), var );
+// Depende del level serial  si muestra o no el mensaje 
 void CLog::msg( const __FlashStringHelper *fmt, ... )
 {
     if( level ==  LOG_MSG  ){
@@ -52,8 +53,7 @@ void CLog::msg( const __FlashStringHelper *fmt, ... )
     }
 }
 
-// Muestra informacion de logeo por el puerto serie, precedidos
-// por los milisegundos desde el reset.
+
 // Implementa un wrapper de la funcion print de C para usar string
 // formateados, ejemplo: ("distancia %d", var)
 // NOTA: para ahorrar memoria RAM usa la version vsnprintf_P para que los
@@ -74,6 +74,7 @@ va_list args;
 // Logea la informacion de control. Hay dos opciones, la primera es para loggear
 // para pos-procesar con excel. Y la segunda es para procesarla en tiempo real con
 // la utilidad plotter de arduino.
+
 void CLog::ctrl( uint16_t raw, uint16_t filtered, uint8_t state, uint16_t danger_point )
 {
     if( level == LOG_CTRL_JSON ){

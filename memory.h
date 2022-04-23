@@ -18,9 +18,10 @@
 #include "Arduino.h"
 #include <ArduinoJson.h>
 
-#define FIRMWARE_VERSION                "2.0.04"    // Experiemnto del usuario blink 5 veces 
-                                                   // Se completaron Setter y getter faltantes. Se cambio result_x por resultx.
-                                                  //  Se agregaron modos de prueba 3 y 4
+#define FIRMWARE_VERSION                "2.0.05" // v2.0.05  Se agrego Demo Plotter 
+                                                 // v2.0.04  Experiemnto del usuario blink 5 veces 
+                                                 //          Se completaron Setter y getter faltantes. Se cambio result_x por resultx.
+                                                 //          Se agregaron modos de prueba 3 y 4
                                                  // v2.0.02  Se agrego modo de experimento de prueba2      
                                                   
 //#define EEPROM_ADDRESS_memory         4       // Direccion en la epprom donde se almacena la memoryuracion.
