@@ -18,7 +18,8 @@
 #include "Arduino.h"
 #include <ArduinoJson.h>
 
-#define FIRMWARE_VERSION                "2.0.06" // v2.0.06  Se agrego demo mode.
+#define FIRMWARE_VERSION                "2.0.07" // Se saco de runexample1 las definicion de param.h para no confundir al usuario cuando las cambie
+                                                 // v2.0.06  Se agrego demo mode.
                                                  // v2.0.05  Se agrego Demo Plotter .
                                                  // v2.0.04  Experiemnto del usuario blink 5 veces.
                                                  //          Se completaron Setter y getter faltantes. Se cambio result_x por resultx.

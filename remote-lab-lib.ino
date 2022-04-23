@@ -252,11 +252,11 @@ static void run_example1( void ){
   
    Log.msg( F("Ejemplo de prueba 1"));
    Led.n_blink(2, 500);
-   Memory.set_output(ACELERACION, ( Memory.get_input(FUERZA)  + Memory.get_cfg(INPUT0_ADD) ) + ( 2 *  Memory.get_cfg(INPUT0_MUL)) );
-   Memory.set_output(MILIMETROS,  ( Memory.get_input(PESO)    + Memory.get_cfg(INPUT1_ADD) ) + ( 2 *  Memory.get_cfg(INPUT1_MUL)));
-   Memory.set_output(AMPER,       ( Memory.get_input(ENERGIA) + Memory.get_cfg(INPUT2_ADD) ) + ( 2 *  Memory.get_cfg(INPUT2_MUL)));
-   Memory.set_output(NEWTON,      ( Memory.get_input(TENSION) + Memory.get_cfg(INPUT3_ADD) ) + ( 2 *  Memory.get_cfg(INPUT3_MUL)));
-   Memory.set_output(ANGULO,      ( Memory.get_input(POTENCIA)+ Memory.get_cfg(INPUT4_ADD) ) + ( 2 *  Memory.get_cfg(INPUT4_MUL)));
+   Memory.set_output( 10, ( Memory.get_input( 1 ) + Memory.get_cfg( 11 ) ) + ( 2 *  Memory.get_cfg( 66 )));
+   Memory.set_output( 20, ( Memory.get_input( 2 ) + Memory.get_cfg( 22 ) ) + ( 2 *  Memory.get_cfg( 77 )));
+   Memory.set_output( 30, ( Memory.get_input( 3 ) + Memory.get_cfg( 33 ) ) + ( 2 *  Memory.get_cfg( 88 )));
+   Memory.set_output( 40, ( Memory.get_input( 4 ) + Memory.get_cfg( 44 ) ) + ( 2 *  Memory.get_cfg( 99 )));
+   Memory.set_output( 50, ( Memory.get_input( 5 ) + Memory.get_cfg( 55 ) ) + ( 2 *  Memory.get_cfg( 100)));
    Log.msg( F("Fin de prueba 1"));
    Memory.set_st_mode( ST_MODE_TEST );
 }
@@ -371,9 +371,7 @@ static void run_demo1( void ){
  static void experiment( void ){
   // Escribir experimento    
    
+  Led.n_blink(5, 500);
   
  }
  
-//Led.n_blink(5, 500); 
- //Memory.set_input(FUERZA, 15);
- //  Memory.set_output(ACELERACION,  Memory.get_input(FUERZA)  + 4 );
