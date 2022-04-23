@@ -14,7 +14,9 @@
 */
 
 
-// Lee por el puerto serie parametros de memoryuracion en formato json.
+// *********************************************
+// **************Json lectura*******************
+
 // {read:'all-params'}        Envia todos los parametros en formato json.
 // {read:'all-input'}         Envia todos los parametros de entrada.
 // {read:'all-output'}        Envia todos los parametros de salida.
@@ -33,11 +35,9 @@
 // {serial_level:'2'}                 2=info control estandar.
 // {serial_level:'3'}                 3=info control arduino plotter.
 
-// {cmd:'start'}       Comienza el ensayo.
 
-
-
- //   {cdd:'start',data:{distance:'20',force:'306'}} 
+// *********************************************
+// **************Json escritura*****************
 
 // {input0:'250.2',input1:'250.3',input2:'250.4',input3:'250.5',input4:'250.6'}
 // {input0:'250'}       input0       parametro de entrada tipo float 
@@ -49,11 +49,16 @@
 // {cfg0:'250'}      cfg0       parametro de configuracion tipo float 
 // {cfgx:'250'}      cfgx 
 
-
-
 // {result0:'70.123'}      result0      parametro float
 // {resultx:'70.123'}      resultx      p
 
+// *********************************************
+// ****Comando de ejecucion del experimento*****
+
+// {cmd:'start'}       Comienza el ensayo.} 
+
+// *********************************************
+// **************Estado de la Lib****************
 // {st_test:'1'}         st_test       0 ensayo desactivado. 
 //                       st_test       1 ensayo activado. 
 // {st_mode:'0'}         st_mode       Modo de operacion normal, ensayo activado.
@@ -336,6 +341,7 @@ static void run_demo1( void ){
 
   Led.n_blink(10, 100);
   
+  
 }
  
 /*
@@ -366,6 +372,9 @@ static void run_demo1( void ){
   // Escribir experimento  
    
   Led.n_blink(5, 500);
-  
+   Memory.set_input(FUERZA, 15);
+   Memory.set_output(ACELERACION,  Memory.get_input(FUERZA)  + 4 );
+   
+   
   
  }
