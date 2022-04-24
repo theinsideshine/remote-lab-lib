@@ -60,7 +60,8 @@
 // {st_mode:'100'}       st_mode       Experimento de prueba 1. 
 // {st_mode:'101'}       st_mode       Experimento de prueba 2.  
 // {st_mode:'102'}       st_mode       Experimento de prueba 3. 
-// {st_mode:'103'}       st_mode       Experimento de prueba 4.                               
+// {st_mode:'103'}       st_mode       Experimento de prueba 4.    
+// {st_mode:'200'}       st_mode       Experimento de demo   1.                           
 
 
 
@@ -80,17 +81,17 @@
 #define ST_LOOP_IDLE                    1     // Espera la recepcion por comando.
 #define ST_LOOP_RUN_TEST                2     // Experimento en ejecucion. 
 #define ST_LOOP_END_TEST                3     // Termino el ensayo.
-#define ST_MODE_RUN_EXAMPLE1            4     // Experimento1 para ejecutar desde el frontEnd
-#define ST_MODE_RUN_EXAMPLE2            5     // Experimento2 para ejecutar desde el frontEnd
-#define ST_MODE_RUN_EXAMPLE3            6     // Experimento1 para ejecutar desde el frontEnd
-#define ST_MODE_RUN_EXAMPLE4            7     // Experimento2 para ejecutar desde el frontEnd
-
+#define ST_MODE_RUN_EXAMPLE1            4     // Experimento1 para ejecutar desde el frontEnd.
+#define ST_MODE_RUN_EXAMPLE2            5     // Experimento2 para ejecutar desde el frontEnd.
+#define ST_MODE_RUN_EXAMPLE3            6     // Experimento3 para ejecutar desde el frontEnd.
+#define ST_MODE_RUN_EXAMPLE4            7     // Experimento4 para ejecutar desde el frontEnd.
+#define ST_MODE_RUN_DEMO1               8     // Demo del uso del estamo mode.
 /*
  * Clases del sistema
  */
 
 CLog    Log;                              // Manejo del puerto serie.
-CMemory Memory;                           // Manejo de la memoria EEPROM
+CMemory Memory;                           // Manejo de la memoria EEPROM.
 CLed     Led;                             // Manejo del led.
 
 static void experiment( void );          // Experimento escrito por el usuario. 
@@ -98,6 +99,7 @@ static void run_example1( void );        // Experimento de prueba 1.
 static void run_example2( void );        // Experimento de prueba 2.
 static void run_example3( void );        // Experimento de prueba 3.
 static void run_example4( void );        // Experimento de prueba 4.
+static void run_demo1( void);            // Demo del uso del estado mode.
 
 /*
  * realizz el final de ensayo
@@ -171,6 +173,8 @@ void loop()
         st_loop =  ST_MODE_RUN_EXAMPLE3 ;
       }else if (Memory.get_st_mode() == ST_MODE_RUN4 ) { // Espera el modo runExample1
         st_loop =  ST_MODE_RUN_EXAMPLE4 ;
+      }else if (Memory.get_st_mode() == ST_MODE_DEMO ) { // Espera el modo runExample1
+        st_loop =  ST_MODE_RUN_DEMO1 ;
       }
       
       
@@ -214,6 +218,12 @@ void loop()
 
       case ST_MODE_RUN_EXAMPLE4:  
       run_example4();      
+      st_loop = ST_LOOP_IDLE;
+      
+      break;
+
+      case ST_MODE_RUN_DEMO1:  
+      run_demo1();      
       st_loop = ST_LOOP_IDLE;
       
       break;
@@ -317,6 +327,17 @@ static void run_example4( void ){
 }
 
 
+
+/* 
+ *  Demo de uso del estado mode
+ */
+
+static void run_demo1( void ){
+
+  Led.n_blink(10, 100);
+  
+}
+ 
 /*
  * Experimento de usuario: Demo Arduino Plotter
  * este codigo se usa en el video:  https://youtu.be/7ykRqe4GuWU 

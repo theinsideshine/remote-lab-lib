@@ -18,11 +18,12 @@
 #include "Arduino.h"
 #include <ArduinoJson.h>
 
-#define FIRMWARE_VERSION                "2.0.05" // v2.0.05  Se agrego Demo Plotter 
-                                                 // v2.0.04  Experiemnto del usuario blink 5 veces 
+#define FIRMWARE_VERSION                "2.0.06" // v2.0.06  Se agrego demo mode.
+                                                 // v2.0.05  Se agrego Demo Plotter .
+                                                 // v2.0.04  Experiemnto del usuario blink 5 veces.
                                                  //          Se completaron Setter y getter faltantes. Se cambio result_x por resultx.
-                                                 //          Se agregaron modos de prueba 3 y 4
-                                                 // v2.0.02  Se agrego modo de experimento de prueba2      
+                                                 //          Se agregaron modos de prueba 3 y 4.
+                                                 // v2.0.02  Se agrego modo de experimento de prueba2.
                                                   
 //#define EEPROM_ADDRESS_memory         4       // Direccion en la epprom donde se almacena la memoryuracion.
 #define MAGIC_NUMBER                    45    // Numero magico para detectar memoria sin inicializar.
@@ -221,6 +222,7 @@
 #define ST_MODE_RUN2                    101               // Experimento de prueba 2.
 #define ST_MODE_RUN3                    102               // Experimento de prueba 3.
 #define ST_MODE_RUN4                    103               // Experimento de prueba 4.
+#define ST_MODE_DEMO                    200              //  Demo: Uso del estado modo. 
 
 
 
